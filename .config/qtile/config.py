@@ -5,7 +5,7 @@ import socket
 import subprocess
 from libqtile.config import Drag, Key, Screen, Group, Drag, Click, Rule
 from libqtile.command import lazy
-from libqtile import layout, bar, widget, hook
+from libqtile import layout, bar, widget, hook, qtile
 from libqtile.widget import Spacer
 import albattery
 
@@ -219,7 +219,7 @@ group_names = ["1", "2", "3", "4", "5", "6", "7",]
 group_labels = ["", "", "", "", "", "", "",]
 #group_labels = ["Web", "Edit/chat", "Image", "Gimp", "Meld", "Video", "Vb", "Files", "Mail", "Music",]
 
-group_layouts = ["tile", "monadtall", "ratiotile", "floating", "full", "monadtall", "full",]
+group_layouts = ["tile", "monadtall", "ratiotile", "floating", "max", "monadtall", "max",]
 #group_layouts = ["monadtall", "matrix", "monadtall", "bsp", "monadtall", "matrix", "monadtall", "bsp", "monadtall", "monadtall",]
 
 for i in range(len(group_names)):
@@ -308,7 +308,7 @@ def init_widgets_defaults():
 
 widget_defaults = init_widgets_defaults()
 
-def open_menu(qtile):
+def open_menu():
     qtile.cmd_spawn('jgmenu_run')
 
 
