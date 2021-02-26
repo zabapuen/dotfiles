@@ -89,8 +89,8 @@ keys = [
 
     # SCREENSHOTS
 
-    Key([], "Print", lazy.spawn('flameshot full -p ' + home + '/Pictures')),
-    Key([mod2], "Print", lazy.spawn('flameshot full -p ' + home + '/Pictures')),
+    Key([], "Print", lazy.spawn('flameshot full -p ' + home + '/Imágenes')),
+    Key([mod2], "Print", lazy.spawn('flameshot full -p ' + home + '/Imágenes')),
     #    Key([mod2, "shift"], "Print", lazy.spawn('gnome-screenshot -i')),
 
     # MULTIMEDIA KEYS

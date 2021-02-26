@@ -23,7 +23,7 @@ run pamac-tray &
 numlockx on &
 # blueman-applet &
 #flameshot &
-picom --config $HOME/.config/picom/picom.conf &
+# picom --config $HOME/.config/picom/picom.conf &
 #/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 dunst &
 
