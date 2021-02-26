@@ -254,7 +254,7 @@ for i in groups:
 
 
 def init_layout_theme():
-    return {"margin": 10,
+    return {"margin": 4,
             "border_width": 2,
             "border_focus": "#ff0000",
             "border_normal": "#ffd700"
@@ -265,9 +265,9 @@ layout_theme = init_layout_theme()
 
 
 layouts = [
-    layout.MonadTall(margin=16, border_width=2,
+    layout.MonadTall(margin=8, border_width=2,
                      border_focus="#ff0000", border_normal="#ffd700"),
-    layout.MonadWide(margin=16, border_width=2,
+    layout.MonadWide(margin=8, border_width=2,
                      border_focus="#ff0000", border_normal="#ffd700"),
     layout.Matrix(**layout_theme),
     layout.Bsp(**layout_theme),
@@ -323,6 +323,9 @@ widget_defaults = init_widgets_defaults()
 
 def open_menu():
     qtile.cmd_spawn('jgmenu_run')
+
+def open_shutdown_dialog():
+    qtile.cmd_spawn('shutdown-dialog')
 
 
 def init_widgets_list():
@@ -388,7 +391,7 @@ def init_widgets_list():
             background=colors[1],
             foreground=colors[3],
             padding=0,
-            fontsize=37
+            fontsize=46
         ),
         widget.CurrentLayoutIcon(
             custom_icon_paths=[os.path.expanduser("~/.config/qtile/icons")],
@@ -408,7 +411,7 @@ def init_widgets_list():
             background=colors[3],
             foreground=colors[9],
             padding=0,
-            fontsize=37
+            fontsize=46
         ),
 
         # widget.NetGraph(
@@ -456,7 +459,7 @@ def init_widgets_list():
             background=colors[9],
             foreground=colors[3],
             padding=0,
-            fontsize=37
+            fontsize=46
         ),
         widget.CPU(
             font="Noto Sans",
@@ -482,7 +485,7 @@ def init_widgets_list():
             background=colors[3],
             foreground=colors[9],
             padding=0,
-            fontsize=37
+            fontsize=46
         ),
 
         # widget.CPUGraph(
@@ -519,7 +522,7 @@ def init_widgets_list():
             background=colors[9],
             foreground=colors[3],
             padding=0,
-            fontsize=37
+            fontsize=46
         ),
         widget.TextBox(
             font="FontAwesome",
@@ -540,7 +543,7 @@ def init_widgets_list():
             background=colors[3],
             foreground=colors[9],
             padding=0,
-            fontsize=37
+            fontsize=46
         ),
 
         widget.Systray(
@@ -553,7 +556,15 @@ def init_widgets_list():
             background=colors[9],
             foreground=colors[1],
             padding=0,
-            fontsize=37
+            fontsize=46
+        ),
+        widget.TextBox(
+            text=' ',
+            background=colors[1],
+            foreground=colors[5],
+            padding=0,
+            fontsize=16,
+            mouse_callbacks={'Button1': open_shutdown_dialog}
         ),
 
     ]
@@ -578,8 +589,8 @@ widgets_screen2 = init_widgets_screen2()
 
 
 def init_screens():
-    return [Screen(top=bar.Bar(widgets=init_widgets_screen1(), size=20, opacity=0.85, background="000000")),
-            Screen(top=bar.Bar(widgets=init_widgets_screen2(), size=20, opacity=0.85, background="000000"))]
+    return [Screen(top=bar.Bar(widgets=init_widgets_screen1(), size=24, opacity=0.85, background="000000")),
+            Screen(top=bar.Bar(widgets=init_widgets_screen2(), size=24, opacity=0.85, background="000000"))]
 
 
 screens = init_screens()
