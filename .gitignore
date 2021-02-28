@@ -23,7 +23,14 @@
 !.config/alacritty/*
 !.config/picom/
 !.config/picom/*
+!.config/volumeicon/
+!.config/volumeicon/*
+!.config/gtk-3.0/
+!.config/gtk-3.0/*
+!.config/lxsession/
+!.config/lxsession/*
 !.zshrc
+!.gtkrc-2.0
 !.local/
 .local/*
 !.local/share/
