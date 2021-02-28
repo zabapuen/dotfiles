@@ -12,9 +12,10 @@
 # Whitelist folder/a/b1/ and folder/a/b2/
 # trailing "/" is optional for folders, may match file though.
 # "/" is NOT optional when followed by a *
-!.oh-my-zsh/
-!.oh-my-zsh/*
-.oh-my-zsh/.github/
+# !.oh-my-zsh/
+# !.oh-my-zsh/*
+# .oh-my-zsh/.github/
+# .oh-my-zsh/.git/
 !.config/
 .config/*
 !.config/qtile/

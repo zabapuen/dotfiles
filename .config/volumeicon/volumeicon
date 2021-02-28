@@ -1,5 +1,5 @@
 [Alsa]
-card=Intel 82801AA-ICH
+card=default
 channel=PCM
 
 [Notification]
