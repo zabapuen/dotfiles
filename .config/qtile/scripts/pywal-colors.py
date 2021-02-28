@@ -10,7 +10,7 @@ wallpaper_list = []
 #         wallpaper_list.append(full_path)
 
 #Add your own wallpapers directory
-e = "/home/alejandro/.local/share/backgrounds/favs"
+e = "/home/alejandro/.local/share/wallpapers/favs"
 for path in os.listdir(e):
    full_path = os.path.join(e, path)
    if os.path.isfile(full_path):

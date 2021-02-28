@@ -12,6 +12,9 @@
 # Whitelist folder/a/b1/ and folder/a/b2/
 # trailing "/" is optional for folders, may match file though.
 # "/" is NOT optional when followed by a *
+!.oh-my-zsh/
+!.oh-my-zsh/*
+.oh-my-zsh/.github/
 !.config/
 .config/*
 !.config/qtile/
@@ -20,6 +23,13 @@
 !.config/alacritty/*
 !.config/picom/
 !.config/picom/*
+!.zshrc
+!.local/
+.local/*
+!.local/share/
+.local/share/*
+!.local/share/wallpapers/
+!.local/share/wallpapers/*
 # !folder/a/b1/
 # !folder/a/b2/
 # !folder/a/file.txt
