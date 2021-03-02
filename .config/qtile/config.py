@@ -326,7 +326,8 @@ def open_menu():
 
 def open_shutdown_dialog():
     qtile.cmd_spawn('shutdown-dialog')
-
+def _open_menu():
+    qtile.cmd_spawn(home + '/.config/qtile/scripts/xmenu.sh')
 
 def init_widgets_list():
     prompt = "{0}@{1}: ".format(os.environ["USER"], socket.gethostname())
@@ -349,7 +350,7 @@ def init_widgets_list():
             filename="~/.config/qtile/icons/arh-circle.png",
             iconsize=9,
             background=colors[1],
-            mouse_callbacks={'Button1': open_menu}
+            mouse_callbacks={'Button1': _open_menu}
         ),
         widget.Sep(
             linewidth=1,
