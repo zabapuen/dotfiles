@@ -315,7 +315,7 @@ colors = init_colors()
 # WIDGETS FOR THE BAR
 
 def init_widgets_defaults():
-    return dict(font="Noto Sans",
+    return dict(font="MesloLGSDZ Nerd Font",
                 fontsize=18,
                 padding=2,
                 background=colors[1])
@@ -392,41 +392,41 @@ def init_widgets_list():
                           ),
 
         widget.TextBox(
-            text='',
+            text='||',
             background=colors[1],
-            foreground=colors[3],
-            padding=0,
-            fontsize=54
+            foreground=colors[5],
+            padding=3,
+            fontsize=18
         ),
         widget.CurrentLayoutIcon(
             custom_icon_paths=[os.path.expanduser("~/.config/qtile/icons")],
             foreground=colors[5],
-            background=colors[3],
+            background=colors[1],
             padding=0,
             scale=0.7
         ),
         widget.CurrentLayout(
-            font="Noto Sans Bold",
+            font="MesloLGSDZ Nerd Font Bold",
             fontsize=18,
             foreground=colors[5],
-            background=colors[3]
+            background=colors[1]
         ),
         widget.TextBox(
-            text='',
-            background=colors[3],
-            foreground=colors[9],
-            padding=0,
-            fontsize=54
+            text='||',
+            background=colors[1],
+            foreground=colors[5],
+            padding=3,
+            fontsize=18
         ),
 
         # widget.NetGraph(
-        #          font="Noto Sans",
+        #          font="MesloLGSDZ Nerd Font",
         #          fontsize=18,
         #          bandwidth="down",
         #          interface="eno1",
         #          fill_color = colors[8],
         #          foreground=colors[5],
-        #          background=colors[9],
+        #          background=colors[1],
         #          graph_color = colors[8],
         #          border_color = colors[2],
         #          padding = 0,
@@ -437,7 +437,7 @@ def init_widgets_list():
         widget.ThermalSensor(
                  foreground = colors[5],
                  foreground_alert = colors[6],
-                 background = colors[9],
+                 background = colors[1],
                  tag_sensor = "Package id 0",
                  metric = True,
                  padding = 3,
@@ -454,51 +454,51 @@ def init_widgets_list():
         #          ),
         # # battery option 2  from Qtile
         # widget.Battery(
-        #          font="Noto Sans",
+        #          font="MesloLGSDZ Nerd Font",
         #          update_interval = 10,
         #          fontsize = 12,
         #          foreground = colors[5],
-        #          background = colors[9],
+        #          background = colors[1],
         #          ),
         widget.TextBox(
-            text='',
-            background=colors[9],
-            foreground=colors[3],
-            padding=0,
-            fontsize=54
+            text='||',
+            background=colors[1],
+            foreground=colors[5],
+            padding=3,
+            fontsize=18
         ),
         widget.CPU(
-            font="Noto Sans",
+            font="MesloLGSDZ Nerd Font",
             #format = '{MemUsed}M/{MemTotal}M',
             update_interval=1,
             fontsize=18,
             foreground=colors[5],
-            background=colors[3],
+            background=colors[1],
             mouse_callbacks={
                 'Button1': lambda qtile: qtile.cmd_spawn(myTerm + ' -e htop')},
         ),
         #                widget.Net(
-        #                         font="Noto Sans",
+        #                         font="MesloLGSDZ Nerd Font",
         #                         fontsize=18,
         #                         interface=["wlan0"],
         #                         format = '{down} ↓↑ {up}',
         #                         foreground=colors[5],
-        #                         background=colors[3],
+        #                         background=colors[1],
         #                         padding = 0,
         #                         ),
         widget.TextBox(
-            text='',
-            background=colors[3],
-            foreground=colors[9],
-            padding=0,
-            fontsize=54
+            text='||',
+            background=colors[1],
+            foreground=colors[5],
+            padding=3,
+            fontsize=18
         ),
 
         # widget.CPUGraph(
         #         border_color = colors[2],
         #         fill_color = colors[5],
         #         graph_color = colors[6],
-        #         background=colors[9],
+        #         background=colors[1],
         #         border_width = 1,
         #         line_width = 1,
         #         core = "all",
@@ -509,61 +509,61 @@ def init_widgets_list():
             font="FontAwesome",
             text="  ",
             foreground=colors[5],
-            background=colors[9],
+            background=colors[1],
             padding=0,
             fontsize=18
         ),
         widget.Memory(
-            font="Noto Sans",
+            font="MesloLGSDZ Nerd Font",
             format='{MemUsed}M/{MemTotal}M',
             update_interval=1,
             fontsize=18,
             foreground=colors[5],
-            background=colors[9],
+            background=colors[1],
             mouse_callbacks={
                 'Button1': lambda qtile: qtile.cmd_spawn(myTerm + ' -e htop')},
         ),
         widget.TextBox(
-            text='',
-            background=colors[9],
-            foreground=colors[3],
-            padding=0,
-            fontsize=54
+            text='||',
+            background=colors[1],
+            foreground=colors[5],
+            padding=3,
+            fontsize=18
         ),
         widget.TextBox(
             font="FontAwesome",
             text="  ",
             foreground=colors[5],
-            background=colors[3],
+            background=colors[1],
             padding=0,
             fontsize=18
         ),
         widget.Clock(
             foreground=colors[5],
-            background=colors[3],
+            background=colors[1],
             fontsize=20,
             format="%-I:%M%p"
             # format="%Y-%m-%d %H:%M"
         ),
         widget.TextBox(
-            text='',
-            background=colors[3],
-            foreground=colors[9],
-            padding=0,
-            fontsize=54
+            text='||',
+            background=colors[1],
+            foreground=colors[5],
+            padding=3,
+            fontsize=18
         ),
 
         widget.Systray(
-            background=colors[9],
+            background=colors[1],
             icon_size=24,
             padding=4
         ),
         widget.TextBox(
-            text='',
-            background=colors[9],
+            text='||',
+            background=colors[1],
             foreground=colors[1],
-            padding=0,
-            fontsize=54
+            padding=3,
+            fontsize=18
         ),
         widget.TextBox(
             text='  ',
