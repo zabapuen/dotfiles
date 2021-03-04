@@ -1,6 +1,6 @@
 #!/bin/sh
 
-cat <<EOF | xmenu -p 0x25 | sh &
+cat <<EOF | xmenu -p 2x30 | sh &
 $(cat $HOME/.config/qtile/scripts/menu.txt)
 Shutdown		poweroff
 Reboot			reboot

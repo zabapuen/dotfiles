@@ -316,7 +316,7 @@ colors = init_colors()
 
 def init_widgets_defaults():
     return dict(font="Noto Sans",
-                fontsize=12,
+                fontsize=18,
                 padding=2,
                 background=colors[1])
 
@@ -386,7 +386,7 @@ def init_widgets_list():
         #       fontsize = 46
         #       ),
         widget.WindowName(font="MesloLGSDZ Nerd Font Bold",
-                          fontsize=16,
+                          fontsize=18,
                           foreground=colors[7],
                           background=colors[1],
                           ),
@@ -407,7 +407,7 @@ def init_widgets_list():
         ),
         widget.CurrentLayout(
             font="Noto Sans Bold",
-            fontsize=12,
+            fontsize=18,
             foreground=colors[5],
             background=colors[3]
         ),
@@ -421,7 +421,7 @@ def init_widgets_list():
 
         # widget.NetGraph(
         #          font="Noto Sans",
-        #          fontsize=12,
+        #          fontsize=18,
         #          bandwidth="down",
         #          interface="eno1",
         #          fill_color = colors[8],
@@ -471,7 +471,7 @@ def init_widgets_list():
             font="Noto Sans",
             #format = '{MemUsed}M/{MemTotal}M',
             update_interval=1,
-            fontsize=12,
+            fontsize=18,
             foreground=colors[5],
             background=colors[3],
             mouse_callbacks={
@@ -479,7 +479,7 @@ def init_widgets_list():
         ),
         #                widget.Net(
         #                         font="Noto Sans",
-        #                         fontsize=12,
+        #                         fontsize=18,
         #                         interface=["wlan0"],
         #                         format = '{down} ↓↑ {up}',
         #                         foreground=colors[5],
@@ -511,13 +511,13 @@ def init_widgets_list():
             foreground=colors[5],
             background=colors[9],
             padding=0,
-            fontsize=16
+            fontsize=18
         ),
         widget.Memory(
             font="Noto Sans",
             format='{MemUsed}M/{MemTotal}M',
             update_interval=1,
-            fontsize=12,
+            fontsize=18,
             foreground=colors[5],
             background=colors[9],
             mouse_callbacks={
@@ -532,17 +532,18 @@ def init_widgets_list():
         ),
         widget.TextBox(
             font="FontAwesome",
-            text="  ",
+            text="  ",
             foreground=colors[5],
             background=colors[3],
             padding=0,
-            fontsize=16
+            fontsize=18
         ),
         widget.Clock(
             foreground=colors[5],
             background=colors[3],
-            fontsize=12,
-            format="%Y-%m-%d %H:%M"
+            fontsize=20,
+            format="%-I:%M%p"
+            # format="%Y-%m-%d %H:%M"
         ),
         widget.TextBox(
             text='',
@@ -554,7 +555,7 @@ def init_widgets_list():
 
         widget.Systray(
             background=colors[9],
-            icon_size=20,
+            icon_size=24,
             padding=4
         ),
         widget.TextBox(
@@ -565,11 +566,11 @@ def init_widgets_list():
             fontsize=54
         ),
         widget.TextBox(
-            text=' ',
+            text='  ',
             background=colors[1],
             foreground=colors[5],
             padding=0,
-            fontsize=16,
+            fontsize=18,
             mouse_callbacks={'Button1': open_shutdown_dialog}
         ),
 
@@ -706,6 +707,7 @@ floating_layout = layout.Floating(float_rules=[
     {'wmclass': 'Pamac-manager'},
     {'wmclass': 'Mailspring'},
     {'wmclass': 'Gpick'},
+    {'wmclass': 'ocs-url'},
 
 
 ],  fullscreen_border_width=0, border_width=0)
