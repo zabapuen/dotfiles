@@ -305,7 +305,7 @@ def init_colors():
             ["#ff0000", "#ff0000"],  # color 6
             ["#9BDD22", "#9BDD22"],  # color 7
             #            ["#6790eb", "#6790eb"], # color 8
-            ["#000000", "#000000"],  # color 8
+            ["#151515", "#151515"],  # color 8
             ["#9400de", "#9400de"]]  # color 9
 
 
@@ -385,7 +385,7 @@ def init_widgets_list():
         #       padding = 0,
         #       fontsize = 46
         #       ),
-        widget.WindowName(font="MesloLGSDZ Nerd Font",
+        widget.WindowName(font="MesloLGSDZ Nerd Font Bold",
                           fontsize=16,
                           foreground=colors[7],
                           background=colors[1],
