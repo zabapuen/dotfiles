@@ -49,6 +49,7 @@ keys = [
     Key([mod], "KP_Enter", lazy.spawn('alacritty')),
     Key([mod], "w", lazy.spawn(home + '/.config/qtile/scripts/pywal-colors.py')),
     Key([mod], "x", lazy.shutdown()),
+    Key([mod], "u", lazy.spawn(home + '/.config/qtile/scripts/rdesktop.sh')),
 
     # SUPER + SHIFT KEYS
 
@@ -221,7 +222,7 @@ group_names = ["1", "2", "3", "4", "5", "6", "7", ]
 #group_names = ["ampersand", "eacute", "quotedbl", "apostrophe", "parenleft", "section", "egrave", "exclam", "ccedilla", "agrave",]
 
 #group_labels = ["1 ", "2 ", "3 ", "4 ", "5 ", "6 ", "7 ", "8 ", "9 ", "0",]
-group_labels = ["", "", "", "", "", "", "", ]
+group_labels = ["  ", "  ", "  ", "  ", "  ", "  ", "  ", ]
 #group_labels = ["Web", "Edit/chat", "Image", "Gimp", "Meld", "Video", "Vb", "Files", "Mail", "Music",]
 
 group_layouts = ["tile", "monadtall", "ratiotile",
@@ -244,6 +245,8 @@ for i in groups:
         Key([mod], "Tab", lazy.screen.next_group()),
         Key(["mod1"], "Tab", lazy.screen.next_group()),
         Key(["mod1", "shift"], "Tab", lazy.screen.prev_group()),
+        Key(["mod1"], "Left", lazy.screen.prev_group()),
+        Key(["mod1"], "Right", lazy.screen.next_group()),
 
         # MOVE WINDOW TO SELECTED WORKSPACE 1-10 AND STAY ON WORKSPACE
         #Key([mod, "shift"], i.name, lazy.window.togroup(i.name)),
@@ -256,8 +259,8 @@ for i in groups:
 def init_layout_theme():
     return {"margin": 4,
             "border_width": 2,
-            "border_focus": "#ff0000",
-            "border_normal": "#ffd700"
+            "border_focus": "#9BDD22",
+            "border_normal": "#c0c5ce"
             }
 
 
@@ -266,9 +269,9 @@ layout_theme = init_layout_theme()
 
 layouts = [
     layout.MonadTall(margin=8, border_width=2,
-                     border_focus="#ff0000", border_normal="#ffd700"),
+                     border_focus="#9BDD22", border_normal="#c0c5ce"),
     layout.MonadWide(margin=8, border_width=2,
-                     border_focus="#ff0000", border_normal="#ffd700"),
+                     border_focus="#9BDD22", border_normal="#c0c5ce"),
     layout.Matrix(**layout_theme),
     layout.Bsp(**layout_theme),
     layout.Floating(**layout_theme),
@@ -300,7 +303,7 @@ def init_colors():
             ["#3384d0", "#3384d0"],  # color 4
             ["#ffffff", "#ffffff"],  # color 5
             ["#ff0000", "#ff0000"],  # color 6
-            ["#62FF00", "#62FF00"],  # color 7
+            ["#9BDD22", "#9BDD22"],  # color 7
             #            ["#6790eb", "#6790eb"], # color 8
             ["#000000", "#000000"],  # color 8
             ["#9400de", "#9400de"]]  # color 9
@@ -350,6 +353,7 @@ def init_widgets_list():
             filename="~/.config/qtile/icons/arh-circle.png",
             iconsize=9,
             background=colors[1],
+            margin=3,
             mouse_callbacks={'Button1': _open_menu}
         ),
         widget.Sep(
@@ -359,14 +363,14 @@ def init_widgets_list():
             background=colors[1]
         ),
         widget.GroupBox(font="FontAwesome",
-                        fontsize=16,
+                        fontsize=20,
                         margin_y=1,
                         margin_x=0,
                         padding_y=6,
                         padding_x=5,
                         borderwidth=0,
                         disable_drag=False,
-                        active="#ffff00",
+                        active=colors[7],
                         inactive=colors[5],
                         rounded=False,
                         highlight_method="block",
@@ -381,9 +385,9 @@ def init_widgets_list():
         #       padding = 0,
         #       fontsize = 46
         #       ),
-        widget.WindowName(font="Fantasque Sans Mono",
+        widget.WindowName(font="MesloLGSDZ Nerd Font",
                           fontsize=16,
-                          foreground=colors[6],
+                          foreground=colors[7],
                           background=colors[1],
                           ),
 
@@ -392,7 +396,7 @@ def init_widgets_list():
             background=colors[1],
             foreground=colors[3],
             padding=0,
-            fontsize=46
+            fontsize=54
         ),
         widget.CurrentLayoutIcon(
             custom_icon_paths=[os.path.expanduser("~/.config/qtile/icons")],
@@ -412,32 +416,33 @@ def init_widgets_list():
             background=colors[3],
             foreground=colors[9],
             padding=0,
-            fontsize=46
+            fontsize=54
         ),
 
         # widget.NetGraph(
         #          font="Noto Sans",
         #          fontsize=12,
         #          bandwidth="down",
-        #          interface="auto",
+        #          interface="eno1",
         #          fill_color = colors[8],
-        #          foreground=colors[2],
-        #          background=colors[1],
+        #          foreground=colors[5],
+        #          background=colors[9],
         #          graph_color = colors[8],
         #          border_color = colors[2],
         #          padding = 0,
-        #          border_width = 1,
-        #          line_width = 1,
+        #          border_width = 0,
+        #          line_width = 0,
         #          ),
-        # # do not activate in Virtualbox - will break qtile
-        # widget.ThermalSensor(
-        #          foreground = colors[5],
-        #          foreground_alert = colors[6],
-        #          background = colors[1],
-        #          metric = True,
-        #          padding = 3,
-        #          threshold = 80
-        #          ),
+        # # # do not activate in Virtualbox - will break qtile
+        widget.ThermalSensor(
+                 foreground = colors[5],
+                 foreground_alert = colors[6],
+                 background = colors[9],
+                 tag_sensor = "Package id 0",
+                 metric = True,
+                 padding = 3,
+                 threshold = 80
+                 ),
         # albattery.BatteryIcon(
         #          padding=0,
         #          scale=0.7,
@@ -460,7 +465,7 @@ def init_widgets_list():
             background=colors[9],
             foreground=colors[3],
             padding=0,
-            fontsize=46
+            fontsize=54
         ),
         widget.CPU(
             font="Noto Sans",
@@ -486,7 +491,7 @@ def init_widgets_list():
             background=colors[3],
             foreground=colors[9],
             padding=0,
-            fontsize=46
+            fontsize=54
         ),
 
         # widget.CPUGraph(
@@ -523,7 +528,7 @@ def init_widgets_list():
             background=colors[9],
             foreground=colors[3],
             padding=0,
-            fontsize=46
+            fontsize=54
         ),
         widget.TextBox(
             font="FontAwesome",
@@ -544,7 +549,7 @@ def init_widgets_list():
             background=colors[3],
             foreground=colors[9],
             padding=0,
-            fontsize=46
+            fontsize=54
         ),
 
         widget.Systray(
@@ -557,7 +562,7 @@ def init_widgets_list():
             background=colors[9],
             foreground=colors[1],
             padding=0,
-            fontsize=46
+            fontsize=54
         ),
         widget.TextBox(
             text=' ',
@@ -590,8 +595,8 @@ widgets_screen2 = init_widgets_screen2()
 
 
 def init_screens():
-    return [Screen(top=bar.Bar(widgets=init_widgets_screen1(), size=24, opacity=0.85, background="000000")),
-            Screen(top=bar.Bar(widgets=init_widgets_screen2(), size=24, opacity=0.85, background="000000"))]
+    return [Screen(top=bar.Bar(widgets=init_widgets_screen1(), size=30, opacity=0.8, background="000000")),
+            Screen(top=bar.Bar(widgets=init_widgets_screen2(), size=30, opacity=0.8, background="000000"))]
 
 
 screens = init_screens()
@@ -672,8 +677,8 @@ def set_floating(window):
 floating_types = ["notification", "toolbar", "splash", "dialog"]
 
 
-follow_mouse_focus = True
-bring_front_click = False
+follow_mouse_focus = False
+bring_front_click = True
 cursor_warp = False
 floating_layout = layout.Floating(float_rules=[
     {'wmclass': 'confirm'},
@@ -698,6 +703,9 @@ floating_layout = layout.Floating(float_rules=[
     {'wmclass': 'Lxpolkit'},
     {'wmclass': 'yad'},
     {'wmclass': 'Yad'},
+    {'wmclass': 'Pamac-manager'},
+    {'wmclass': 'Mailspring'},
+    {'wmclass': 'Gpick'},
 
 
 ],  fullscreen_border_width=0, border_width=0)

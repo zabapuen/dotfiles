@@ -21,10 +21,11 @@ lxsession &
 run nm-applet &
 run pamac-tray &
 numlockx on &
+polychromatic-tray-applet &
 # blueman-applet &
 flameshot &
-# picom --config $HOME/.config/picom/picom.conf &
-#/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
+picom --config $HOME/.config/picom/picom.conf &
+/usr/lib/polkit-kde-authentication-agent-1 &
 dunst &
 
 #starting user applications at boot time
@@ -40,3 +41,6 @@ run volumeicon &
 #run spotify &
 #run atom &
 #run telegram-desktop &
+run mailspring &
+run teams &
+

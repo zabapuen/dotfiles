@@ -1,0 +1,126 @@
+IMG:/home/alejandro.garuda/.cache/xdg-xmenu/icons/applications-accessories.png	Accessories
+	xgps (GPS information)	xgps
+	xgpsspeed (GPS speedometer)	xgpsspeed
+	picom (X compositor)	picom
+	IMG:/home/alejandro.garuda/.cache/xdg-xmenu/icons/AppImageLauncher.png	AppImageLauncher Settings	AppImageLauncherSettings
+	IMG:/home/alejandro.garuda/.cache/xdg-xmenu/icons/ark.png	Ark (Archiving Tool)	ark
+	IMG:/home/alejandro.garuda/.cache/xdg-xmenu/icons/org.xfce.png	Bulk Rename (Bulk Rename)	thunar --bulk-rename
+	IMG:/home/alejandro.garuda/.cache/xdg-xmenu/icons/byobu.png	Byobu Gnome Terminal	gnome-terminal --name=us.kirkland.terminals.byobu --class=us.kirkland.terminals.byobu -- byobu
+	IMG:/home/alejandro.garuda/.cache/xdg-xmenu/icons/byobu.png	Byobu Terminal	xterm -e env TERM=xterm-256color byobu
+	IMG:/home/alejandro.garuda/.cache/xdg-xmenu/icons/compton.png	compton (X compositor)	compton
+	IMG:/home/alejandro.garuda/.cache/xdg-xmenu/icons/org.gnome.png	Firmware	gnome-firmware
+	IMG:/home/alejandro.garuda/.cache/xdg-xmenu/icons/com.leinardi.png	GreenWithEnvy	/usr/bin/gwe
+	IMG:/home/alejandro.garuda/.cache/xdg-xmenu/icons/kate.png	Kate (Advanced Text Editor)	kate -b
+	IMG:/home/alejandro.garuda/.cache/xdg-xmenu/icons/accessories-calculator.png	KCalc (Scientific Calculator)	kcalc
+	IMG:/home/alejandro.garuda/.cache/xdg-xmenu/icons/klipper.png	Klipper (Clipboard Tool)	klipper
+	IMG:/home/alejandro.garuda/.cache/xdg-xmenu/icons/kvantum.png	Kvantum Manager	kvantummanager
+	IMG:/home/alejandro.garuda/.cache/xdg-xmenu/icons/latte-dock.png	Latte (Dock)	/usr/bin/latte-dock
+	IMG:/home/alejandro.garuda/.cache/xdg-xmenu/icons/micro.png	Micro (Text Editor)	xterm -e micro
+	IMG:/home/alejandro.garuda/.cache/xdg-xmenu/icons/Nextcloud.png	Nextcloud desktop sync client  (Folder Sync)	nextcloud
+	IMG:/home/alejandro.garuda/.cache/xdg-xmenu/icons/stoken-gui.png	Software Token (small) (Software Token)	stoken-gui --small
+	IMG:/home/alejandro.garuda/.cache/xdg-xmenu/icons/stoken-gui.png	Software Token (Software Token)	stoken-gui
+	IMG:/home/alejandro.garuda/.cache/xdg-xmenu/icons/spectacle.png	Spectacle (Screenshot Capture Utility)	/usr/bin/spectacle
+	IMG:/home/alejandro.garuda/.cache/xdg-xmenu/icons/xgpsspeed.png	Speedometer (xgpsspeed)	xterm -e xgpsspeed
+	IMG:/home/alejandro.garuda/.cache/xdg-xmenu/icons/org.xfce.png	Thunar File Manager (File Manager)	thunar
+	IMG:/home/alejandro.garuda/.cache/xdg-xmenu/icons/gvim.png	Vim (Text Editor)	xterm -e vim
+	IMG:/home/alejandro.garuda/.cache/xdg-xmenu/icons/visual-studio-code.png	Visual Studio Code (Text Editor)	/opt/visual-studio-code/code --no-sandbox --unity-launch
+	IMG:/home/alejandro.garuda/.cache/xdg-xmenu/icons/gps.png	Xgps (GPS information)	xterm -e xgps
+IMG:/home/alejandro.garuda/.cache/xdg-xmenu/icons/applications-development.png	Development
+	IMG:/home/alejandro.garuda/.cache/xdg-xmenu/icons/electron.png	Electron	electron
+	IMG:/home/alejandro.garuda/.cache/xdg-xmenu/icons/fluid.png	FLUID	fluid
+	IMG:/home/alejandro.garuda/.cache/xdg-xmenu/icons/cuttlefish.png	Icon Browser	xterm -e yad-icon-browser
+	IMG:/home/alejandro.garuda/.cache/xdg-xmenu/icons/yad.png	Icon Browser	yad-icon-browser
+	IMG:/home/alejandro.garuda/.cache/xdg-xmenu/icons/micro.png	Micro (Text Editor)	xterm -e micro
+	IMG:/home/alejandro.garuda/.cache/xdg-xmenu/icons/assistant.png	Qt Assistant	assistant
+	IMG:/home/alejandro.garuda/.cache/xdg-xmenu/icons/QtProject-designer.png	Qt Designer (Interface Designer)	designer
+	IMG:/home/alejandro.garuda/.cache/xdg-xmenu/icons/linguist.png	Qt Linguist	linguist
+	IMG:/home/alejandro.garuda/.cache/xdg-xmenu/icons/qdbusviewer.png	Qt QDbusViewer  (D-Bus Debugger)	qdbusviewer
+	IMG:/home/alejandro.garuda/.cache/xdg-xmenu/icons/search.png	UserFeedback Console (UserFeedback Management Console)	UserFeedbackConsole
+	IMG:/home/alejandro.garuda/.cache/xdg-xmenu/icons/visual-studio-code.png	Visual Studio Code (Text Editor)	/opt/visual-studio-code/code --no-sandbox --unity-launch
+IMG:/home/alejandro.garuda/.cache/xdg-xmenu/icons/applications-education.png	Education
+IMG:/home/alejandro.garuda/.cache/xdg-xmenu/icons/applications-games.png	Games
+IMG:/home/alejandro.garuda/.cache/xdg-xmenu/icons/applications-graphics.png	Graphics
+	XDvi (DVI Viewer)	xdvi
+	IMG:/home/alejandro.garuda/.cache/xdg-xmenu/icons/gpick.png	Gpick (Color picker)	gpick
+	IMG:/home/alejandro.garuda/.cache/xdg-xmenu/icons/gwenview.png	Gwenview (KDE Image Viewer)	gwenview
+	IMG:/home/alejandro.garuda/.cache/xdg-xmenu/icons/okular.png	Okular (Document Viewer)	okular
+IMG:/home/alejandro.garuda/.cache/xdg-xmenu/icons/applications-internet.png	Internet
+	TeamSpeak 3 (TeamSpeak)	teamspeak3
+	IMG:/home/alejandro.garuda/.cache/xdg-xmenu/icons/network-wired.png	Avahi SSH Server Browser	/usr/bin/bssh
+	IMG:/home/alejandro.garuda/.cache/xdg-xmenu/icons/network-wired.png	Avahi VNC Server Browser	/usr/bin/bvnc
+	IMG:/home/alejandro.garuda/.cache/xdg-xmenu/icons/discord.png	Discord (Internet Messenger)	/usr/bin/discord
+	IMG:/home/alejandro.garuda/.cache/xdg-xmenu/icons/google-chrome.png	Google Chrome (Web Browser)	/usr/bin/google-chrome-stable
+	IMG:/home/alejandro.garuda/.cache/xdg-xmenu/icons/kdeconnect.png	KDE Connect (Device Synchronization)	kdeconnect-app
+	IMG:/home/alejandro.garuda/.cache/xdg-xmenu/icons/kdeconnect.png	KDE Connect Indicator	kdeconnect-indicator
+	IMG:/home/alejandro.garuda/.cache/xdg-xmenu/icons/kdeconnect.png	KDE Connect SMS (SMS)	kdeconnect-sms
+	IMG:/home/alejandro.garuda/.cache/xdg-xmenu/icons/kget.png	KGet (Download Manager)	kget -qwindowtitle
+	IMG:/home/alejandro.garuda/.cache/xdg-xmenu/icons/krfb.png	Krfb (Desktop Sharing (VNC))	krfb -qwindowtitle
+	IMG:/home/alejandro.garuda/.cache/xdg-xmenu/icons/librewolf.png	LibreWolf (Web Browser)	/usr/lib/librewolf/librewolf
+	IMG:/home/alejandro.garuda/.cache/xdg-xmenu/icons/mailspring.png	Mailspring (Mail Client)	/usr/bin/mailspring
+	IMG:/home/alejandro.garuda/.cache/xdg-xmenu/icons/kdeconnect.png	Open on connected device via KDE Connect (Open on connected device via KDE Connect)	kdeconnect-handler --open
+	IMG:/home/alejandro.garuda/.cache/xdg-xmenu/icons/qbittorrent.png	qBittorrent (BitTorrent client)	qbittorrent
+	IMG:/home/alejandro.garuda/.cache/xdg-xmenu/icons/virt-viewer.png	Remote Viewer	remote-viewer
+	IMG:/home/alejandro.garuda/.cache/xdg-xmenu/icons/tigervnc.png	TigerVNC Viewer (Remote Desktop Viewer)	/usr/bin/vncviewer
+	IMG:/home/alejandro.garuda/.cache/xdg-xmenu/icons/icon.png	Xtreme Download Manager	"/opt/xdman/xdman"
+	IMG:/home/alejandro.garuda/.cache/xdg-xmenu/icons/Zoom.png	Zoom	/usr/bin/zoom
+IMG:/home/alejandro.garuda/.cache/xdg-xmenu/icons/applications-multimedia.png	Multimedia
+	IMG:/home/alejandro.garuda/.cache/xdg-xmenu/icons/mpv.png	mpv Media Player (Multimedia player)	mpv --player-operation-mode=pseudo-gui --
+	IMG:/home/alejandro.garuda/.cache/xdg-xmenu/icons/multimedia-volume-control.png	PulseAudio Equalizer (Equalizer)	pulseaudio-equalizer-gtk
+	IMG:/home/alejandro.garuda/.cache/xdg-xmenu/icons/qv4l2.png	Qt V4L2 test Utility	qv4l2
+	IMG:/home/alejandro.garuda/.cache/xdg-xmenu/icons/qvidcap.png	Qt V4L2 video capture utility	qvidcap
+	IMG:/home/alejandro.garuda/.cache/xdg-xmenu/icons/vlc.png	VLC media player (Media player)	/usr/bin/vlc --started-from-file
+	IMG:/home/alejandro.garuda/.cache/xdg-xmenu/icons/multimedia-volume-control.png	Volume Icon	volumeicon
+IMG:/home/alejandro.garuda/.cache/xdg-xmenu/icons/applications-office.png	Office
+	IMG:/home/alejandro.garuda/.cache/xdg-xmenu/icons/okular.png	Okular (Document Viewer)	okular
+IMG:/home/alejandro.garuda/.cache/xdg-xmenu/icons/applications-science.png	Science
+IMG:/home/alejandro.garuda/.cache/xdg-xmenu/icons/preferences-desktop.png	Settings
+	Polychromatic Controller (Razer Device Manager)	polychromatic-controller
+	IMG:/home/alejandro.garuda/.cache/xdg-xmenu/icons/system-software-install.png	Add/Remove Software	pamac-manager
+	IMG:/home/alejandro.garuda/.cache/xdg-xmenu/icons/preferences-system-network.png	Advanced Network Configuration	nm-connection-editor
+	IMG:/home/alejandro.garuda/.cache/xdg-xmenu/icons/AppImageLauncher.png	AppImageLauncher Settings	AppImageLauncherSettings
+	IMG:/home/alejandro.garuda/.cache/xdg-xmenu/icons/org.xfce.png	File Manager Settings	thunar-settings
+	IMG:/home/alejandro.garuda/.cache/xdg-xmenu/icons/gufw.png	Firewall Configuration	gufw
+	IMG:/home/alejandro.garuda/.cache/xdg-xmenu/icons/preferences-desktop.png	Garuda Notifier KDE Settings	msm_kde_notifier --settings
+	IMG:/home/alejandro.garuda/.cache/xdg-xmenu/icons/preferences-desktop.png	Garuda Settings Manager	garuda-settings-manager
+	IMG:/home/alejandro.garuda/.cache/xdg-xmenu/icons/kdeconnect.png	KDE Connect Settings (Connect and sync your devices)	kdeconnect-settings
+	IMG:/home/alejandro.garuda/.cache/xdg-xmenu/icons/preferences-system.png	KDE System Settings (KDE System Settings)	systemsettings5
+	IMG:/home/alejandro.garuda/.cache/xdg-xmenu/icons/kvantum.png	Kvantum Manager	kvantummanager
+	IMG:/home/alejandro.garuda/.cache/xdg-xmenu/icons/nvidia-settings.png	NVIDIA X Server Settings	/usr/bin/nvidia-settings
+	IMG:/home/alejandro.garuda/.cache/xdg-xmenu/icons/polychromatic.png	Polychromatic Tray Applet (Razer Device Manager)	polychromatic-tray-applet
+IMG:/home/alejandro.garuda/.cache/xdg-xmenu/icons/applications-system.png	System
+	Hardware Locality lstopo	lstopo
+	IMG:/home/alejandro.garuda/.cache/xdg-xmenu/icons/system-software-install.png	Add/Remove Software	pamac-manager
+	IMG:/home/alejandro.garuda/.cache/xdg-xmenu/icons/Alacritty.png	Alacritty (Terminal)	alacritty
+	IMG:/home/alejandro.garuda/.cache/xdg-xmenu/icons/network-wired.png	Avahi Zeroconf Browser	/usr/bin/avahi-discover
+	IMG:/home/alejandro.garuda/.cache/xdg-xmenu/icons/bleachbit.png	BleachBit (Unnecessary file cleaner)	bleachbit
+	IMG:/home/alejandro.garuda/.cache/xdg-xmenu/icons/org.xfce.png	Bulk Rename (Bulk Rename)	thunar --bulk-rename
+	IMG:/home/alejandro.garuda/.cache/xdg-xmenu/icons/byobu.png	Byobu Gnome Terminal	gnome-terminal --name=us.kirkland.terminals.byobu --class=us.kirkland.terminals.byobu -- byobu
+	IMG:/home/alejandro.garuda/.cache/xdg-xmenu/icons/conky-logomark-violet.png	conky	conky --daemonize --pause=1
+	IMG:/home/alejandro.garuda/.cache/xdg-xmenu/icons/system-file-manager.png	Dolphin (File Manager)	dolphin
+	IMG:/home/alejandro.garuda/.cache/xdg-xmenu/icons/garuda-assistant.png	Garuda Assistant	garuda-assistant
+	IMG:/home/alejandro.garuda/.cache/xdg-xmenu/icons/garuda-boot-options.png	Garuda Boot Options	pkexec env DISPLAY=$DISPLAY XAUTHORITY=$XAUTHORITY HOME=$HOME garuda-boot-options -style kvantum
+	IMG:/home/alejandro.garuda/.cache/xdg-xmenu/icons/garuda-gamer.png	Garuda Gamer	garuda-gamer
+	IMG:/home/alejandro.garuda/.cache/xdg-xmenu/icons/garuda-network-assistant.png	Garuda Network Assistant	pkexec env DISPLAY=$DISPLAY XAUTHORITY=$XAUTHORITY HOME=$HOME garuda-network-assistant -style kvantum
+	IMG:/home/alejandro.garuda/.cache/xdg-xmenu/icons/garuda-welcome.png	Garuda Welcome	garuda-welcome
+	IMG:/home/alejandro.garuda/.cache/xdg-xmenu/icons/gnome-system-log.png	Hardware Locality (lstopo)	xterm -e lstopo
+	IMG:/home/alejandro.garuda/.cache/xdg-xmenu/icons/htop.png	Htop (Process Viewer)	xterm -e htop
+	IMG:/home/alejandro.garuda/.cache/xdg-xmenu/icons/partitionmanager.png	KDE Partition Manager (Partition Editor)	partitionmanager
+	IMG:/home/alejandro.garuda/.cache/xdg-xmenu/icons/utilities-terminal.png	Konsole (Terminal)	konsole
+	IMG:/home/alejandro.garuda/.cache/xdg-xmenu/icons/utilities-system-monitor.png	KSysGuard (System Monitor)	ksysguard
+	IMG:/home/alejandro.garuda/.cache/xdg-xmenu/icons/libinput-gestures-qt.png	Libinput Gestures	xterm -e libinput-gestures-qt
+	IMG:/home/alejandro.garuda/.cache/xdg-xmenu/icons/libinput-gestures-qt.png	libinput-gestures-qt	libinput-gestures-qt
+	IMG:/home/alejandro.garuda/.cache/xdg-xmenu/icons/virtualbox.png	Oracle VM VirtualBox (Virtual Machine)	VirtualBox
+	IMG:/home/alejandro.garuda/.cache/xdg-xmenu/icons/ar.com.softwareperonista.png	Pace	pace
+	IMG:/home/alejandro.garuda/.cache/xdg-xmenu/icons/preferences-system-login.png	Qwikaccess	xterm -e qwikaccess
+	IMG:/home/alejandro.garuda/.cache/xdg-xmenu/icons/system-reboot.png	Reboot To UEFI	systemctl reboot --firmware-setup
+	IMG:/home/alejandro.garuda/.cache/xdg-xmenu/icons/reload.png	Reflector Simple	/usr/bin/reflector-simple
+	IMG:/home/alejandro.garuda/.cache/xdg-xmenu/icons/system-suspend.png	Suspend/Hibernate	systemctl suspend-then-hibernate
+	IMG:/home/alejandro.garuda/.cache/xdg-xmenu/icons/org.xfce.png	Thunar File Manager (File Manager)	thunar
+	IMG:/home/alejandro.garuda/.cache/xdg-xmenu/icons/timeshift.png	Timeshift (System Restore Utility)	timeshift-launcher
+	IMG:/home/alejandro.garuda/.cache/xdg-xmenu/icons/xterm-color_48x48.png	UXTerm	uxterm
+	IMG:/home/alejandro.garuda/.cache/xdg-xmenu/icons/virt-manager.png	Virtual Machine Manager	virt-manager
+	IMG:/home/alejandro.garuda/.cache/xdg-xmenu/icons/wihotspot.png	Wifi Hotspot	sh -c 'env DISPLAY=$DISPLAY XAUTHORITY=$XAUTHORITY /usr/bin/wihotspot'
+	IMG:/home/alejandro.garuda/.cache/xdg-xmenu/icons/xterm-color_48x48.png	XTerm	xterm
+IMG:/home/alejandro.garuda/.cache/xdg-xmenu/icons/applications-other.png	Others
+	Chrome Shotdown Hook	/usr/bin/chrome-shutdown-hook
+	IMG:/home/alejandro.garuda/.cache/xdg-xmenu/icons/plasma.png	Plasma Windowed	plasmawindowed

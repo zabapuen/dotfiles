@@ -1,14 +1,15 @@
 #!/bin/sh
 
-# cat <<EOF | xmenu | sh &
+cat <<EOF | xmenu -p 0x25 | sh &
+$(cat $HOME/.config/qtile/scripts/menu.txt)
+Shutdown		poweroff
+Reboot			reboot
+EOF
+# xdg-xmenu > $HOME/.config/qtile/scripts/menu.txt
+# xdg-xmenu > menu; xmenu -p 0x25 < menu | sh
 # Applications
 # 	IMG:./icons/web.png	Web Browser	firefox
 # 	IMG:./icons/gimp.png	Image editor	gimp
 # Terminal (xterm)	xterm
 # Terminal (urxvt)	urxvt
 # Terminal (st)		st
-# Shutdown		poweroff
-# Reboot			reboot
-# EOF
-
-xdg-xmenu > menu; xmenu < menu | sh &
