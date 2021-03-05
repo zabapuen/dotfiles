@@ -50,6 +50,7 @@ keys = [
     Key([mod], "w", lazy.spawn(home + '/.config/qtile/scripts/pywal-colors.py')),
     Key([mod], "x", lazy.shutdown()),
     Key([mod], "u", lazy.spawn(home + '/.config/qtile/scripts/rdesktop.sh')),
+    Key([mod], "s", lazy.spawn('alacritty -e ' + home + '/.local/bin/spoty')),
 
     # SUPER + SHIFT KEYS
 
@@ -318,6 +319,7 @@ def init_widgets_defaults():
     return dict(font="MesloLGSDZ Nerd Font",
                 fontsize=18,
                 padding=2,
+                fontshadow='#000000',
                 background=colors[1])
 
 
@@ -391,13 +393,19 @@ def init_widgets_list():
                           background=colors[1],
                           ),
 
-        widget.TextBox(
-            text='||',
-            background=colors[1],
-            foreground=colors[5],
-            padding=3,
-            fontsize=18
-        ),
+        # widget.TextBox(
+        #     text='||',
+        #     background=colors[1],
+        #     foreground=colors[5],
+        #     padding=3,
+        #     fontsize=18
+        # ),
+        widget.Sep(
+            linewidth=1,
+            padding=10,
+            foreground=colors[2],
+            background=colors[1]
+        ),              #
         widget.CurrentLayoutIcon(
             custom_icon_paths=[os.path.expanduser("~/.config/qtile/icons")],
             foreground=colors[5],
@@ -411,13 +419,19 @@ def init_widgets_list():
             foreground=colors[5],
             background=colors[1]
         ),
-        widget.TextBox(
-            text='||',
-            background=colors[1],
-            foreground=colors[5],
-            padding=3,
-            fontsize=18
-        ),
+        # widget.TextBox(
+        #     text='||',
+        #     background=colors[1],
+        #     foreground=colors[5],
+        #     padding=3,
+        #     fontsize=18
+        # ),
+        widget.Sep(
+            linewidth=1,
+            padding=10,
+            foreground=colors[2],
+            background=colors[1]
+        ),              #
 
         # widget.NetGraph(
         #          font="MesloLGSDZ Nerd Font",
@@ -460,13 +474,19 @@ def init_widgets_list():
         #          foreground = colors[5],
         #          background = colors[1],
         #          ),
-        widget.TextBox(
-            text='||',
-            background=colors[1],
-            foreground=colors[5],
-            padding=3,
-            fontsize=18
-        ),
+        # widget.TextBox(
+        #     text='||',
+        #     background=colors[1],
+        #     foreground=colors[5],
+        #     padding=3,
+        #     fontsize=18
+        # ),
+        widget.Sep(
+            linewidth=1,
+            padding=10,
+            foreground=colors[2],
+            background=colors[1]
+        ),              #
         widget.CPU(
             font="MesloLGSDZ Nerd Font",
             #format = '{MemUsed}M/{MemTotal}M',
@@ -486,13 +506,19 @@ def init_widgets_list():
         #                         background=colors[1],
         #                         padding = 0,
         #                         ),
-        widget.TextBox(
-            text='||',
-            background=colors[1],
-            foreground=colors[5],
-            padding=3,
-            fontsize=18
-        ),
+        # widget.TextBox(
+        #     text='||',
+        #     background=colors[1],
+        #     foreground=colors[5],
+        #     padding=3,
+        #     fontsize=18
+        # ),
+        widget.Sep(
+            linewidth=1,
+            padding=10,
+            foreground=colors[2],
+            background=colors[1]
+        ),              #
 
         # widget.CPUGraph(
         #         border_color = colors[2],
@@ -523,13 +549,19 @@ def init_widgets_list():
             mouse_callbacks={
                 'Button1': lambda qtile: qtile.cmd_spawn(myTerm + ' -e htop')},
         ),
-        widget.TextBox(
-            text='||',
-            background=colors[1],
-            foreground=colors[5],
-            padding=3,
-            fontsize=18
-        ),
+        # widget.TextBox(
+        #     text='||',
+        #     background=colors[1],
+        #     foreground=colors[5],
+        #     padding=3,
+        #     fontsize=18
+        # ),
+        widget.Sep(
+            linewidth=1,
+            padding=10,
+            foreground=colors[2],
+            background=colors[1]
+        ),              #
         widget.TextBox(
             font="FontAwesome",
             text="  ",
@@ -545,34 +577,65 @@ def init_widgets_list():
             format="%-I:%M%p"
             # format="%Y-%m-%d %H:%M"
         ),
-        widget.TextBox(
-            text='||',
-            background=colors[1],
+        # widget.TextBox(
+        #     text='||',
+        #     background=colors[1],
+        #     foreground=colors[5],
+        #     padding=3,
+        #     fontsize=18
+        # ),
+        widget.Sep(
+            linewidth=1,
+            padding=10,
+            foreground=colors[2],
+            background=colors[1]
+        ),              #
+        widget.Volume(
             foreground=colors[5],
-            padding=3,
-            fontsize=18
+            background=colors[1],
+            fontsize=20,
+            padding=0,
+            channel='Master'
         ),
-
+        widget.Sep(
+            linewidth=1,
+            padding=10,
+            foreground=colors[2],
+            background=colors[1]
+        ),              #
         widget.Systray(
             background=colors[1],
             icon_size=24,
             padding=4
         ),
+        # widget.TextBox(
+        #     text='||',
+        #     background=colors[1],
+        #     foreground=colors[5],
+        #     padding=3,
+        #     fontsize=18
+        # ),
+        widget.Sep(
+            linewidth=1,
+            padding=10,
+            foreground=colors[2],
+            background=colors[1]
+        ),              #
         widget.TextBox(
-            text='||',
-            background=colors[1],
-            foreground=colors[1],
-            padding=3,
-            fontsize=18
-        ),
-        widget.TextBox(
-            text='  ',
+            text='',
             background=colors[1],
             foreground=colors[5],
-            padding=0,
+            padding=18,
+            margin=0,
             fontsize=18,
             mouse_callbacks={'Button1': open_shutdown_dialog}
         ),
+        widget.Sep(
+            linewidth=1,
+            padding=10,
+            foreground=colors[2],
+            background=colors[1]
+        ),              #
 
     ]
     return widgets_list
@@ -596,8 +659,8 @@ widgets_screen2 = init_widgets_screen2()
 
 
 def init_screens():
-    return [Screen(top=bar.Bar(widgets=init_widgets_screen1(), size=30, opacity=0.8, background="000000")),
-            Screen(top=bar.Bar(widgets=init_widgets_screen2(), size=30, opacity=0.8, background="000000"))]
+    return [Screen(top=bar.Bar(widgets=init_widgets_screen1(), size=30, opacity=0.68, background="000000")),
+            Screen(top=bar.Bar(widgets=init_widgets_screen2(), size=30, opacity=0.68, background="000000"))]
 
 
 screens = init_screens()

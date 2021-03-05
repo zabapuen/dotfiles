@@ -66,6 +66,7 @@ IMG:/home/alejandro.garuda/.cache/xdg-xmenu/icons/applications-internet.png	Inte
 IMG:/home/alejandro.garuda/.cache/xdg-xmenu/icons/applications-multimedia.png	Multimedia
 	IMG:/home/alejandro.garuda/.cache/xdg-xmenu/icons/mpv.png	mpv Media Player (Multimedia player)	mpv --player-operation-mode=pseudo-gui --
 	IMG:/home/alejandro.garuda/.cache/xdg-xmenu/icons/multimedia-volume-control.png	PulseAudio Equalizer (Equalizer)	pulseaudio-equalizer-gtk
+	IMG:/home/alejandro.garuda/.cache/xdg-xmenu/icons/multimedia-volume-control.png	PulseAudio Volume Control (Volume Control)	pavucontrol
 	IMG:/home/alejandro.garuda/.cache/xdg-xmenu/icons/qv4l2.png	Qt V4L2 test Utility	qv4l2
 	IMG:/home/alejandro.garuda/.cache/xdg-xmenu/icons/qvidcap.png	Qt V4L2 video capture utility	qvidcap
 	IMG:/home/alejandro.garuda/.cache/xdg-xmenu/icons/vlc.png	VLC media player (Media player)	/usr/bin/vlc --started-from-file
@@ -87,6 +88,7 @@ IMG:/home/alejandro.garuda/.cache/xdg-xmenu/icons/preferences-desktop.png	Settin
 	IMG:/home/alejandro.garuda/.cache/xdg-xmenu/icons/kvantum.png	Kvantum Manager	kvantummanager
 	IMG:/home/alejandro.garuda/.cache/xdg-xmenu/icons/nvidia-settings.png	NVIDIA X Server Settings	/usr/bin/nvidia-settings
 	IMG:/home/alejandro.garuda/.cache/xdg-xmenu/icons/polychromatic.png	Polychromatic Tray Applet (Razer Device Manager)	polychromatic-tray-applet
+	IMG:/home/alejandro.garuda/.cache/xdg-xmenu/icons/org.xfce.png	Removable Drives and Media	thunar-volman-settings
 IMG:/home/alejandro.garuda/.cache/xdg-xmenu/icons/applications-system.png	System
 	Hardware Locality lstopo	lstopo
 	IMG:/home/alejandro.garuda/.cache/xdg-xmenu/icons/system-software-install.png	Add/Remove Software	pamac-manager
