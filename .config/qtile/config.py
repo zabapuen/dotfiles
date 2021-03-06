@@ -41,9 +41,11 @@ keys = [
     Key([mod], "f", lazy.window.toggle_fullscreen()),
     Key([mod], "m", lazy.spawn('pragha')),
     Key([mod], "q", lazy.window.kill()),
-    Key([mod], "t", lazy.spawn('termite')),
+    Key([mod], "t", lazy.spawn('teamspeak3')),
     Key([mod], "v", lazy.spawn('pavucontrol')),
-    Key([mod], "d", lazy.spawn('nwggrid -p -o 0.4')),
+    # Key([mod], "d", lazy.spawn('nwggrid -p -o 0.4')),
+    Key([mod], "d", lazy.spawn(
+        home + '/.config/qtile/scripts/dmenu.sh')),
     Key([mod], "Escape", lazy.spawn('xkill')),
     Key([mod], "Return", lazy.spawn('alacritty')),
     Key([mod], "KP_Enter", lazy.spawn('alacritty')),
@@ -57,8 +59,8 @@ keys = [
     Key([mod, "shift"], "Return", lazy.spawn('pcmanfm')),
     Key([mod, "shift"], "d", lazy.spawn(
         "dmenu_run -i -nb '#191919' -nf '#fea63c' -sb '#fea63c' -sf '#191919' -fn 'NotoMonoRegular:bold:pixelsize=14'")),
-    Key([mod, "shift"], "d", lazy.spawn(
-        home + '/.config/qtile/scripts/dmenu.sh')),
+    # Key([mod, "shift"], "d", lazy.spawn(
+    #     home + '/.config/qtile/scripts/dmenu.sh')),
     Key([mod, "shift"], "q", lazy.window.kill()),
     Key([mod, "shift"], "r", lazy.restart()),
     Key([mod, "control"], "r", lazy.restart()),
@@ -258,7 +260,7 @@ for i in groups:
 
 
 def init_layout_theme():
-    return {"margin": 4,
+    return {"margin": 6,
             "border_width": 2,
             "border_focus": "#9BDD22",
             "border_normal": "#c0c5ce"
@@ -330,7 +332,7 @@ def open_menu():
     qtile.cmd_spawn('jgmenu_run')
 
 def open_shutdown_dialog():
-    qtile.cmd_spawn('shutdown-dialog')
+    qtile.cmd_spawn(home + '/.config/qtile/scripts/shutdown-menu.sh')
 def _open_menu():
     qtile.cmd_spawn(home + '/.config/qtile/scripts/xmenu.sh')
 

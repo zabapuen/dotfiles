@@ -41,6 +41,6 @@ run volumeicon &
 #run spotify &
 #run atom &
 #run telegram-desktop &
-run mailspring &
-run teams &
+# run mailspring &
+# run teams &
 

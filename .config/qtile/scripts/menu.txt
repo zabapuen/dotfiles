@@ -104,6 +104,7 @@ IMG:/home/alejandro.garuda/.cache/xdg-xmenu/icons/applications-system.png	System
 	IMG:/home/alejandro.garuda/.cache/xdg-xmenu/icons/garuda-gamer.png	Garuda Gamer	garuda-gamer
 	IMG:/home/alejandro.garuda/.cache/xdg-xmenu/icons/garuda-network-assistant.png	Garuda Network Assistant	pkexec env DISPLAY=$DISPLAY XAUTHORITY=$XAUTHORITY HOME=$HOME garuda-network-assistant -style kvantum
 	IMG:/home/alejandro.garuda/.cache/xdg-xmenu/icons/garuda-welcome.png	Garuda Welcome	garuda-welcome
+	IMG:/home/alejandro.garuda/.cache/xdg-xmenu/icons/gparted.png	GParted (Partition Editor)	/usr/bin/gparted
 	IMG:/home/alejandro.garuda/.cache/xdg-xmenu/icons/gnome-system-log.png	Hardware Locality (lstopo)	xterm -e lstopo
 	IMG:/home/alejandro.garuda/.cache/xdg-xmenu/icons/htop.png	Htop (Process Viewer)	xterm -e htop
 	IMG:/home/alejandro.garuda/.cache/xdg-xmenu/icons/partitionmanager.png	KDE Partition Manager (Partition Editor)	partitionmanager
