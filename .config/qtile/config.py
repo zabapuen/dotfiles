@@ -3,7 +3,7 @@ import os
 import re
 import socket
 import subprocess
-from libqtile.config import Drag, Key, Screen, Group, Drag, Click, Rule
+from libqtile.config import Drag, Key, Screen, Group, Drag, Click, Rule, Match
 from libqtile.command import lazy
 from libqtile import layout, bar, widget, hook, qtile
 from libqtile.widget import Spacer
@@ -57,8 +57,8 @@ keys = [
     # SUPER + SHIFT KEYS
 
     Key([mod, "shift"], "Return", lazy.spawn('pcmanfm')),
-    Key([mod, "shift"], "d", lazy.spawn(
-        "dmenu_run -i -nb '#191919' -nf '#fea63c' -sb '#fea63c' -sf '#191919' -fn 'NotoMonoRegular:bold:pixelsize=14'")),
+    # Key([mod, "shift"], "d", lazy.spawn(
+    #     "dmenu_run -i -nb '#191919' -nf '#fea63c' -sb '#fea63c' -sf '#191919' -fn 'NotoMonoRegular:bold:pixelsize=14'")),
     # Key([mod, "shift"], "d", lazy.spawn(
     #     home + '/.config/qtile/scripts/dmenu.sh')),
     Key([mod, "shift"], "q", lazy.window.kill()),
@@ -220,6 +220,14 @@ groups = []
 
 # FOR QWERTY KEYBOARDS
 group_names = ["1", "2", "3", "4", "5", "6", "7", ]
+# group_names =  [("1", {'layout': 'tile', 'matches':[Match(wm_class=["Google-chrome"])]}),
+#                 ("2", {'layout': 'monadtall'}),
+#                 ("3", {'layout': 'ratiotile'}),
+#                 ("4", {'layout': 'max'}),
+#                 ("5", {'layout': 'max'}),
+#                 ("6", {'layout': 'monadtall', 'matches':[Match(wm_class=["Pcmanfm"])]}),
+#                 ("7", {'layout': 'max'})
+#                 ]
 
 # FOR AZERTY KEYBOARDS
 #group_names = ["ampersand", "eacute", "quotedbl", "apostrophe", "parenleft", "section", "egrave", "exclam", "ccedilla", "agrave",]
@@ -230,7 +238,9 @@ group_labels = ["  ", "  ", "  ", "  ", "  ", "  ", "  ", ]
 
 group_layouts = ["tile", "monadtall", "ratiotile",
                  "floating", "max", "monadtall", "max", ]
-#group_layouts = ["monadtall", "matrix", "monadtall", "bsp", "monadtall", "matrix", "monadtall", "bsp", "monadtall", "monadtall",]
+
+group_matches = [[Match(wm_class=["Google-chrome", "LibreWolf"])],
+                 "None", [Match(wm_class=["Virt-manager"])], [Match(wm_class=["Pamac-manager"])], "None", "None", "None", ]
 
 for i in range(len(group_names)):
     groups.append(
@@ -238,6 +248,7 @@ for i in range(len(group_names)):
             name=group_names[i],
             layout=group_layouts[i].lower(),
             label=group_labels[i],
+            matches=group_matches[i],
         ))
 
 for i in groups:
@@ -331,10 +342,14 @@ widget_defaults = init_widgets_defaults()
 def open_menu():
     qtile.cmd_spawn('jgmenu_run')
 
+
 def open_shutdown_dialog():
     qtile.cmd_spawn(home + '/.config/qtile/scripts/shutdown-menu.sh')
+
+
 def _open_menu():
     qtile.cmd_spawn(home + '/.config/qtile/scripts/xmenu.sh')
+
 
 def init_widgets_list():
     prompt = "{0}@{1}: ".format(os.environ["USER"], socket.gethostname())
@@ -451,14 +466,14 @@ def init_widgets_list():
         #          ),
         # # # do not activate in Virtualbox - will break qtile
         widget.ThermalSensor(
-                 foreground = colors[5],
-                 foreground_alert = colors[6],
-                 background = colors[1],
-                 tag_sensor = "Package id 0",
-                 metric = True,
-                 padding = 3,
-                 threshold = 80
-                 ),
+            foreground=colors[5],
+            foreground_alert=colors[6],
+            background=colors[1],
+            tag_sensor="Package id 0",
+            metric=True,
+            padding=3,
+            threshold=80
+        ),
         # albattery.BatteryIcon(
         #          padding=0,
         #          scale=0.7,
