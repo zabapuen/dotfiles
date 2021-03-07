@@ -66,7 +66,8 @@ keys = [
     Key([mod, "shift"], "r", lazy.restart()),
     Key([mod, "control"], "r", lazy.restart()),
     Key([mod, "shift"], "x", lazy.shutdown()),
-    Key([mod, "shift"], "w", lazy.spawn(home + '/.config/qtile/scripts/pywal-colors-fav.py')),
+    Key([mod, "shift"], "w", lazy.spawn(
+        home + '/.config/qtile/scripts/pywal-colors-fav.py')),
 
     # CONTROL + ALT KEYS
 
@@ -282,7 +283,8 @@ def init_layout_theme():
     return {"margin": 6,
             "border_width": 2,
             "border_focus": "#9BDD22",
-            "border_normal": "#c0c5ce"
+            "border_normal": "#c0c5ce",
+            "grow_amount": 5
             }
 
 
@@ -292,25 +294,26 @@ layout_theme = init_layout_theme()
 layouts = [
     layout.MonadTall(margin=8, border_width=2,
                      border_focus="#9BDD22", border_normal="#c0c5ce"),
-    layout.MonadWide(margin=8, border_width=2,
-                     border_focus="#9BDD22", border_normal="#c0c5ce"),
-    layout.Matrix(**layout_theme),
-    layout.Bsp(**layout_theme),
     layout.Floating(**layout_theme),
     layout.RatioTile(**layout_theme),
     layout.Max(**layout_theme),
-    layout.Columns(**layout_theme),
-    layout.Stack(**layout_theme),
-    layout.Tile(**layout_theme),
-    layout.TreeTab(
-        sections=['FIRST', 'SECOND'],
-        bg_color='#141414',
-        active_bg='#0000ff',
-        inactive_bg='#1e90ff',
-        padding_y=5,
-        section_top=10,
-        panel_width=280),
-    layout.VerticalTile(**layout_theme),
+    layout.Tile(add_on_top=False, add_after_last=True,
+                ratio=0.7, **layout_theme),
+    # layout.Matrix(**layout_theme),
+    # layout.Bsp(**layout_theme),
+    # layout.Columns(**layout_theme),
+    # layout.Stack(**layout_theme),
+    # layout.Tile(margin=80, border_width=6,
+    #             border_focus="#9BDD22", border_normal="#c0c5ce"),
+    # layout.TreeTab(
+    #     sections=['FIRST', 'SECOND'],
+    #     bg_color='#141414',
+    #     active_bg='#0000ff',
+    #     inactive_bg='#1e90ff',
+    #     padding_y=5,
+    #     section_top=10,
+    #     panel_width=280),
+    # layout.VerticalTile(**layout_theme),
     layout.Zoomy(**layout_theme)
 ]
 
