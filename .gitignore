@@ -1,54 +1,46 @@
-# Blacklist files/folders in same directory as the .gitignore file
+# Ignore everything
 /*
-
-# Whitelist some files
 !.gitignore
+!.gitmodules
+
+# Except for the files and folders we want to track
 !README.md
-
-# Ignore all files named .DS_Store or ending with .log
-**/.DS_Store
-**.log
-
-# Whitelist folder/a/b1/ and folder/a/b2/
-# trailing "/" is optional for folders, may match file though.
-# "/" is NOT optional when followed by a *
-# !.oh-my-zsh/
-# !.oh-my-zsh/*
-# .oh-my-zsh/.github/
-# .oh-my-zsh/.git/
-!.config/
-.config/*
-!.config/qtile/
-!.config/qtile/*
-!.config/alacritty/
-!.config/alacritty/*
-!.config/picom/
-!.config/picom/*
-!.config/volumeicon/
-!.config/volumeicon/*
-!.config/gtk-3.0/
-!.config/gtk-3.0/*
-!.config/lxsession/
-!.config/lxsession/*
-!.config/spotifyd/
-!.config/spotifyd/*
-!.config/dunst/
-!.config/dunst/*
+!README.es.md
+!.screenshots
+!.bashrc
 !.zshrc
 !.gtkrc-2.0
-!.local/
-.local/*
-!.local/share/
-.local/share/*
-!.local/share/wallpapers/
-!.local/share/wallpapers/*
-# !folder/a/b1/
-# !folder/a/b2/
-# !folder/a/file.txt
+!.spectrwm.conf
+!.baraction.sh
+!.xsession
+!.xprofile
+!.Xresources
+!.config
+!.local
 
-# Adding to the above, this also works...
-# !/folder/a/deeply
-# /folder/a/deeply/*
-# !/folder/a/deeply/nested
-# /folder/a/deeply/nested/*
-# !/folder/a/deeply/nested/subfolder
+# !.config/
+# .config/*
+# !.config/qtile/
+# !.config/qtile/*
+# !.config/alacritty/
+# !.config/alacritty/*
+# !.config/picom/
+# !.config/picom/*
+# !.config/volumeicon/
+# !.config/volumeicon/*
+# !.config/gtk-3.0/
+# !.config/gtk-3.0/*
+# !.config/lxsession/
+# !.config/lxsession/*
+# !.config/spotifyd/
+# !.config/spotifyd/*
+# !.config/dunst/
+# !.config/dunst/*
+# !.zshrc
+# !.gtkrc-2.0
+# !.local/
+# .local/*
+# !.local/share/
+# .local/share/*
+# !.local/share/wallpapers/
+# !.local/share/wallpapers/*

@@ -240,7 +240,13 @@ group_layouts = ["tile", "monadtall", "ratiotile",
                  "floating", "max", "monadtall", "max", ]
 
 group_matches = [[Match(wm_class=["Google-chrome", "LibreWolf"])],
-                 "None", [Match(wm_class=["Virt-manager"])], [Match(wm_class=["Pamac-manager"])], "None", "None", "None", ]
+                 "None",
+                 [Match(wm_class=["Virt-manager"])],
+                 [Match(wm_class=["Pamac-manager"])],
+                 "None",
+                 "None",
+                 [Match(wm_class=["rdesktop"])],
+                 ]
 
 for i in range(len(group_names)):
     groups.append(

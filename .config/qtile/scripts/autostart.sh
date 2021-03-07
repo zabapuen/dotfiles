@@ -18,6 +18,7 @@ function run {
 
 #starting utility applications at boot time
 lxsession &
+xscreensaver -no-splash &
 run nm-applet &
 run pamac-tray &
 numlockx on &

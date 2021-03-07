@@ -46,6 +46,7 @@ IMG:/home/alejandro.garuda/.cache/xdg-xmenu/icons/applications-graphics.png	Grap
 	IMG:/home/alejandro.garuda/.cache/xdg-xmenu/icons/okular.png	Okular (Document Viewer)	okular
 IMG:/home/alejandro.garuda/.cache/xdg-xmenu/icons/applications-internet.png	Internet
 	TeamSpeak 3 (TeamSpeak)	teamspeak3
+	Netflix (Netflix)	/usr/bin/qtws /usr/share/qtws-apps/netflix/netflix.qtws --disable-seccomp-filter-sandbox --register-pepper-plugins="/usr/lib/qt/plugins/ppapi/libwidevinecdmadapter.so; application/x-ppapi-widevine-cdm"
 	IMG:/home/alejandro.garuda/.cache/xdg-xmenu/icons/network-wired.png	Avahi SSH Server Browser	/usr/bin/bssh
 	IMG:/home/alejandro.garuda/.cache/xdg-xmenu/icons/network-wired.png	Avahi VNC Server Browser	/usr/bin/bvnc
 	IMG:/home/alejandro.garuda/.cache/xdg-xmenu/icons/discord.png	Discord (Internet Messenger)	/usr/bin/discord
@@ -64,6 +65,7 @@ IMG:/home/alejandro.garuda/.cache/xdg-xmenu/icons/applications-internet.png	Inte
 	IMG:/home/alejandro.garuda/.cache/xdg-xmenu/icons/icon.png	Xtreme Download Manager	"/opt/xdman/xdman"
 	IMG:/home/alejandro.garuda/.cache/xdg-xmenu/icons/Zoom.png	Zoom	/usr/bin/zoom
 IMG:/home/alejandro.garuda/.cache/xdg-xmenu/icons/applications-multimedia.png	Multimedia
+	Netflix (Netflix)	/usr/bin/qtws /usr/share/qtws-apps/netflix/netflix.qtws --disable-seccomp-filter-sandbox --register-pepper-plugins="/usr/lib/qt/plugins/ppapi/libwidevinecdmadapter.so; application/x-ppapi-widevine-cdm"
 	IMG:/home/alejandro.garuda/.cache/xdg-xmenu/icons/mpv.png	mpv Media Player (Multimedia player)	mpv --player-operation-mode=pseudo-gui --
 	IMG:/home/alejandro.garuda/.cache/xdg-xmenu/icons/multimedia-volume-control.png	PulseAudio Equalizer (Equalizer)	pulseaudio-equalizer-gtk
 	IMG:/home/alejandro.garuda/.cache/xdg-xmenu/icons/multimedia-volume-control.png	PulseAudio Volume Control (Volume Control)	pavucontrol
