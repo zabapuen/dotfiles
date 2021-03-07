@@ -8,6 +8,7 @@ from libqtile.command import lazy
 from libqtile import layout, bar, widget, hook, qtile
 from libqtile.widget import Spacer
 import albattery
+import psutil
 
 # mod4 or mod = super key
 mod = "mod4"
@@ -65,6 +66,7 @@ keys = [
     Key([mod, "shift"], "r", lazy.restart()),
     Key([mod, "control"], "r", lazy.restart()),
     Key([mod, "shift"], "x", lazy.shutdown()),
+    Key([mod, "shift"], "w", lazy.spawn(home + '/.config/qtile/scripts/pywal-colors-fav.py')),
 
     # CONTROL + ALT KEYS
 
@@ -242,7 +244,7 @@ group_layouts = ["tile", "monadtall", "ratiotile",
 group_matches = [[Match(wm_class=["Google-chrome", "LibreWolf"])],
                  "None",
                  [Match(wm_class=["Virt-manager"])],
-                 [Match(wm_class=["Pamac-manager"])],
+                 "None",
                  "None",
                  "None",
                  [Match(wm_class=["rdesktop"])],
@@ -345,42 +347,33 @@ def init_widgets_defaults():
 widget_defaults = init_widgets_defaults()
 
 
-def open_menu():
-    qtile.cmd_spawn('jgmenu_run')
-
-
-def open_shutdown_dialog():
-    qtile.cmd_spawn(home + '/.config/qtile/scripts/shutdown-menu.sh')
-
-
-def _open_menu():
-    qtile.cmd_spawn(home + '/.config/qtile/scripts/xmenu.sh')
-
-
 def init_widgets_list():
     prompt = "{0}@{1}: ".format(os.environ["USER"], socket.gethostname())
     widgets_list = [
 
-        # widget.TextBox(
-        #        text = "◢",
-        #        background = colors[1],
-        #        foreground = colors[9],
-        #        padding = 0,
-        #        fontsize = 45
-        #        ),
         widget.Sep(
             linewidth=1,
             padding=10,
             foreground=colors[2],
             background=colors[1]
-        ),              #
-        widget.Image(
-            filename="~/.config/qtile/icons/arh-circle.png",
-            iconsize=9,
-            background=colors[1],
-            margin=3,
-            mouse_callbacks={'Button1': _open_menu}
         ),
+        widget.TextBox(
+            font="FontAwesome",
+            text="",
+            foreground=colors[5],
+            background=colors[1],
+            fontsize=34,
+            mouse_callbacks={'Button1': lambda: qtile.cmd_spawn(
+                home + '/.config/qtile/scripts/xmenu.sh')}
+        ),
+        # widget.Image(
+        #     filename="~/.config/qtile/icons/arh-circle.png",
+        #     iconsize=9,
+        #     background=colors[1],
+        #     margin=3,
+        #     mouse_callbacks={'Button1': lambda: qtile.cmd_spawn(
+        #         home + '/.config/qtile/scripts/xmenu.sh')}
+        # ),
         widget.Sep(
             linewidth=1,
             padding=10,
@@ -403,32 +396,17 @@ def init_widgets_list():
                         foreground=colors[5],
                         background=colors[1]
                         ),
-        # widget.TextBox(
-        #       text = "◤",
-        #       background = colors[1],
-        #       foreground = colors[9],
-        #       padding = 0,
-        #       fontsize = 46
-        #       ),
         widget.WindowName(font="MesloLGSDZ Nerd Font Bold",
                           fontsize=18,
                           foreground=colors[7],
                           background=colors[1],
                           ),
-
-        # widget.TextBox(
-        #     text='||',
-        #     background=colors[1],
-        #     foreground=colors[5],
-        #     padding=3,
-        #     fontsize=18
-        # ),
         widget.Sep(
             linewidth=1,
             padding=10,
             foreground=colors[2],
             background=colors[1]
-        ),              #
+        ),
         widget.CurrentLayoutIcon(
             custom_icon_paths=[os.path.expanduser("~/.config/qtile/icons")],
             foreground=colors[5],
@@ -442,35 +420,20 @@ def init_widgets_list():
             foreground=colors[5],
             background=colors[1]
         ),
-        # widget.TextBox(
-        #     text='||',
-        #     background=colors[1],
-        #     foreground=colors[5],
-        #     padding=3,
-        #     fontsize=18
-        # ),
         widget.Sep(
             linewidth=1,
             padding=10,
             foreground=colors[2],
             background=colors[1]
-        ),              #
-
-        # widget.NetGraph(
-        #          font="MesloLGSDZ Nerd Font",
-        #          fontsize=18,
-        #          bandwidth="down",
-        #          interface="eno1",
-        #          fill_color = colors[8],
-        #          foreground=colors[5],
-        #          background=colors[1],
-        #          graph_color = colors[8],
-        #          border_color = colors[2],
-        #          padding = 0,
-        #          border_width = 0,
-        #          line_width = 0,
-        #          ),
-        # # # do not activate in Virtualbox - will break qtile
+        ),
+        widget.TextBox(
+            font="FontAwesome",
+            text="  ",
+            foreground=colors[5],
+            background=colors[1],
+            padding=0,
+            fontsize=18
+        ),
         widget.ThermalSensor(
             foreground=colors[5],
             foreground_alert=colors[6],
@@ -480,36 +443,20 @@ def init_widgets_list():
             padding=3,
             threshold=80
         ),
-        # albattery.BatteryIcon(
-        #          padding=0,
-        #          scale=0.7,
-        #          y_poss=2,
-        #          theme_path=home + "/.config/qtile/icons/battery_icons_horiz",
-        #          update_interval = 5,
-        #          foreground = colors[5],
-        #          background = colors[9]
-        #          ),
-        # # battery option 2  from Qtile
-        # widget.Battery(
-        #          font="MesloLGSDZ Nerd Font",
-        #          update_interval = 10,
-        #          fontsize = 12,
-        #          foreground = colors[5],
-        #          background = colors[1],
-        #          ),
-        # widget.TextBox(
-        #     text='||',
-        #     background=colors[1],
-        #     foreground=colors[5],
-        #     padding=3,
-        #     fontsize=18
-        # ),
         widget.Sep(
             linewidth=1,
             padding=10,
             foreground=colors[2],
             background=colors[1]
-        ),              #
+        ),
+        widget.TextBox(
+            font="FontAwesome",
+            text="",
+            foreground=colors[5],
+            background=colors[1],
+            fontsize=24
+        ),
+        # widget.CPUGraph(type="line"),
         widget.CPU(
             font="MesloLGSDZ Nerd Font",
             #format = '{MemUsed}M/{MemTotal}M',
@@ -520,40 +467,12 @@ def init_widgets_list():
             mouse_callbacks={
                 'Button1': lambda qtile: qtile.cmd_spawn(myTerm + ' -e htop')},
         ),
-        #                widget.Net(
-        #                         font="MesloLGSDZ Nerd Font",
-        #                         fontsize=18,
-        #                         interface=["wlan0"],
-        #                         format = '{down} ↓↑ {up}',
-        #                         foreground=colors[5],
-        #                         background=colors[1],
-        #                         padding = 0,
-        #                         ),
-        # widget.TextBox(
-        #     text='||',
-        #     background=colors[1],
-        #     foreground=colors[5],
-        #     padding=3,
-        #     fontsize=18
-        # ),
         widget.Sep(
             linewidth=1,
             padding=10,
             foreground=colors[2],
             background=colors[1]
-        ),              #
-
-        # widget.CPUGraph(
-        #         border_color = colors[2],
-        #         fill_color = colors[5],
-        #         graph_color = colors[6],
-        #         background=colors[1],
-        #         border_width = 1,
-        #         line_width = 1,
-        #         core = "all",
-        #         type = "box"
-        #         ),
-
+        ),
         widget.TextBox(
             font="FontAwesome",
             text="  ",
@@ -570,21 +489,52 @@ def init_widgets_list():
             foreground=colors[5],
             background=colors[1],
             mouse_callbacks={
-                'Button1': lambda qtile: qtile.cmd_spawn(myTerm + ' -e htop')},
+                "Button1": lambda: qtile.cmd_spawn(myTerm + ' -e htop')},
         ),
-        # widget.TextBox(
-        #     text='||',
-        #     background=colors[1],
-        #     foreground=colors[5],
-        #     padding=3,
-        #     fontsize=18
-        # ),
         widget.Sep(
             linewidth=1,
             padding=10,
             foreground=colors[2],
             background=colors[1]
-        ),              #
+        ),
+        widget.TextBox(
+            font="FontAwesome",
+            text="",
+            foreground=colors[5],
+            background=colors[1],
+            fontsize=24
+        ),
+        # widget.NetGraph(interface="eno1", bandwidth="down"),
+        widget.Net(
+            font="MesloLGSDZ Nerd Font",
+            fontsize=18,
+            interface=["eno1"],
+            format='{down}↓↑{up}',
+            foreground=colors[5],
+            background=colors[1],
+            padding=0,
+        ),
+        widget.Sep(
+            linewidth=1,
+            padding=10,
+            foreground=colors[2],
+            background=colors[1]
+        ),
+        widget.TextBox(
+            font="FontAwesome",
+            text="  ",
+            foreground=colors[5],
+            background=colors[1],
+            padding=0,
+            fontsize=18
+        ),
+        widget.Clock(
+            foreground=colors[5],
+            background=colors[1],
+            fontsize=20,
+            # format="%-I:%M%p"
+            format="%Y-%m-%d"
+        ),
         widget.TextBox(
             font="FontAwesome",
             text="  ",
@@ -600,66 +550,51 @@ def init_widgets_list():
             format="%-I:%M%p"
             # format="%Y-%m-%d %H:%M"
         ),
-        # widget.TextBox(
-        #     text='||',
-        #     background=colors[1],
-        #     foreground=colors[5],
-        #     padding=3,
-        #     fontsize=18
-        # ),
         widget.Sep(
             linewidth=1,
             padding=10,
             foreground=colors[2],
             background=colors[1]
-        ),              #
+        ),
         widget.Volume(
             foreground=colors[5],
             background=colors[1],
             fontsize=20,
             padding=0,
-            channel='Master'
+            channel="Master"
         ),
         widget.Sep(
             linewidth=1,
             padding=10,
             foreground=colors[2],
             background=colors[1]
-        ),              #
+        ),
         widget.Systray(
             background=colors[1],
             icon_size=24,
             padding=4
         ),
-        # widget.TextBox(
-        #     text='||',
-        #     background=colors[1],
-        #     foreground=colors[5],
-        #     padding=3,
-        #     fontsize=18
-        # ),
         widget.Sep(
             linewidth=1,
             padding=10,
             foreground=colors[2],
             background=colors[1]
-        ),              #
+        ),
         widget.TextBox(
-            text='',
-            background=colors[1],
+            font="FontAwesome",
+            text="",
             foreground=colors[5],
-            padding=18,
-            margin=0,
-            fontsize=18,
-            mouse_callbacks={'Button1': open_shutdown_dialog}
+            background=colors[1],
+            fontsize=20,
+            mouse_callbacks={'Button1': lambda: qtile.cmd_spawn(
+                home + '/.config/qtile/scripts/shutdown-menu.sh')}
         ),
         widget.Sep(
             linewidth=1,
             padding=10,
             foreground=colors[2],
             background=colors[1]
-        ),              #
-
+        ),
     ]
     return widgets_list
 
@@ -728,7 +663,7 @@ dgroups_app_rules = []
 #               "spotify", "pragha", "clementine", "deadbeef", "audacious" ]
 #     ##########################################################
 #     wm_class = client.window.get_wm_class()[0]
-#
+
 #     for i in range(len(d)):
 #         if wm_class in list(d.values())[i]:
 #             group = list(d.keys())[i]

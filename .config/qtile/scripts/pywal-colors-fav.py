@@ -4,7 +4,7 @@ import random
 wallpaper_list = []
 
 h = os.environ.get('HOME')
-w = "/.local/share/wallpapers"
+w = "/.local/share/wallpapers/favs"
 e = h + w
 
 for path in os.listdir(e):
