@@ -17,20 +17,21 @@ function run {
 
 
 #starting utility applications at boot time
-lxsession &
-xscreensaver -no-splash &
+run lxsession &
+run xscreensaver -no-splash &
 run nm-applet &
 run pamac-tray &
 numlockx on &
-polychromatic-tray-applet &
+run polychromatic-tray-applet &
 # blueman-applet &
-flameshot &
+run flameshot &
+run volumeicon &
+run dunst &
 picom --config $HOME/.config/picom/picom.conf &
-/usr/lib/polkit-kde-authentication-agent-1 &
-dunst &
+# /usr/lib/polkit-kde-authentication-agent-1 &
+
 
 #starting user applications at boot time
-run volumeicon &
 #run discord &
 #nitrogen --random --set-zoom-fill &
 #run caffeine -a &
@@ -42,6 +43,6 @@ run volumeicon &
 #run spotify &
 #run atom &
 #run telegram-desktop &
-# run mailspring &
-# run teams &
+#run mailspring &
+#run teams &
 

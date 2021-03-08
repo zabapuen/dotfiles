@@ -9,6 +9,7 @@ from libqtile import layout, bar, widget, hook, qtile
 from libqtile.widget import Spacer
 import albattery
 import psutil
+import json
 
 # mod4 or mod = super key
 mod = "mod4"
@@ -319,7 +320,6 @@ layouts = [
 
 # COLORS FOR THE BAR
 
-
 def init_colors():
     return [["#2F343F", "#2F343F"],  # color 0
             ["#2F343F", "#2F343F"],  # color 1
@@ -329,13 +329,21 @@ def init_colors():
             ["#ffffff", "#ffffff"],  # color 5
             ["#ff0000", "#ff0000"],  # color 6
             ["#9BDD22", "#9BDD22"],  # color 7
-            #            ["#6790eb", "#6790eb"], # color 8
             ["#151515", "#151515"],  # color 8
             ["#9400de", "#9400de"]]  # color 9
 
+# ##### Import Pywal Palette / Importar la paleta generada por pywal #####
+# with open(home + '/.cache/wal/colors.json') as json_file:
+#     data = json.load(json_file)
+#     colorsarray = data['colors']
+#     val_list = list(colorsarray.values())
+#     def getList(val_list):
+#         return [*val_list]
+
+# def init_colors():
+#     return [*val_list]
 
 colors = init_colors()
-
 
 # WIDGETS FOR THE BAR
 
@@ -468,7 +476,7 @@ def init_widgets_list():
             foreground=colors[5],
             background=colors[1],
             mouse_callbacks={
-                'Button1': lambda qtile: qtile.cmd_spawn(myTerm + ' -e htop')},
+                'Button1': lambda qtile: qtile.cmd_spawn(myTerm + ' -e bashtop')},
         ),
         widget.Sep(
             linewidth=1,
@@ -492,7 +500,7 @@ def init_widgets_list():
             foreground=colors[5],
             background=colors[1],
             mouse_callbacks={
-                "Button1": lambda: qtile.cmd_spawn(myTerm + ' -e htop')},
+                "Button1": lambda: qtile.cmd_spawn(myTerm + ' -e bashtop')},
         ),
         widget.Sep(
             linewidth=1,
@@ -535,6 +543,8 @@ def init_widgets_list():
             foreground=colors[5],
             background=colors[1],
             fontsize=20,
+            mouse_callbacks={
+                "Button1": lambda: qtile.cmd_spawn('galendae')},
             # format="%-I:%M%p"
             format="%Y-%m-%d"
         ),
@@ -550,6 +560,8 @@ def init_widgets_list():
             foreground=colors[5],
             background=colors[1],
             fontsize=20,
+            mouse_callbacks={
+                "Button1": lambda: qtile.cmd_spawn('galendae')},
             format="%-I:%M%p"
             # format="%Y-%m-%d %H:%M"
         ),
@@ -732,6 +744,8 @@ floating_layout = layout.Floating(float_rules=[
     {'wmclass': 'Mailspring'},
     {'wmclass': 'Gpick'},
     {'wmclass': 'ocs-url'},
+    {'wname': 'Imagen en imagen'},
+    {'wname': 'Calendar'},
 
 
 ],  fullscreen_border_width=0, border_width=0)

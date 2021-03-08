@@ -35,18 +35,24 @@ IMG:/home/alejandro.garuda/.cache/xdg-xmenu/icons/applications-development.png	D
 	IMG:/home/alejandro.garuda/.cache/xdg-xmenu/icons/QtProject-designer.png	Qt Designer (Interface Designer)	designer
 	IMG:/home/alejandro.garuda/.cache/xdg-xmenu/icons/linguist.png	Qt Linguist	linguist
 	IMG:/home/alejandro.garuda/.cache/xdg-xmenu/icons/qdbusviewer.png	Qt QDbusViewer  (D-Bus Debugger)	qdbusviewer
+	IMG:/home/alejandro.garuda/.cache/xdg-xmenu/icons/assistant-qt4.png	Qt4 Assistant 	assistant-qt4
+	IMG:/home/alejandro.garuda/.cache/xdg-xmenu/icons/designer-qt4.png	Qt4 Designer (Interface Designer)	designer-qt4
+	IMG:/home/alejandro.garuda/.cache/xdg-xmenu/icons/linguist-qt4.png	Qt4 Linguist 	linguist-qt4
+	IMG:/home/alejandro.garuda/.cache/xdg-xmenu/icons/qdbusviewer-qt4.png	Qt4 QDbusViewer  (D-Bus Debugger)	qdbusviewer-qt4
 	IMG:/home/alejandro.garuda/.cache/xdg-xmenu/icons/search.png	UserFeedback Console (UserFeedback Management Console)	UserFeedbackConsole
 	IMG:/home/alejandro.garuda/.cache/xdg-xmenu/icons/visual-studio-code.png	Visual Studio Code (Text Editor)	/opt/visual-studio-code/code --no-sandbox --unity-launch
 IMG:/home/alejandro.garuda/.cache/xdg-xmenu/icons/applications-education.png	Education
 IMG:/home/alejandro.garuda/.cache/xdg-xmenu/icons/applications-games.png	Games
 IMG:/home/alejandro.garuda/.cache/xdg-xmenu/icons/applications-graphics.png	Graphics
 	XDvi (DVI Viewer)	xdvi
+	IMG:/home/alejandro.garuda/.cache/xdg-xmenu/icons/4chan-downloader.png	4chan-downloader	4chan-downloader
 	IMG:/home/alejandro.garuda/.cache/xdg-xmenu/icons/gpick.png	Gpick (Color picker)	gpick
 	IMG:/home/alejandro.garuda/.cache/xdg-xmenu/icons/gwenview.png	Gwenview (KDE Image Viewer)	gwenview
 	IMG:/home/alejandro.garuda/.cache/xdg-xmenu/icons/okular.png	Okular (Document Viewer)	okular
 IMG:/home/alejandro.garuda/.cache/xdg-xmenu/icons/applications-internet.png	Internet
 	TeamSpeak 3 (TeamSpeak)	teamspeak3
 	Netflix (Netflix)	/usr/bin/qtws /usr/share/qtws-apps/netflix/netflix.qtws --disable-seccomp-filter-sandbox --register-pepper-plugins="/usr/lib/qt/plugins/ppapi/libwidevinecdmadapter.so; application/x-ppapi-widevine-cdm"
+	IMG:/home/alejandro.garuda/.cache/xdg-xmenu/icons/4chan-downloader.png	4chan-downloader	4chan-downloader
 	IMG:/home/alejandro.garuda/.cache/xdg-xmenu/icons/network-wired.png	Avahi SSH Server Browser	/usr/bin/bssh
 	IMG:/home/alejandro.garuda/.cache/xdg-xmenu/icons/network-wired.png	Avahi VNC Server Browser	/usr/bin/bvnc
 	IMG:/home/alejandro.garuda/.cache/xdg-xmenu/icons/discord.png	Discord (Internet Messenger)	/usr/bin/discord
@@ -91,6 +97,7 @@ IMG:/home/alejandro.garuda/.cache/xdg-xmenu/icons/preferences-desktop.png	Settin
 	IMG:/home/alejandro.garuda/.cache/xdg-xmenu/icons/nvidia-settings.png	NVIDIA X Server Settings	/usr/bin/nvidia-settings
 	IMG:/home/alejandro.garuda/.cache/xdg-xmenu/icons/polychromatic.png	Polychromatic Tray Applet (Razer Device Manager)	polychromatic-tray-applet
 	IMG:/home/alejandro.garuda/.cache/xdg-xmenu/icons/org.xfce.png	Removable Drives and Media	thunar-volman-settings
+	IMG:/home/alejandro.garuda/.cache/xdg-xmenu/icons/xscreensaver.xpm	Screensaver	xscreensaver-demo
 IMG:/home/alejandro.garuda/.cache/xdg-xmenu/icons/applications-system.png	System
 	Hardware Locality lstopo	lstopo
 	IMG:/home/alejandro.garuda/.cache/xdg-xmenu/icons/system-software-install.png	Add/Remove Software	pamac-manager
@@ -114,6 +121,7 @@ IMG:/home/alejandro.garuda/.cache/xdg-xmenu/icons/applications-system.png	System
 	IMG:/home/alejandro.garuda/.cache/xdg-xmenu/icons/utilities-system-monitor.png	KSysGuard (System Monitor)	ksysguard
 	IMG:/home/alejandro.garuda/.cache/xdg-xmenu/icons/libinput-gestures-qt.png	Libinput Gestures	xterm -e libinput-gestures-qt
 	IMG:/home/alejandro.garuda/.cache/xdg-xmenu/icons/libinput-gestures-qt.png	libinput-gestures-qt	libinput-gestures-qt
+	IMG:/home/alejandro.garuda/.cache/xdg-xmenu/icons/cups.png	Manage Printing	/usr/bin/xdg-open http://localhost:631/
 	IMG:/home/alejandro.garuda/.cache/xdg-xmenu/icons/virtualbox.png	Oracle VM VirtualBox (Virtual Machine)	VirtualBox
 	IMG:/home/alejandro.garuda/.cache/xdg-xmenu/icons/ar.com.softwareperonista.png	Pace	pace
 	IMG:/home/alejandro.garuda/.cache/xdg-xmenu/icons/preferences-system-login.png	Qwikaccess	xterm -e qwikaccess
