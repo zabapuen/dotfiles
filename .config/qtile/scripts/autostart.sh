@@ -18,15 +18,17 @@ function run {
 
 #starting utility applications at boot time
 run lxsession &
+# run dex -ae qtile
 run xscreensaver -no-splash &
+run volumeicon &
 run nm-applet &
 run pamac-tray &
 numlockx on &
 run polychromatic-tray-applet &
 # blueman-applet &
 run flameshot &
-run volumeicon &
 run dunst &
+run blueman-applet &
 picom --config $HOME/.config/picom/picom.conf &
 # /usr/lib/polkit-kde-authentication-agent-1 &
 

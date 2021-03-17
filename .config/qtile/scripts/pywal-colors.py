@@ -5,7 +5,8 @@ wallpaper_list = []
 
 h = os.environ.get('HOME')
 w = "/.local/share/wallpapers"
-e = h + w
+w2 = "/Imágenes/Walls/Anime/Summer"
+e = h + w2
 
 for path in os.listdir(e):
    full_path = os.path.join(e, path)

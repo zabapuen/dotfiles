@@ -243,7 +243,8 @@ group_labels = ["  ", "  ", "  ", "  ", "  ", "  ", "  ", ]
 group_layouts = ["tile", "monadtall", "ratiotile",
                  "floating", "max", "monadtall", "max", ]
 
-group_matches = [[Match(wm_class=["Google-chrome", "LibreWolf"])],
+# group_matches = [[Match(wm_class=["Google-chrome", "LibreWolf"])],
+group_matches = ["None",
                  "None",
                  [Match(wm_class=["Virt-manager"])],
                  "None",
@@ -300,8 +301,8 @@ layouts = [
     layout.Max(**layout_theme),
     layout.Tile(add_on_top=False, add_after_last=True,
                 ratio=0.7, **layout_theme),
+    layout.Bsp(**layout_theme),
     # layout.Matrix(**layout_theme),
-    # layout.Bsp(**layout_theme),
     # layout.Columns(**layout_theme),
     # layout.Stack(**layout_theme),
     # layout.Tile(margin=80, border_width=6,
@@ -359,7 +360,6 @@ widget_defaults = init_widgets_defaults()
 
 
 def init_widgets_list():
-    prompt = "{0}@{1}: ".format(os.environ["USER"], socket.gethostname())
     widgets_list = [
 
         widget.Sep(
@@ -412,6 +412,12 @@ def init_widgets_list():
                           foreground=colors[7],
                           background=colors[1],
                           ),
+        # widget.LaunchBar(
+        #     progs=[
+        #         ('mailspring', 'mailspring', 'Launch Mailspring'),
+        #         ('Alacritty', 'alacritty', 'Alacritty terminal')
+        #     ]
+        # ),
         widget.Sep(
             linewidth=1,
             padding=10,
@@ -544,7 +550,7 @@ def init_widgets_list():
             background=colors[1],
             fontsize=20,
             mouse_callbacks={
-                "Button1": lambda: qtile.cmd_spawn('galendae')},
+                "Button1": lambda: qtile.cmd_spawn(home + '/.config/qtile/scripts/calendar.sh')},
             # format="%-I:%M%p"
             format="%Y-%m-%d"
         ),
@@ -561,7 +567,7 @@ def init_widgets_list():
             background=colors[1],
             fontsize=20,
             mouse_callbacks={
-                "Button1": lambda: qtile.cmd_spawn('galendae')},
+                "Button1": lambda: qtile.cmd_spawn(home + '/.config/qtile/scripts/calendar.sh')},
             format="%-I:%M%p"
             # format="%Y-%m-%d %H:%M"
         ),
@@ -587,7 +593,7 @@ def init_widgets_list():
         widget.Systray(
             background=colors[1],
             icon_size=24,
-            padding=4
+            padding=2
         ),
         widget.Sep(
             linewidth=1,

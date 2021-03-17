@@ -6,7 +6,7 @@ rdesktop \
     -r sound:local \
     -d REDOCU \
     -u alejandro.zabaleta \
-    -p P@ssw0rd \
+    -p P@ssw0rd1 \
     -z \
     -x b \
     -M \
