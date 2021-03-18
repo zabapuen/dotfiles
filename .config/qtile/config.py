@@ -282,7 +282,7 @@ for i in groups:
 
 
 def init_layout_theme():
-    return {"margin": 6,
+    return {"margin": 12,
             "border_width": 2,
             "border_focus": "#9BDD22",
             "border_normal": "#c0c5ce",
@@ -294,32 +294,17 @@ layout_theme = init_layout_theme()
 
 
 layouts = [
-    layout.MonadTall(margin=8, border_width=2,
-                     border_focus="#9BDD22", border_normal="#c0c5ce"),
+    layout.MonadTall(**layout_theme),
     layout.Floating(**layout_theme),
-    layout.RatioTile(**layout_theme),
+    layout.RatioTile(fancy=True, **layout_theme),
     layout.Max(**layout_theme),
     layout.Tile(add_on_top=False, add_after_last=True,
-                ratio=0.7, **layout_theme),
-    layout.Bsp(**layout_theme),
-    # layout.Matrix(**layout_theme),
-    # layout.Columns(**layout_theme),
-    # layout.Stack(**layout_theme),
-    # layout.Tile(margin=80, border_width=6,
-    #             border_focus="#9BDD22", border_normal="#c0c5ce"),
-    # layout.TreeTab(
-    #     sections=['FIRST', 'SECOND'],
-    #     bg_color='#141414',
-    #     active_bg='#0000ff',
-    #     inactive_bg='#1e90ff',
-    #     padding_y=5,
-    #     section_top=10,
-    #     panel_width=280),
-    # layout.VerticalTile(**layout_theme),
+                ratio=0.68, **layout_theme),
     layout.Zoomy(**layout_theme)
 ]
 
 # COLORS FOR THE BAR
+
 
 def init_colors():
     return [["#2F343F", "#2F343F"],  # color 0
@@ -344,9 +329,11 @@ def init_colors():
 # def init_colors():
 #     return [*val_list]
 
+
 colors = init_colors()
 
 # WIDGETS FOR THE BAR
+
 
 def init_widgets_defaults():
     return dict(font="MesloLGSDZ Nerd Font",

@@ -29,9 +29,10 @@ run polychromatic-tray-applet &
 run flameshot &
 run dunst &
 run blueman-applet &
-picom --config $HOME/.config/picom/picom.conf &
+# run picom &
+picom -b --config ~/.config/picom/picom.conf &
+/usr/bin/mailspring --background %U
 # /usr/lib/polkit-kde-authentication-agent-1 &
-
 
 #starting user applications at boot time
 #run discord &

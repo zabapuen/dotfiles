@@ -56,7 +56,7 @@ IMG:/home/alejandro.garuda/.cache/xdg-xmenu/icons/applications-internet.png	Inte
 	IMG:/home/alejandro.garuda/.cache/xdg-xmenu/icons/kget.png	KGet (Download Manager)	kget -qwindowtitle
 	IMG:/home/alejandro.garuda/.cache/xdg-xmenu/icons/krfb.png	Krfb (Desktop Sharing (VNC))	krfb -qwindowtitle
 	IMG:/home/alejandro.garuda/.cache/xdg-xmenu/icons/librewolf.png	LibreWolf (Web Browser)	/usr/lib/librewolf/librewolf
-	IMG:/home/alejandro.garuda/.cache/xdg-xmenu/icons/mailspring.png	Mailspring (Mail Client)	/usr/bin/mailspring
+	IMG:/home/alejandro.garuda/.cache/xdg-xmenu/icons/mailspring.png	Mailspring (Mail Client)	env BAMF_DESKTOP_FILE_HINT=/var/lib/snapd/desktop/applications/mailspring_mailspring.desktop /var/lib/snapd/snap/bin/mailspring
 	IMG:/home/alejandro.garuda/.cache/xdg-xmenu/icons/netflix-desktop.png	Netflix (Netflix)	/usr/bin/qtws /usr/share/qtws-apps/netflix/netflix.qtws --disable-seccomp-filter-sandbox --register-pepper-plugins="/usr/lib/qt/plugins/ppapi/libwidevinecdmadapter.so; application/x-ppapi-widevine-cdm"
 	IMG:/home/alejandro.garuda/.cache/xdg-xmenu/icons/kdeconnect.png	Open on connected device via KDE Connect (Open on connected device via KDE Connect)	kdeconnect-handler --open
 	IMG:/home/alejandro.garuda/.cache/xdg-xmenu/icons/qbittorrent.png	qBittorrent (BitTorrent client)	qbittorrent
