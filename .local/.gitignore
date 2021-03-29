@@ -2,3 +2,6 @@
 !.gitignore
 
 !bin
+!share
+!share/wallpapers
+!share/wallpapers/favs

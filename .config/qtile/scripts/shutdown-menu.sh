@@ -1,7 +1,7 @@
 #!/bin/bash
-if pgrep -x "shutdown-dialog" > /dev/null
+if pgrep -x "nwgbar" > /dev/null
 then
-	killall shutdown-dialog
+	killall nwgbar
 else
-	shutdown-dialog
+	nwgbar
 fi

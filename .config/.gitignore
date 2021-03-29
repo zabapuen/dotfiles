@@ -11,6 +11,7 @@
 !vifm
 !ranger
 !qtile
+qtile/__pycache__/
 !spectrwm
 !openbox
 !tint2
@@ -26,3 +27,6 @@
 !spotifyd
 !volumeicon
 !galendae
+!MangoHud
+!jgmenu
+jgmenu/backup/

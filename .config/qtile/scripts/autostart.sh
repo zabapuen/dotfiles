@@ -9,7 +9,7 @@ function run {
 
 
 #Special python script for auto wallpaper and colorscheme change
-~/.config/qtile/scripts/pywal-colors.py
+~/.config/qtile/scripts/pywal-colors-fav.py
 
 
 #feh --bg-fill ~/.config/qtile/flower.jpg &
@@ -18,21 +18,21 @@ function run {
 
 #starting utility applications at boot time
 run lxsession &
+numlockx on &
 # run dex -ae qtile
 run xscreensaver -no-splash &
 run volumeicon &
 run nm-applet &
 run pamac-tray &
-numlockx on &
 run polychromatic-tray-applet &
-# blueman-applet &
-run flameshot &
-run dunst &
 run blueman-applet &
+run flameshot &
+run thunar --daemon &
+/var/lib/snapd/snap/bin/mailspring --background %U &
+run dunst &
 # run picom &
 picom -b --config ~/.config/picom/picom.conf &
-/usr/bin/mailspring --background %U
-# /usr/lib/polkit-kde-authentication-agent-1 &
+/usr/lib/polkit-kde-authentication-agent-1 &
 
 #starting user applications at boot time
 #run discord &
@@ -48,4 +48,3 @@ picom -b --config ~/.config/picom/picom.conf &
 #run telegram-desktop &
 #run mailspring &
 #run teams &
-
