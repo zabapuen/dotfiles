@@ -527,7 +527,7 @@ def init_widgets_list():
              fontsize=18
          ),
          widget.NetGraph(
-             interface="eno1",
+             interface="auto",
              bandwidth="down",
              mouse_callbacks={
                  "Button1": lambda: qtile.cmd_spawn(myTerm + ' -e nload')},

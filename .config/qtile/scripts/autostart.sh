@@ -33,7 +33,7 @@ run dunst &
 # run picom &
 picom -b --config ~/.config/picom/picom.conf &
 /usr/lib/polkit-kde-authentication-agent-1 &
-
+~/.conky/conky-startup.sh &
 #starting user applications at boot time
 #run discord &
 #nitrogen --random --set-zoom-fill &
