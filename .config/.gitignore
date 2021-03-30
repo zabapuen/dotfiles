@@ -28,5 +28,7 @@ qtile/__pycache__/
 !volumeicon
 !galendae
 !MangoHud
+!lxsession-default-apps
+!nwg-launchers
 !jgmenu
 jgmenu/backup/
