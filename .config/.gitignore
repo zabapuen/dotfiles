@@ -11,7 +11,6 @@
 !vifm
 !ranger
 !qtile
-qtile/__pycache__/
 !spectrwm
 !openbox
 !tint2
@@ -30,5 +29,7 @@ qtile/__pycache__/
 !MangoHud
 !lxsession-default-apps
 !nwg-launchers
+!Code
 !jgmenu
 jgmenu/backup/
+qtile/__pycache__/

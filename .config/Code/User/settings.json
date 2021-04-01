@@ -1,0 +1,5 @@
+{
+    "terminal.integrated.fontFamily": "'MesloLGSDZ Nerd Font'",
+    "terminal.integrated.fontSize": 16,
+    "git.enableSmartCommit": true
+}
