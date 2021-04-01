@@ -1,5 +1,7 @@
 {
     "terminal.integrated.fontFamily": "'MesloLGSDZ Nerd Font'",
     "terminal.integrated.fontSize": 16,
-    "git.enableSmartCommit": true
+    "git.enableSmartCommit": true,
+    "editor.fontFamily": "'MesloLGSDZ Nerd Font', 'Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'",
+    "editor.fontSize": 16
 }
