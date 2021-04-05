@@ -5,11 +5,11 @@ wallpaper_list = []
 
 h = os.environ.get('HOME')
 w = "/.local/share/wallpapers"
-w2 = "/Imágenes/Walls/Anime/Summer"
+w2 = "/Imágenes/Walls/Anime"
 e = h + w2
 
 #Add your own wallpapers directory
-e = "/home/alejandro/.local/share/wallpapers/favs"
+# e = "/home/alejandro/.local/share/wallpapers/favs"
 for path in os.listdir(e):
    full_path = os.path.join(e, path)
    if os.path.isfile(full_path):
