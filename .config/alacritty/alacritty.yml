@@ -102,38 +102,38 @@ font:
     # The `style` can be specified to pick a specific face.
     # style: Regular
 
-  # Bold font face
-  bold:
-    # Font family
-    #
-    # If the bold family is not specified, it will fall back to the
-    # value specified for the normal font.
-    family:  "MesloLGSDZ Nerd Font Mono"
+  # # # # Bold font face
+  # # # bold:
+  # # #   # Font family
+  # # #   #
+  # # #   # If the bold family is not specified, it will fall back to the
+  # # #   # value specified for the normal font.
+  # # #   family:  "MesloLGSDZ Nerd Font Mono"
 
-    # The `style` can be specified to pick a specific face.
-    #style: Bold
+  # # #   # The `style` can be specified to pick a specific face.
+  # # #   #style: Bold
 
-  # Italic font face
-  italic:
-    # Font family
-    #
-    # If the italic family is not specified, it will fall back to the
-    # value specified for the normal font.
-    family:  "MesloLGSDZ Nerd Font Mono"
+  # # # # Italic font face
+  # # # italic:
+  # # #   # Font family
+  # # #   #
+  # # #   # If the italic family is not specified, it will fall back to the
+  # # #   # value specified for the normal font.
+  # # #   family:  "MesloLGSDZ Nerd Font Mono"
 
-    # The `style` can be specified to pick a specific face.
-    #style: Italic
+  # # #   # The `style` can be specified to pick a specific face.
+  # # #   #style: Italic
 
-  # Bold italic font face
-  bold_italic:
-    # Font family
-    #
-    # If the bold italic family is not specified, it will fall back to the
-    # value specified for the normal font.
-    family:  "MesloLGSDZ Nerd Font Mono"
+  # # # # Bold italic font face
+  # # # bold_italic:
+  # # #   # Font family
+  # # #   #
+  # # #   # If the bold italic family is not specified, it will fall back to the
+  # # #   # value specified for the normal font.
+  # # #   family:  "MesloLGSDZ Nerd Font Mono"
 
-    # The `style` can be specified to pick a specific face.
-    #style: Bold Italic
+  # # #   # The `style` can be specified to pick a specific face.
+  # # #   #style: Bold Italic
 
   # Point size
     size: 9.0
@@ -328,7 +328,7 @@ shell:
   # program: /usr/bin/fish
   program: /usr/bin/zsh
   args:
-    - --login
+    - -l
 
 # Startup directory
 #
