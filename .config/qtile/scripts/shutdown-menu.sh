@@ -3,5 +3,5 @@ if pgrep -x "nwgbar" > /dev/null
 then
 	killall nwgbar
 else
-	nwgbar
+	nwgbar -b #03070b
 fi

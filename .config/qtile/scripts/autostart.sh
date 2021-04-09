@@ -7,14 +7,10 @@ function run {
   fi
 }
 
-
 #Special python script for auto wallpaper and colorscheme change
-~/.config/qtile/scripts/pywal-colors-fav.py
+~/.config/qtile/scripts/pywal-colors-fav.py &
 
-
-#feh --bg-fill ~/.config/qtile/flower.jpg &
 # conky -c ~/.config/conky/conky.conf &
-
 
 #starting utility applications at boot time
 run lxsession &
@@ -33,7 +29,7 @@ run dunst &
 # run picom &
 picom -b --config ~/.config/picom/picom.conf &
 /usr/lib/polkit-kde-authentication-agent-1 &
-~/.conky/conky-startup.sh &
+# ~/.conky/conky-startup.sh &
 #starting user applications at boot time
 #run discord &
 #nitrogen --random --set-zoom-fill &
