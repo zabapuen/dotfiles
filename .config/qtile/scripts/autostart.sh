@@ -14,9 +14,10 @@ function run {
 
 #starting utility applications at boot time
 run lxsession &
+/usr/lib/polkit-kde-authentication-agent-1 &
 numlockx on &
 # run dex -ae qtile
-run xscreensaver -no-splash &
+# run xscreensaver -no-splash &
 run volumeicon &
 run nm-applet &
 run pamac-tray &
@@ -26,9 +27,8 @@ run flameshot &
 run thunar --daemon &
 /var/lib/snapd/snap/bin/mailspring --background %U &
 run dunst &
-# run picom &
-picom -b --config ~/.config/picom/picom.conf &
-/usr/lib/polkit-kde-authentication-agent-1 &
+run picom &
+# picom -b --config ~/.config/picom/picom.conf &
 # ~/.conky/conky-startup.sh &
 #starting user applications at boot time
 #run discord &

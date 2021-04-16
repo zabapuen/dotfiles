@@ -1,3 +1,4 @@
+
 import os
 import re
 import socket
@@ -35,6 +36,8 @@ myTerm = "alacritty"  # My terminal of choice
 
 keys = [
 
+
+
     # SUPER + FUNCTION KEYS
 
     Key([mod], "f", lazy.window.toggle_fullscreen()),
@@ -42,6 +45,7 @@ keys = [
     Key([mod], "q", lazy.window.kill()),
     Key([mod], "t", lazy.spawn('teamspeak3')),
     Key([mod], "v", lazy.spawn('pavucontrol')),
+    # Key([mod], "d", lazy.spawn('nwggrid -p -o 0.4')),
     Key([mod], "d", lazy.spawn(
         home + '/.config/qtile/scripts/dmenu.sh')),
     Key([mod], "Escape", lazy.spawn('xkill')),
@@ -56,6 +60,10 @@ keys = [
     # SUPER + SHIFT KEYS
 
     Key([mod, "shift"], "Return", lazy.spawn('pcmanfm')),
+    # Key([mod, "shift"], "d", lazy.spawn(
+    #     "dmenu_run -i -nb '#191919' -nf '#fea63c' -sb '#fea63c' -sf '#191919' -fn 'NotoMonoRegular:bold:pixelsize=14'")),
+    # Key([mod, "shift"], "d", lazy.spawn(
+    #     home + '/.config/qtile/scripts/dmenu.sh')),
     Key([mod, "shift"], "q", lazy.window.kill()),
     Key([mod, "shift"], "r", lazy.restart()),
     Key([mod, "control"], "r", lazy.restart()),
@@ -80,11 +88,13 @@ keys = [
 
     # ALT + ... KEYS
 
+
     Key(["mod1"], "p", lazy.spawn('pamac-manager')),
     Key(["mod1"], "f", lazy.spawn('google-chrome-stable')),
     Key(["mod1"], "e", lazy.spawn('emacs')),
     Key(["mod1"], "m", lazy.spawn('thunar')),
     Key(["mod1"], "w", lazy.spawn('garuda-welcome')),
+
 
     # CONTROL + SHIFT KEYS
 
@@ -94,6 +104,7 @@ keys = [
 
     Key([], "Print", lazy.spawn('flameshot full -p ' + home + '/Imágenes')),
     Key([mod2], "Print", lazy.spawn('flameshot full -p ' + home + '/Imágenes')),
+    #    Key([mod2, "shift"], "Print", lazy.spawn('gnome-screenshot -i')),
 
     # MULTIMEDIA KEYS
 
@@ -130,6 +141,7 @@ keys = [
     Key([mod], "j", lazy.layout.down()),
     Key([mod], "h", lazy.layout.left()),
     Key([mod], "l", lazy.layout.right()),
+
 
     # RESIZE UP, DOWN, LEFT, RIGHT
     Key([mod, "control"], "l",
@@ -203,6 +215,8 @@ keys = [
         desc='Move down a section in treetab'
         ),
 
+
+
     # MOVE WINDOWS UP OR DOWN MONADTALL/MONADWIDE LAYOUT
     Key([mod, "shift"], "Up", lazy.layout.shuffle_up()),
     Key([mod, "shift"], "Down", lazy.layout.shuffle_down()),
@@ -221,11 +235,16 @@ group_names = ["1", "2", "3", "4", "5", "6", "7", ]
 #                 ("3", {'layout': 'ratiotile'}),
 #                 ("4", {'layout': 'max'}),
 #                 ("5", {'layout': 'max'}),
-#                 ("6", {'layout': 'monadtall', 'matches':[Match(wm_class=["Thunar"])]}),
+#                 ("6", {'layout': 'monadtall', 'matches':[Match(wm_class=["Pcmanfm"])]}),
 #                 ("7", {'layout': 'max'})
 #                 ]
 
+# FOR AZERTY KEYBOARDS
+#group_names = ["ampersand", "eacute", "quotedbl", "apostrophe", "parenleft", "section", "egrave", "exclam", "ccedilla", "agrave",]
+
+#group_labels = ["1 ", "2 ", "3 ", "4 ", "5 ", "6 ", "7 ", "8 ", "9 ", "0",]
 group_labels = ["  ", "  ", "  ", "  ", "  ", "  ", "  ", ]
+#group_labels = ["Web", "Edit/chat", "Image", "Gimp", "Meld", "Video", "Vb", "Files", "Mail", "Music",]
 
 group_layouts = ["tile", "monadtall", "ratiotile",
                  "floating", "max", "monadtall", "max", ]
@@ -279,6 +298,7 @@ def init_layout_theme():
 
 layout_theme = init_layout_theme()
 
+
 layouts = [
     layout.MonadTall(**layout_theme),
     layout.Floating(**layout_theme),
@@ -291,28 +311,30 @@ layouts = [
 
 # COLORS FOR THE BAR
 
-# def init_colors():
-#     return [["#2F343F", "#2F343F"],  # color 0
-#             ["#2F343F", "#2F343F"],  # color 1
-#             ["#c0c5ce", "#c0c5ce"],  # color 2
-#             ["#ff4500", "#ff4500"],  # color 3
-#             ["#3384d0", "#3384d0"],  # color 4
-#             ["#ffffff", "#ffffff"],  # color 5
-#             ["#ff0000", "#ff0000"],  # color 6
-#             ["#9BDD22", "#9BDD22"],  # color 7
-#             ["#151515", "#151515"],  # color 8
-#             ["#9400de", "#9400de"]]  # color 9
-
-# ##### Import Pywal Palette / Importar la paleta generada por pywal #####
-with open(home + '/.cache/wal/colors.json') as json_file:
-    data = json.load(json_file)
-    colorsarray = data['colors']
-    val_list = list(colorsarray.values())
-    def getList(val_list):
-        return [*val_list]
 
 def init_colors():
-    return [*val_list]
+    return [["#2F343F", "#2F343F"],  # color 0
+            ["#2F343F", "#2F343F"],  # color 1
+            ["#c0c5ce", "#c0c5ce"],  # color 2
+            ["#ff4500", "#ff4500"],  # color 3
+            ["#3384d0", "#3384d0"],  # color 4
+            ["#ffffff", "#ffffff"],  # color 5
+            ["#ff0000", "#ff0000"],  # color 6
+            ["#9BDD22", "#9BDD22"],  # color 7
+            ["#151515", "#151515"],  # color 8
+            ["#9400de", "#9400de"]]  # color 9
+
+# ##### Import Pywal Palette / Importar la paleta generada por pywal #####
+# with open(home + '/.cache/wal/colors.json') as json_file:
+#     data = json.load(json_file)
+#     colorsarray = data['colors']
+#     val_list = list(colorsarray.values())
+#     def getList(val_list):
+#         return [*val_list]
+
+# def init_colors():
+#     return [*val_list]
+
 
 colors = init_colors()
 
@@ -320,11 +342,11 @@ colors = init_colors()
 
 
 def init_widgets_defaults():
-    return dict(font="MesloLGSDZ Nerd Font Bold",
+    return dict(font="MesloLGSDZ Nerd Font",
                 fontsize=18,
                 padding=2,
                 fontshadow='#000000',
-                background=colors[0])
+                background=colors[1])
 
 
 widget_defaults = init_widgets_defaults()
@@ -332,128 +354,282 @@ widget_defaults = init_widgets_defaults()
 
 def init_widgets_list():
     widgets_list = [
-
-        widget.Sep(
-            linewidth=0,
-            padding=10,
-            foreground=colors[2],
-            background=colors[0]
-        ),
-        widget.TextBox(
-            font="FontAwesome",
-            text="",
-            foreground=colors[7],
-            background=colors[0],
-            fontsize=34,
-            mouse_callbacks={'Button1': lambda: qtile.cmd_spawn(
+        
+         widget.Sep(
+             linewidth=1,
+             padding=10,
+             foreground=colors[2],
+             background=colors[1]
+         ),
+         widget.TextBox(
+             font="FontAwesome",
+             text="",
+             foreground=colors[5],
+             background=colors[1],
+             fontsize=34,
+             mouse_callbacks={'Button1': lambda: qtile.cmd_spawn(
                  home + '/.config/qtile/scripts/xmenu.sh')}
-        ),
-        widget.Sep(
-            linewidth=0,
-            padding=10,
-            foreground=colors[2],
-            background=colors[0]
-        ),
-        widget.GroupBox(font="FontAwesome",
-                        fontsize=20,
-                        margin_y=1,
-                        margin_x=0,
-                        padding_y=6,
-                        padding_x=5,
-                        borderwidth=3,
-                        disable_drag=True,
-                        active=colors[7],
-                        inactive=colors[7],
-                        rounded=False,
-                        highlight_method="block",
-                        this_current_screen_border=colors[8],
-                        foreground=colors[7],
-                        background=colors[0]
-                        ),
-        widget.WindowName(fontsize=18,
-                          foreground=colors[7],
-                          background=colors[0],
-                          ),
-        widget.TextBox(
-            font="FontAwesome",
-            text="  ",
-            foreground=colors[7],
-            background=colors[0],
-            padding=0,
-            fontsize=18
-        ),
-        widget.ThermalSensor(
-            foreground=colors[7],
-            foreground_alert=colors[6],
-            background=colors[0],
-            tag_sensor="Package id 0",
-            metric=True,
-            padding=6,
-            threshold=80
-        ),
-        widget.TextBox(
-            font="FontAwesome",
-            text="",
-            foreground=colors[7],
-            background=colors[0],
-            fontsize=18
-        ),
-        widget.CPUGraph(
-            border_width=0,
-            mouse_callbacks={
-                "Button1": lambda: qtile.cmd_spawn(myTerm + ' -e bashtop')},
-        ),
-
-        widget.TextBox(
-            font="FontAwesome",
-            text="  ",
-            foreground=colors[7],
-            background=colors[0],
-            padding=0,
-            fontsize=18
-        ),
-        widget.MemoryGraph(
-            border_width=0,
-            mouse_callbacks={
-                "Button1": lambda: qtile.cmd_spawn(myTerm + ' -e bashtop')},
-        ),
-        widget.TextBox(
-            font="FontAwesome",
-            text="  ",
-            foreground=colors[7],
-            background=colors[0],
-            padding=0,
-            fontsize=18
-        ),
-        widget.NetGraph(
-            border_width=0,
-            interface="auto",
-            bandwidth="down",
-            mouse_callbacks={
-                "Button1": lambda: qtile.cmd_spawn(myTerm + ' -e nload')},
-        ),
-        widget.Systray(
-            background=colors[0],
-            icon_size=24,
-            padding=6
-        ),
-        widget.CurrentLayoutIcon(
-            custom_icon_paths=[os.path.expanduser("~/.config/qtile/icons")],
-            foreground=colors[7],
-            background=colors[0],
-            padding=6,
-            scale=0.7
-        ),
-        widget.Clock(
-            foreground=colors[7],
-            background=colors[0],
-            padding=16,
-            fontsize=20,
-            mouse_callbacks={
-                "Button1": lambda: qtile.cmd_spawn(home + '/.config/qtile/scripts/calendar.sh')},
-            format="%a %d %b %I:%M"
-        ),
-    ]
+         ),
+         # widget.Image(
+         #     filename="~/.config/qtile/icons/arh-circle.png",
+         #     iconsize=9,
+         #     background=colors[1],
+         #     margin=3,
+         #     mouse_callbacks={'Button1': lambda: qtile.cmd_spawn(
+         #         home + '/.config/qtile/scripts/xmenu.sh')}
+         # ),
+         widget.Sep(
+             linewidth=1,
+             padding=10,
+             foreground=colors[2],
+             background=colors[1]
+         ),
+         widget.GroupBox(font="FontAwesome",
+                         fontsize=20,
+                         margin_y=1,
+                         margin_x=0,
+                         padding_y=6,
+                         padding_x=5,
+                         borderwidth=3,
+                         disable_drag=True,
+                         active=colors[7],
+                         inactive=colors[5],
+                         rounded=False,
+                         highlight_method="block",
+                         this_current_screen_border=colors[8],
+                         foreground=colors[5],
+                         background=colors[1]
+                         ),
+         widget.WindowName(font="MesloLGSDZ Nerd Font Bold",
+                           fontsize=18,
+                           foreground=colors[7],
+                           background=colors[1],
+                           ),
+         # widget.LaunchBar(
+         #     progs=[
+         #         ('mailspring', 'mailspring', 'Launch Mailspring'),
+         #         ('Alacritty', 'alacritty', 'Alacritty terminal')
+         #     ]
+         # ),
+         widget.TextBox(
+             text='',
+             background=colors[1],
+             foreground=colors[2],
+             # padding=0,
+             fontsize=50
+         ),
+         widget.CurrentLayoutIcon(
+             custom_icon_paths=[os.path.expanduser("~/.config/qtile/icons")],
+             foreground=colors[5],
+             background=colors[1],
+             padding=0,
+             scale=0.7
+         ),
+         widget.CurrentLayout(
+             font="MesloLGSDZ Nerd Font Bold",
+             fontsize=18,
+             foreground=colors[5],
+             background=colors[1]
+         ),
+         widget.TextBox(
+             text='',
+             background=colors[1],
+             foreground=colors[2],
+             # padding=0,
+             fontsize=50
+         ),
+         widget.TextBox(
+             font="FontAwesome",
+             text="  ",
+             foreground=colors[5],
+             background=colors[1],
+             padding=0,
+             fontsize=18
+         ),
+         widget.ThermalSensor(
+             foreground=colors[5],
+             foreground_alert=colors[6],
+             background=colors[1],
+             tag_sensor="Package id 0",
+             metric=True,
+             padding=3,
+             threshold=80
+         ),
+         widget.TextBox(
+             text='',
+             background=colors[1],
+             foreground=colors[2],
+             # padding=0,
+             fontsize=50
+         ),
+         widget.TextBox(
+             font="FontAwesome",
+             text="",
+             foreground=colors[5],
+             background=colors[1],
+             fontsize=18
+         ),
+         widget.CPUGraph(
+             mouse_callbacks={
+                 "Button1": lambda: qtile.cmd_spawn(myTerm + ' -e bashtop')},
+         ),
+        #  widget.CPU(
+        #      update_interval=1,
+        #      fontsize=12,
+        #      format='{freq_current}GHz\n{load_percent}%',
+        #      foreground=colors[5],
+        #      background=colors[1],
+        #      mouse_callbacks={
+        #          'Button1': lambda qtile: qtile.cmd_spawn(myTerm + ' -e bashtop')},
+        #  ),
+        #  widget.TextBox(
+        #      text='',
+        #      background=colors[1],
+        #      foreground=colors[2],
+        #      # padding=0,
+        #      fontsize=50
+        #  ),
+         widget.TextBox(
+             font="FontAwesome",
+             text="  ",
+             foreground=colors[5],
+             background=colors[1],
+             padding=0,
+             fontsize=18
+         ),
+         widget.MemoryGraph(
+             mouse_callbacks={
+                 "Button1": lambda: qtile.cmd_spawn(myTerm + ' -e bashtop')},
+         ),
+        #  widget.Memory(
+        #      update_interval=1,
+        #      fontsize=12,
+        #      format='{MemUsed: .2f} G\n{MemTotal: .2f} G',
+        #      measure_mem='G',
+        #      foreground=colors[5],
+        #      background=colors[1],
+        #      mouse_callbacks={
+        #          "Button1": lambda: qtile.cmd_spawn(myTerm + ' -e bashtop')},
+        #  ),
+        #  widget.TextBox(
+        #      text='',
+        #      background=colors[1],
+        #      foreground=colors[2],
+        #      # padding=0,
+        #      fontsize=50
+        #  ),
+         widget.TextBox(
+             font="FontAwesome",
+             text="  ",
+             foreground=colors[5],
+             background=colors[1],
+             padding=0,
+             fontsize=18
+         ),
+         widget.NetGraph(
+             interface="auto",
+             bandwidth="down",
+             mouse_callbacks={
+                 "Button1": lambda: qtile.cmd_spawn(myTerm + ' -e nload')},
+             ),
+        #  widget.Net(
+        #      update_interval=1,
+        #      fontsize=12,
+        #      format='↓{down}\n↑{up}',
+        #      interface=["eno1"],
+        #      foreground=colors[5],
+        #      background=colors[1],
+        #      use_bits=True,
+        #      mouse_callbacks={
+        #          "Button1": lambda: qtile.cmd_spawn(myTerm + ' -e nload')},
+        #  ),
+         widget.TextBox(
+             text='',
+             background=colors[1],
+             foreground=colors[2],
+             # padding=0,
+             fontsize=50
+         ),
+         widget.TextBox(
+             font="FontAwesome",
+             text="  ",
+             foreground=colors[5],
+             background=colors[1],
+             padding=0,
+             fontsize=18
+         ),
+         widget.Clock(
+             foreground=colors[5],
+             background=colors[1],
+             fontsize=20,
+             mouse_callbacks={
+                 "Button1": lambda: qtile.cmd_spawn(home + '/.config/qtile/scripts/calendar.sh')},
+             format="%d/%m/%Y"
+         ),
+         widget.TextBox(
+             font="FontAwesome",
+             text="  ",
+             foreground=colors[5],
+             background=colors[1],
+             padding=0,
+             fontsize=18
+         ),
+         widget.Clock(
+             foreground=colors[5],
+             background=colors[1],
+             fontsize=20,
+             mouse_callbacks={
+                 "Button1": lambda: qtile.cmd_spawn(home + '/.config/qtile/scripts/calendar.sh')},
+             format="%-I:%M%p"
+         ),
+         widget.TextBox(
+             text='',
+             background=colors[1],
+             foreground=colors[2],
+             # padding=0,
+             fontsize=50
+         ),
+         # widget.Volume(
+         #     foreground=colors[5],
+         #     background=colors[1],
+         #     fontsize=20,
+         #     padding=0,
+         #     channel="Master"
+         # ),
+         # widget.TextBox(
+         #     text='',
+         #     background=colors[1],
+         #     foreground=colors[2],
+         #     padding=0,
+         #     fontsize=50
+         # ),
+         widget.Systray(
+             background=colors[1],
+             icon_size=24,
+             padding=2
+         ),
+         widget.Sep(
+             linewidth=1,
+             padding=10,
+             foreground=colors[2],
+             background=colors[1]
+         ),
+         widget.TextBox(
+             font="FontAwesome",
+             text="",
+             foreground=colors[5],
+             background=colors[1],
+             fontsize=20,
+             mouse_callbacks={'Button1': lambda: qtile.cmd_spawn(
+                 home + '/.config/qtile/scripts/shutdown-menu.sh')}
+         ),
+         widget.Sep(
+             linewidth=1,
+             padding=10,
+             foreground=colors[2],
+             background=colors[1]
+         ),
+     ]
     return widgets_list
 
 
@@ -479,6 +655,7 @@ def init_screens():
 
 
 screens = init_screens()
+
 
 # MOUSE CONFIGURATION
 mouse = [
@@ -529,6 +706,7 @@ dgroups_app_rules = []
 # END
 # ASSIGN APPLICATIONS TO A SPECIFIC GROUPNAME
 
+
 main = None
 
 
@@ -552,6 +730,7 @@ def set_floating(window):
 
 
 floating_types = ["notification", "toolbar", "splash", "dialog"]
+
 
 follow_mouse_focus = False
 bring_front_click = True

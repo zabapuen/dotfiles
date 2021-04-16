@@ -1,6 +1,7 @@
 ^sep()
 Exit,^checkout(exit),system-shutdown
 ^tag(exit)
-Suspend,systemctl -i suspend,system-log-out
+Logout,loginctl terminate-user $USER,system-log-out
+Suspend,systemctl suspend,system-suspend
 Reboot,systemctl -i reboot,system-reboot
 Poweroff,systemctl -i poweroff,system-shutdown

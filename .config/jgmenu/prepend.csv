@@ -1,3 +1,4 @@
 Terminal,alacritty,Alacritty
 File manager,thunar,system-file-manager
+Web Browser,google-chrome-stable,google-chrome
 ^sep()
