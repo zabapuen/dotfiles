@@ -291,17 +291,17 @@ layouts = [
 
 # COLORS FOR THE BAR
 
-# def init_colors():
-#     return [["#2F343F", "#2F343F"],  # color 0
-#             ["#2F343F", "#2F343F"],  # color 1
-#             ["#c0c5ce", "#c0c5ce"],  # color 2
-#             ["#ff4500", "#ff4500"],  # color 3
-#             ["#3384d0", "#3384d0"],  # color 4
-#             ["#ffffff", "#ffffff"],  # color 5
-#             ["#ff0000", "#ff0000"],  # color 6
-#             ["#9BDD22", "#9BDD22"],  # color 7
-#             ["#151515", "#151515"],  # color 8
-#             ["#9400de", "#9400de"]]  # color 9
+# # def init_colors():
+# #     return [["#2F343F", "#2F343F"],  # color 0
+# #             ["#2F343F", "#2F343F"],  # color 1
+# #             ["#c0c5ce", "#c0c5ce"],  # color 2
+# #             ["#ff4500", "#ff4500"],  # color 3
+# #             ["#3384d0", "#3384d0"],  # color 4
+# #             ["#9BDD22", "#9BDD22"],  # color 5
+# #             ["#ff0000", "#ff0000"],  # color 6
+# #             ["#ffffff", "#ffffff"],  # color 7
+# #             ["#151515", "#151515"],  # color 8
+# #             ["#9400de", "#9400de"]]  # color 9
 
 # ##### Import Pywal Palette / Importar la paleta generada por pywal #####
 with open(home + '/.cache/wal/colors.json') as json_file:
@@ -355,21 +355,21 @@ def init_widgets_list():
             background=colors[0]
         ),
         widget.GroupBox(font="FontAwesome",
-                        fontsize=20,
-                        margin_y=1,
-                        margin_x=0,
-                        padding_y=6,
-                        padding_x=5,
-                        borderwidth=3,
-                        disable_drag=True,
-                        active=colors[7],
-                        inactive=colors[7],
-                        rounded=False,
-                        highlight_method="block",
-                        this_current_screen_border=colors[8],
-                        foreground=colors[7],
-                        background=colors[0]
-                        ),
+                         fontsize=20,
+                         margin_y=1,
+                         margin_x=0,
+                         padding_y=6,
+                         padding_x=5,
+                         borderwidth=3,
+                         disable_drag=True,
+                         active=colors[5],
+                         inactive=colors[7],
+                         rounded=False,
+                         highlight_method="block",
+                         this_current_screen_border=colors[8],
+                         foreground=colors[5],
+                         background=colors[0]
+                         ),
         widget.WindowName(fontsize=18,
                           foreground=colors[7],
                           background=colors[0],
