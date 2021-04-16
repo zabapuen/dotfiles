@@ -28,6 +28,7 @@ run thunar --daemon &
 /var/lib/snapd/snap/bin/mailspring --background %U &
 run dunst &
 run picom &
+run cbatticon &
 # picom -b --config ~/.config/picom/picom.conf &
 # ~/.conky/conky-startup.sh &
 #starting user applications at boot time
