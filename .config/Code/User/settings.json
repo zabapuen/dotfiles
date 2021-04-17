@@ -3,5 +3,11 @@
     "terminal.integrated.fontSize": 16,
     "git.enableSmartCommit": true,
     "editor.fontFamily": "'MesloLGSDZ Nerd Font', 'Font Awesome 5 Free', 'Font Awesome 5 Brands', 'Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'",
-    "editor.fontSize": 16
+    "editor.fontSize": 16,
+    "workbench.editorAssociations": [
+        {
+            "viewType": "jupyter.notebook.ipynb",
+            "filenamePattern": "*.ipynb"
+        }
+    ]
 }
