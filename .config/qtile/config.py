@@ -270,7 +270,7 @@ for i in groups:
 
 def init_layout_theme():
     return {"margin": 12,
-            "border_width": 2,
+            "border_width": 0,
             "border_focus": "#9BDD22",
             "border_normal": "#c0c5ce",
             "grow_amount": 5
