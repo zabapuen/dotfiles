@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env sh
 # xscreensaverstopper.sh
 
 # This script is licensed under GNU GPL version 2.0 or above

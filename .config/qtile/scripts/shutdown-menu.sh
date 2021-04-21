@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env sh
 if pgrep -x "nwgbar" > /dev/null
 then
 	killall nwgbar

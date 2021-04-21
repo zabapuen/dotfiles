@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env sh
 jgmenu_run
 # if pgrep -x "jgmenu_run" > /dev/null
 # then
