@@ -18,6 +18,7 @@
 !.config
 !.local
 !.conkyrc
+!.xmonad
 
 # !.config/
 # .config/*
