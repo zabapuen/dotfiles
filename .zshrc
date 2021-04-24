@@ -105,4 +105,5 @@ alias ssh='TERM=xterm-256color ssh'
 #else
 #  export EDITOR='vim'
 #fi
+export PATH=$HOME/.local/bin:$PATH
 paleofetch

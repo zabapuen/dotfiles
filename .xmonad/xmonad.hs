@@ -371,6 +371,7 @@ myKeys =
         , ("M-M1-h", spawn (myTerminal ++ " -e htop"))
         , ("M-w", spawn "~/.config/qtile/scripts/pywal-colors.py")
         , ("M-S-w", spawn "~/.config/qtile/scripts/pywal-colors-fav.py")
+        , ("M-s", spawn (myTerminal ++ " -e ~/.local/bin/spoty"))
 
     -- Kill windows
         , ("M-q", kill1)     -- Kill the currently focused client
