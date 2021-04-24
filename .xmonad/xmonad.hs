@@ -302,7 +302,7 @@ myLayoutHook = avoidStruts $ mouseResize $ windowArrange $ T.toggleLayouts float
 
 -- myWorkspaces = [" 1 ", " 2 ", " 3 ", " 4 ", " 5 ", " 6 ", " 7 ", " 8 ", " 9 "]
 -- myWorkspaces = [" dev ", " www ", " sys ", " doc ", " vbox ", " chat ", " mus ", " vid ", " gfx "]
-myWorkspaces = ["\xf268 ", "\xf120 ", "\xf395 ", "\xf3ca ", "\xf1bc ", "\xf4f9 ", "\xf26c ", " vid ", " gfx "]
+myWorkspaces = ["\xf268 ", "\xf120 ", "\xf395 ", "\xf3ca ", "\xf1bc ", "\xf4f9 ", "\xf11b ", "\xfc44 ", "\xf26c "]
 -- myWorkspaces = [" \xf268 ", " \xf120 ", " \xf395 ", " \xf3ca ", " \xf1bc ", " \xf4f9 ", " \xf26c ", " \xf26c ", " \xf26c "]
 myWorkspaceIndices = M.fromList $ zip myWorkspaces [1..] -- (,) == \x y -> (x,y)
 
