@@ -587,6 +587,7 @@ floating_layout = layout.Floating(float_rules=[
     {'wname': 'Imagen en imagen'},
     {'wname': 'Calendar'},
     {'wname': 'Steam'},
+    {'wname': 'Xephyr'},
 
 
 ],  fullscreen_border_width=0, border_width=0)

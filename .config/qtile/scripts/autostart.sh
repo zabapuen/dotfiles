@@ -30,6 +30,7 @@ run thunar --daemon &
 run dunst &
 run picom &
 run cbatticon &
+paleofetch --recache &
 # picom -b --config ~/.config/picom/picom.conf &
 # ~/.conky/conky-startup.sh &
 #starting user applications at boot time
