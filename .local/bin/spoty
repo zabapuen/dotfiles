@@ -1,0 +1,4 @@
+#!/usr/bin/env sh
+systemctl start --user spotifyd
+spt
+systemctl stop --user spotifyd
