@@ -17,13 +17,15 @@ Config {
         -- Run Com "volume" [] "volume" 10,
         -- Run Com "battery" [] "battery" 600,
         -- Run Com "brightness" [] "brightness" 10,
-        Run Com "bash" ["-c", "checkupdates | wc -l"] "updates" 3000,
+        Run Cpu ["-t", "<fn=1>\xf108 </fn>cpu:(<total>%)","-H","50","--high","red"] 20,
+        -- Run Com "bash" ["-c", "checkupdates | wc -l"] "updates" 3000,
         Run Com "~/.xmonad/xmobar/trayer-padding-icon.sh" [] "trayerpad" 600,
         Run UnsafeStdinReader
     ],
     alignSep = "}{",
     template = "<action=`~/.config/qtile/scripts/xmenu.sh`>   </action>%UnsafeStdinReader% }{ \
-        \ %updates% \
+        \ %cpu%\
+        -- \ %updates% \
         -- \ %brightness%\
         -- \ %battery%\
         -- \ %volume% \

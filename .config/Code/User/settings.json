@@ -10,5 +10,6 @@
             "filenamePattern": "*.ipynb"
         }
     ],
-    "git.confirmSync": false
+    "git.confirmSync": false,
+    "workbench.startupEditor": "newUntitledFile"
 }
