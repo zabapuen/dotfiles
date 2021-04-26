@@ -1,7 +1,7 @@
 -- http://projects.haskell.org/xmobar/
 
 Config { 
-    font    = "xft:MesloLGSDZ Nerd Font:weight=bold:pixelsize=20:antialias=true:hinting=true, Font Awesome 5 Brands:pixelsize=18",
+    font    = "xft:MesloLGSDZ Nerd Font:weight=bold:pixelsize=20:antialias=true:hinting=true, Font Awesome 5 Brands:pixelsize=20",
     additionalFonts = [ "xft:Mononoki Nerd Font:pixelsize=20:antialias=true:hinting=true",
                         "xft:FontAwesome:pixelsize=13"],
     bgColor = "#000000",
@@ -13,7 +13,7 @@ Config {
     allDesktops = True,
     persistent = True,
     commands = [ 
-        Run Date " %d %b %Y %-I:%M  " "date" 600,
+        Run Date " %d %b %-I:%M  " "date" 600,
         -- Run Com "volume" [] "volume" 10,
         -- Run Com "battery" [] "battery" 600,
         -- Run Com "brightness" [] "brightness" 10,
@@ -29,6 +29,6 @@ Config {
         -- \ %brightness%\
         -- \ %battery%\
         -- \ %volume% \
-        \ %date% \
+        \ <action=`~/.config/qtile/scripts/calendar.sh`>%date%</action> \
         \%trayerpad%"
 }

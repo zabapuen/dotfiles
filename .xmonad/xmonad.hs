@@ -278,7 +278,7 @@ myTabTheme = def { fontName            = myFont
 -- Theme for showWName which prints current workspace when you change workspaces.
 myShowWNameTheme :: SWNConfig
 myShowWNameTheme = def
-    { swn_font              = "xft:Ubuntu:bold:size=60"
+    { swn_font              = "xft:MesloLGSDZ Nerd Font:bold:size=60"
     , swn_fade              = 1.0
     , swn_bgcolor           = "#1c1f24"
     , swn_color             = "#ffffff"
@@ -302,7 +302,7 @@ myLayoutHook = avoidStruts $ mouseResize $ windowArrange $ T.toggleLayouts float
 
 -- myWorkspaces = [" 1 ", " 2 ", " 3 ", " 4 ", " 5 ", " 6 ", " 7 ", " 8 ", " 9 "]
 -- myWorkspaces = [" dev ", " www ", " sys ", " doc ", " vbox ", " chat ", " mus ", " vid ", " gfx "]
-myWorkspaces = ["\xf268 ", "\xf120 ", "\xf395", "\xf3ca", "\xf1bc", "\xf11b ", "\xfc44", "\xf4f9", "\xf26c "]
+myWorkspaces = ["\xf268 ", "\xf120 ", "\xf395", "\xf3ca", "\xf1bc ", "\xf11b ", "\xfc44", "\xf4f9", "\xf26c "]
 -- myWorkspaces = [" \xf268 ", " \xf120 ", " \xf395 ", " \xf3ca ", " \xf1bc ", " \xf4f9 ", " \xf26c ", " \xf26c ", " \xf26c "]
 myWorkspaceIndices = M.fromList $ zip myWorkspaces [1..] -- (,) == \x y -> (x,y)
 
@@ -372,6 +372,8 @@ myKeys =
         , ("M-w", spawn "~/.config/qtile/scripts/pywal-colors.py")
         , ("M-S-w", spawn "~/.config/qtile/scripts/pywal-colors-fav.py")
         , ("M-s", spawn (myTerminal ++ " -e ~/.local/bin/spoty"))
+        , ("M-u", spawn "~/.config/qtile/scripts/rdesktop.sh")
+        , ("C-M1-o", spawn "~/.config/qtile/scripts/picom-toggle.sh")
 
     -- Kill windows
         , ("M-q", kill1)     -- Kill the currently focused client
@@ -459,10 +461,10 @@ myKeys =
         --, ("M-<F2>", spawn "feh --randomize --bg-fill ~/wallpapers/*")
 
     -- Controls for mocp music player (SUPER-u followed by a key)
-        , ("M-u p", spawn "mocp --play")
-        , ("M-u l", spawn "mocp --next")
-        , ("M-u h", spawn "mocp --previous")
-        , ("M-u <Space>", spawn "mocp --toggle-pause")
+        -- , ("M-u p", spawn "mocp --play")
+        -- , ("M-u l", spawn "mocp --next")
+        -- , ("M-u h", spawn "mocp --previous")
+        -- , ("M-u <Space>", spawn "mocp --toggle-pause")
 
     -- Emacs (CTRL-e followed by a key)
         -- , ("C-e e", spawn myEmacs)                 -- start emacs
@@ -493,7 +495,8 @@ myKeys =
         , ("<XF86Mail>", runOrRaise "thunderbird" (resource =? "thunderbird"))
         , ("<XF86Calculator>", runOrRaise "qalculate-gtk" (resource =? "qalculate-gtk"))
         , ("<XF86Eject>", spawn "toggleeject")
-        , ("<Print>", spawn "scrotd 0")
+        , ("<Print>", spawn "spectacle -c")
+        , ("M-C-<Print>", spawn "spectacle -c -r")
         ]
     -- The following lines are needed for named scratchpads.
           where nonNSP          = WSIs (return (\ws -> W.tag ws /= "NSP"))
@@ -531,13 +534,13 @@ main = do
               { ppOutput = hPutStrLn xmproc0                          -- xmobar on monitor 1
                             --   >> hPutStrLn xmproc1 x                          -- xmobar on monitor 2
                             --   >> hPutStrLn xmproc2 x                          -- xmobar on monitor 3
-              , ppCurrent = xmobarColor "#98be65" "" . wrap "{" "}"           -- Current workspace
+              , ppCurrent = xmobarColor "#98be65" "" . wrap "{" "} "           -- Current workspace
               , ppVisible = xmobarColor "#98be65" "" . clickable              -- Visible but not current workspace
-              , ppHidden = xmobarColor "#98be65" "" . wrap "" "" . clickable -- Hidden workspaces
-              , ppHiddenNoWindows = xmobarColor "#b3afc2" ""  . clickable     -- Hidden workspaces (no windows)
+              , ppHidden = xmobarColor "#98be65" "" . wrap "" " " . clickable -- Hidden workspaces
+              , ppHiddenNoWindows = xmobarColor "#b3afc2" ""  . wrap "" " " . clickable     -- Hidden workspaces (no windows)
               , ppTitle = xmobarColor "#b3afc2" "" . shorten 60               -- Title of active window
               , ppSep =  "<fc=#666666> <fn=1>|</fn> </fc>"                    -- Separator character
-              , ppUrgent = xmobarColor "#C45500" "" . wrap "" ""            -- Urgent workspace
+              , ppUrgent = xmobarColor "#C45500" "" . wrap "" " "            -- Urgent workspace
               , ppExtras  = [windowCount]                                     -- # of windows current workspace
               , ppOrder  = \(ws:l:t:ex) -> [ws,l]++ex++[t]                    -- order of things in xmobar
               }

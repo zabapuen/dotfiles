@@ -92,8 +92,11 @@ keys = [
 
     # SCREENSHOTS
 
-    Key([], "Print", lazy.spawn('flameshot full -p ' + home + '/Imágenes')),
-    Key([mod2], "Print", lazy.spawn('flameshot full -p ' + home + '/Imágenes')),
+    # Key([], "Print", lazy.spawn('flameshot full -p ' + home + '/Imágenes')),
+    # Key([mod2], "Print", lazy.spawn('flameshot full -p ' + home + '/Imágenes')),
+
+    Key([], "Print", lazy.spawn('spectacle -c')),
+    Key([mod], "Print", lazy.spawn('spectacle -c -r')),
 
     # MULTIMEDIA KEYS
 
