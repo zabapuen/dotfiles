@@ -1,5 +1,5 @@
 [global]
-username = "zabapuen"
+username = "<username>"
 password = "<pass>"
 backend = "pulseaudio"
 use_mpris = true
