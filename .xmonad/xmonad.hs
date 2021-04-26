@@ -84,7 +84,7 @@ myEditor = "vim"  -- Sets vim as editor
 -- myEditor = myTerminal ++ " -e vim "    -- Sets vim as editor
 
 myBorderWidth :: Dimension
-myBorderWidth = 2           -- Sets border width for windows
+myBorderWidth = 0           -- Sets border width for windows
 
 myNormColor :: String
 myNormColor   = "#282c34"   -- Border color of normal windows
@@ -322,6 +322,7 @@ myManageHook = composeAll
      , className =? "error"           --> doFloat
      , className =? "Gimp"            --> doFloat
      , className =? "notification"    --> doFloat
+     , className =? "CopyQ"           --> doFloat
      , className =? "copyq"           --> doFloat
      , className =? "pinentry-gtk-2"  --> doFloat
      , className =? "splash"          --> doFloat

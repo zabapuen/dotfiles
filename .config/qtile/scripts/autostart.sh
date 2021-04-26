@@ -21,7 +21,7 @@ numlockx on &
 run volumeicon &
 run nm-applet &
 run pamac-tray &
-run copyq --start-server &
+run copyq &
 run polychromatic-tray-applet &
 run blueman-applet &
 run flameshot &
