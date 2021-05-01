@@ -51,6 +51,7 @@ keys = [
     Key([mod], "x", lazy.shutdown()),
     Key([mod], "u", lazy.spawn(home + '/.config/qtile/scripts/rdesktop.sh')),
     Key([mod], "s", lazy.spawn('alacritty -e ' + home + '/.local/bin/spoty')),
+    Key([mod, "shift"], "s", lazy.spawn('spotify')),
     Key([mod], "space", lazy.spawn('nwggrid -p -o 0.4')),
 
     # SUPER + SHIFT KEYS
@@ -237,7 +238,7 @@ group_layouts = ["tile", "monadtall", "ratiotile",
 group_matches = ["None",
                  "None",
                  [Match(wm_class=["Virt-manager"])],
-                 "None",
+                 [Match(wm_class=["Thunar", "thunar"])],
                  [Match(wm_class=["Spotify"])],
                  "None",
                  [Match(wm_class=["rdesktop"])],
@@ -591,6 +592,7 @@ floating_layout = layout.Floating(float_rules=[
     {'wname': 'Calendar'},
     {'wname': 'Steam'},
     {'wname': 'Xephyr'},
+    {'wmclass': 'krunner'},
 
 
 ],  fullscreen_border_width=0, border_width=0)

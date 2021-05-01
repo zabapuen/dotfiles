@@ -31,5 +31,6 @@
 !nwg-launchers
 !Code
 !jgmenu
+!openrazer
 jgmenu/backup/
 qtile/__pycache__/

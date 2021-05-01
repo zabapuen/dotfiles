@@ -302,7 +302,13 @@ myLayoutHook = avoidStruts $ mouseResize $ windowArrange $ T.toggleLayouts float
 
 -- myWorkspaces = [" 1 ", " 2 ", " 3 ", " 4 ", " 5 ", " 6 ", " 7 ", " 8 ", " 9 "]
 -- myWorkspaces = [" dev ", " www ", " sys ", " doc ", " vbox ", " chat ", " mus ", " vid ", " gfx "]
-myWorkspaces = ["\xf268 ", "\xf120 ", "\xf395", "\xf3ca", "\xf1bc ", "\xf11b ", "\xfc44", "\xf4f9", "\xf26c "]
+--                                                                                         -- sarosi
+--    $ ["\xf269 ", "\xe235 ", "\xe795 ", "\xf121 ", "\xe615 ", "\xf74a ", "\xf7e8 ", "\xf03d ", "\xf827 "] -- sarosi
+-- myWorkspaces = ["\xf269 ", "\xe235 ", "\xe795 ", "\xf121 ", "\xe615 ", "\xf74a ", "\xf7e8 ", "\xf03d ", "\xf827 "] -- Nerd Font
+
+myWorkspaces = ["\xf268 ", "\xf120 ", "\xf395", "\xf3ca", "\xf1bc ", "\xf11b ", "\xfc44", "\xf4f9", "\xf26c "] -- NF & FA
+-- myWorkspaces = ["\xf268 ", "\xf120 ", "\xf308 ", "\xf871 ", "\xf1bc ", "\xf11b ", "\xfc44 ", "\xf232 ", "\xf26c "] -- Nerd Font
+-- myWorkspaces = ["\xf268 ", "\xf120 ", "\xf395", "\xf3ca", "\xf1bc", "\xf412 ", "\xf838", "\xf4f9", "\xf26c "] -- Font Awesome
 -- myWorkspaces = [" \xf268 ", " \xf120 ", " \xf395 ", " \xf3ca ", " \xf1bc ", " \xf4f9 ", " \xf26c ", " \xf26c ", " \xf26c "]
 myWorkspaceIndices = M.fromList $ zip myWorkspaces [1..] -- (,) == \x y -> (x,y)
 
@@ -373,6 +379,7 @@ myKeys =
         , ("M-w", spawn "~/.config/qtile/scripts/pywal-colors.py")
         , ("M-S-w", spawn "~/.config/qtile/scripts/pywal-colors-fav.py")
         , ("M-s", spawn (myTerminal ++ " -e ~/.local/bin/spoty"))
+        , ("M-S-s", spawn "spotify")
         , ("M-u", spawn "~/.config/qtile/scripts/rdesktop.sh")
         , ("C-M1-o", spawn "~/.config/qtile/scripts/picom-toggle.sh")
 
