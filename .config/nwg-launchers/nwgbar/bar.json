@@ -6,8 +6,13 @@
   },
   {
     "name": "Logout",
-    "exec": "qtile cmd-obj -o cmd -f exit",
+    "exec": "loginctl terminate-user $USER",
     "icon": "system-log-out"
+  },
+  {
+    "name": "Suspend",
+    "exec": "systemctl suspend",
+    "icon": "system-suspend"
   },
   {
     "name": "Reboot",
