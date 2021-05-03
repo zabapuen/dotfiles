@@ -1,18 +1,11 @@
 # General
 backend = "glx"; # Huge increase in speed compared to the other backends.
-# experimental-backends = true;
 glx-no-stencil = true; # Give as 15% performance boost, apparently.
 mark-wmwin-focused = true; # Attempt to detect WM windows (a non-override-redirect window with no child that has 'WM_STATE') and mark them as active.
 mark-ovredir-focused = false; # Mark override-redirect windows that don't have a child window with 'WM_STATE' focused.
 unredir-if-possible = false; # May solve windows flashing and being all weird.
-vsync = true
 
-corner-radius = 10;
-rounded-corners-exclude = [
-    "QTILE_INTERNAL:32c = 1",
-    "class_g = 'rdesktop'",
-    "g:e:dmenu"
-];
+corner-radius = 14;
 
 # Fading
 fading          = true;
@@ -20,15 +13,13 @@ fade-delta      = 7;
 fade-in-step    = 0.02;
 fade-out-step   = 0.02;
 fade-exclude = [
-	"g:e:dmenu",
-	"g:e:Galendae",
-	"g:e:jgmenu"
+	"g:e:dmenu"
 ];
 
 # Opacity
 active-opacity            = 1.0;
 frame-opacity             = 1.0;
-inactive-opacity          = 0.8;
+inactive-opacity          = 0.75;
 inactive-opacity-override = true;
 blur-background           = true;
 blur-background-frame     = false;
@@ -37,8 +28,6 @@ blur-method = "dual_kawase";
 blur-strength = 8;
 focus-exclude             = [
     "class_g = 'dmenu'",
-	# "g:e:Galendae",
-	# "g:e:jgmenu"
     # "class_g = 'qutebrowser'",
     # "class_g = 'Brave-browser'",
     # "class_g = 'mpv'"
