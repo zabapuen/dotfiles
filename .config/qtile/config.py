@@ -230,7 +230,7 @@ group_names = ["1", "2", "3", "4", "5", "6", "7", ]
 #                 ]
 
 group_labels = ["  ", "  ", "  ", "  ", "  ", "  ", "  ", ]
-
+# "\xf268 ", "\xf120 ", "\xf395", "\xf3ca", "\xf1bc ", "\xf11b ", "\xfc44", "\xf4f9", "\xf26c "
 group_layouts = ["tile", "monadtall", "ratiotile",
                  "floating", "max", "monadtall", "max", ]
 

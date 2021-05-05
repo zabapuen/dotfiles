@@ -18,5 +18,13 @@
     "go.toolsManagement.autoUpdate": true,
     "workbench.iconTheme": "sweet-vscode-icons",
     "workbench.colorTheme": "Sweet vscode",
-    "glassit-linux.opacity": 90
+    "glassit-linux.opacity": 95,
+    "window.zoomLevel": 1,
+    "files.watcherExclude": {
+        "**/.caches/**": true,
+        "**/.config/rpcs3/**": true,
+        "**/.local/share/Daedalus/**": true,
+        "**/.local/share/lutris/**": true,
+        "**/.local/share/Steam/**": true
+    }
 }
