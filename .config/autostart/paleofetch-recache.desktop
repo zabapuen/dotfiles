@@ -1,0 +1,10 @@
+[Desktop Entry]
+Categories=System;Monitor;
+Comment=Recaches static paleofetch values
+Exec=paleofetch --recache
+Icon=system-upgrade
+Name=Paleofetch recache
+StartupNotify=false
+Terminal=false
+TryExec=paleofetch
+Type=Application

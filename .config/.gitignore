@@ -6,6 +6,8 @@
 !alacritty
 !fish
 !omf
+!mpv
+!Kvantum
 !nvim
 !rofi
 !vifm
@@ -22,6 +24,7 @@
 !dunst
 !picom
 !gtk-3.0
+!gtk-4.0
 !lxsession
 !spotifyd
 !volumeicon
@@ -32,5 +35,6 @@
 !Code
 !jgmenu
 !openrazer
+!autostart
 jgmenu/backup/
 qtile/__pycache__/

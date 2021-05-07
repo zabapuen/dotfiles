@@ -9,7 +9,9 @@
 !.screenshots
 !.bashrc
 !.zshrc
+!.kde4/
 !.gtkrc-2.0
+!.gtkrc-2.0.mine
 !.spectrwm.conf
 !.baraction.sh
 !.xsession
