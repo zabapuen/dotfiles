@@ -21,10 +21,7 @@
     "glassit-linux.opacity": 95,
     "window.zoomLevel": 1,
     "files.watcherExclude": {
-        "**/.caches/**": true,
-        "**/.config/rpcs3/**": true,
-        "**/.local/share/Daedalus/**": true,
-        "**/.local/share/lutris/**": true,
-        "**/.local/share/Steam/**": true
+        "**/alejandro.garuda/*/**": true,
+        "**/alejandro/*/**": true
     }
 }

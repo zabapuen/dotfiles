@@ -306,11 +306,11 @@ myLayoutHook = avoidStruts $ mouseResize $ windowArrange $ T.toggleLayouts float
 --    $ ["\xf269 ", "\xe235 ", "\xe795 ", "\xf121 ", "\xe615 ", "\xf74a ", "\xf7e8 ", "\xf03d ", "\xf827 "] -- sarosi
 -- myWorkspaces = ["\xf269 ", "\xe235 ", "\xe795 ", "\xf121 ", "\xe615 ", "\xf74a ", "\xf7e8 ", "\xf03d ", "\xf827 "] -- Nerd Font
 
-myWorkspaces = ["\xf268 ", "\xf120 ", "\xf395", "\xf3ca", "\xf1bc ", "\xf11b ", "\xfc44", "\xf4f9", "\xf26c "] -- NF & FA
+myWorkspaces = ["\xf268 ", "\xf120 ", "\xf395", "\xf3ca", "\xf1bc ", "\xf4f9", "\xf26c "] -- NF & FA
 -- myWorkspaces = ["\xf268 ", "\xf120 ", "\xf308 ", "\xf871 ", "\xf1bc ", "\xf11b ", "\xfc44 ", "\xf232 ", "\xf26c "] -- Nerd Font
 -- myWorkspaces = ["\xf268 ", "\xf120 ", "\xf395", "\xf3ca", "\xf1bc", "\xf412 ", "\xf838", "\xf4f9", "\xf26c "] -- Font Awesome
 -- myWorkspaces = [" \xf268 ", " \xf120 ", " \xf395 ", " \xf3ca ", " \xf1bc ", " \xf4f9 ", " \xf26c ", " \xf26c ", " \xf26c "]
-myWorkspaceIndices = M.fromList $ zip myWorkspaces [1..] -- (,) == \x y -> (x,y)
+myWorkspaceIndices = M.fromList $ zip myWorkspaces [1..7] -- (,) == \x y -> (x,y)
 
 clickable ws = "<action=xdotool key super+"++show i++">"++ws++"</action>"
     where i = fromJust $ M.lookup ws myWorkspaceIndices
