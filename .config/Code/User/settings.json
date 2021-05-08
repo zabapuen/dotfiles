@@ -1,12 +1,12 @@
 {
     "workbench.startupEditor": "newUntitledFile",
-    "editor.fontFamily": "'MesloLGSDZ Nerd Font', 'FontAwesome', 'Font Awesome 5 Free', 'v', 'Font Awesome 5 Brands', 'Droid Sans Mono', 'monospace', 'Droid Sans Fallback', 'mononki Nerd Font Mono'",
+    "editor.fontFamily": "'MesloLGSDZ Nerd Font', 'FontAwesome', 'Font Awesome 5 Free', 'Font Awesome 5 Brands', 'Droid Sans Mono', 'monospace', 'Droid Sans Fallback'",
     "editor.fontSize": 16,
     "python.showStartPage": false,
     "terminal.integrated.fontFamily": "'MesloLGSDZ Nerd Font Mono'",
     "terminal.external.linuxExec": "alacritty",
     "git.confirmSync": false,
-    "terminal.integrated.fontSize": 20,
+    "terminal.integrated.fontSize": 18,
     "docker.showStartPage": false,
     "workbench.editorAssociations": [
         {
@@ -19,7 +19,6 @@
     "workbench.iconTheme": "sweet-vscode-icons",
     "workbench.colorTheme": "Sweet vscode",
     "glassit-linux.opacity": 95,
-    "window.zoomLevel": 1,
     "files.watcherExclude": {
         "**/alejandro.garuda/*/**": true,
         "**/alejandro/*/**": true
@@ -36,5 +35,6 @@
         "polim",
         "polimórficos",
         "rficos"
-    ]
+    ],
+    "window.zoomLevel": 1
 }
