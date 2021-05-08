@@ -23,5 +23,18 @@
     "files.watcherExclude": {
         "**/alejandro.garuda/*/**": true,
         "**/alejandro/*/**": true
-    }
+    },
+    "cSpell.language": "es,en",
+    "cSpell.userWords": [
+        "Infijas",
+        "Tuplas",
+        "mapean",
+        "ndole",
+        "operandos",
+        "pas",
+        "pasándole",
+        "polim",
+        "polimórficos",
+        "rficos"
+    ]
 }
