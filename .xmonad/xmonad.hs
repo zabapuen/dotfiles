@@ -356,6 +356,7 @@ myKeys =
     -- M-p as part of the keychord for the other dmenu script bindings.
         , ("M-d", spawn "~/.config/qtile/scripts/dmenu.sh") -- Dmenu
         , ("M-<Space>", spawn "nwggrid -p -o 0.4") -- Nwggrid
+        , ("M-<Esc>", spawn "xkill") -- Nwggrid
 
     -- Other Dmenu Prompts
     -- In Xmonad and many tiling window managers, M-p is the default keybinding to
