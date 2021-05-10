@@ -71,7 +71,7 @@ myModMask :: KeyMask
 myModMask = mod4Mask        -- Sets modkey to super/windows key
 
 myTerminal :: String
-myTerminal = "alacritty"    -- Sets default terminal
+myTerminal = "alacritty "    -- Sets default terminal
 
 myBrowser :: String
 myBrowser = "google-chrome-stable "  -- Sets qutebrowser as browser
@@ -278,7 +278,7 @@ myTabTheme = def { fontName            = myFont
 -- Theme for showWName which prints current workspace when you change workspaces.
 myShowWNameTheme :: SWNConfig
 myShowWNameTheme = def
-    { swn_font              = "xft:MesloLGSDZ Nerd Font:bold:size=60"
+    { swn_font              = "xft:Font Awesome 5 Brands:size=60"
     , swn_fade              = 1.0
     , swn_bgcolor           = "#1c1f24"
     , swn_color             = "#ffffff"
@@ -306,7 +306,7 @@ myLayoutHook = avoidStruts $ mouseResize $ windowArrange $ T.toggleLayouts float
 --    $ ["\xf269 ", "\xe235 ", "\xe795 ", "\xf121 ", "\xe615 ", "\xf74a ", "\xf7e8 ", "\xf03d ", "\xf827 "] -- sarosi
 -- myWorkspaces = ["\xf269 ", "\xe235 ", "\xe795 ", "\xf121 ", "\xe615 ", "\xf74a ", "\xf7e8 ", "\xf03d ", "\xf827 "] -- Nerd Font
 
-myWorkspaces = ["\xf268 ", "\xf120 ", "\xf395", "\xf3ca", "\xf1bc ", "\xf4f9", "\xf26c "] -- NF & FA
+myWorkspaces = [" \xf268 ", " \xf120 ", " \xf395 ", " \xf3ca ", " \xf1bc ", "\xf4f9", " \xf26c "] -- NF & FA
 -- myWorkspaces = ["\xf268 ", "\xf120 ", "\xf308 ", "\xf871 ", "\xf1bc ", "\xf11b ", "\xfc44 ", "\xf232 ", "\xf26c "] -- Nerd Font
 -- myWorkspaces = ["\xf268 ", "\xf120 ", "\xf395", "\xf3ca", "\xf1bc", "\xf412 ", "\xf838", "\xf4f9", "\xf26c "] -- Font Awesome
 -- myWorkspaces = [" \xf268 ", " \xf120 ", " \xf395 ", " \xf3ca ", " \xf1bc ", " \xf4f9 ", " \xf26c ", " \xf26c ", " \xf26c "]
@@ -543,10 +543,10 @@ main = do
               { ppOutput = hPutStrLn xmproc0                          -- xmobar on monitor 1
                             --   >> hPutStrLn xmproc1 x                          -- xmobar on monitor 2
                             --   >> hPutStrLn xmproc2 x                          -- xmobar on monitor 3
-              , ppCurrent = xmobarColor "#98be65" "" . wrap "{" "} "           -- Current workspace
+              , ppCurrent = xmobarColor "#ffffff" "#98be65" . wrap "" ""           -- Current workspace
               , ppVisible = xmobarColor "#98be65" "" . clickable              -- Visible but not current workspace
-              , ppHidden = xmobarColor "#98be65" "" . wrap "" " " . clickable -- Hidden workspaces
-              , ppHiddenNoWindows = xmobarColor "#b3afc2" ""  . wrap "" " " . clickable     -- Hidden workspaces (no windows)
+              , ppHidden = xmobarColor "#98be65" "" . wrap "" "" . clickable -- Hidden workspaces
+              , ppHiddenNoWindows = xmobarColor "#b3afc2" ""  . wrap "" "" . clickable     -- Hidden workspaces (no windows)
               , ppTitle = xmobarColor "#b3afc2" "" . shorten 60               -- Title of active window
               , ppSep =  "<fc=#666666> <fn=1>|</fn> </fc>"                    -- Separator character
               , ppUrgent = xmobarColor "#C45500" "" . wrap "" " "            -- Urgent workspace

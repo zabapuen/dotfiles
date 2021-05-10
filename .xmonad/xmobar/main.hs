@@ -1,7 +1,7 @@
 -- http://projects.haskell.org/xmobar/
 
 Config { 
-    font    = "xft:MesloLGSDZ Nerd Font:weight=bold:pixelsize=20:antialias=true:hinting=true, Font Awesome 5 Brands:pixelsize=20",
+    font    = "xft:Font Awesome 5 Brands:weight=regular:pixelsize=20:antialias=true:hinting=true, FontAwesome:weight=bold:pixelsize=20",
     additionalFonts = [ "xft:Mononoki Nerd Font:pixelsize=20:antialias=true:hinting=true",
                         "xft:FontAwesome:pixelsize=13"],
     bgColor = "#000000",
@@ -17,13 +17,14 @@ Config {
         -- Run Com "volume" [] "volume" 10,
         -- Run Com "battery" [] "battery" 600,
         -- Run Com "brightness" [] "brightness" 10,
-        Run Cpu ["-t", "<fn=1>\xf108 </fn>cpu:(<total>%)","-H","50","--high","red"] 20,
+        Run Cpu ["-t", "<fn=0>\xf2db </fn>cpu:(<total>%)","-H","50","--high","red"] 20,
         -- Run Com "bash" ["-c", "checkupdates | wc -l"] "updates" 3000,
         Run Com "~/.xmonad/xmobar/trayer-padding-icon.sh" [] "trayerpad" 600,
         Run UnsafeStdinReader
     ],
     alignSep = "}{",
-    template = "<action=`~/.config/qtile/scripts/xmenu.sh`>   </action>%UnsafeStdinReader% }{ \
+    template = "<action=`~/.config/qtile/scripts/xmenu.sh`>   </action> \
+        \ <fn=0>%UnsafeStdinReader%</fn> }{ \
         \ %cpu%\
         -- \ %updates% \
         -- \ %brightness%\
