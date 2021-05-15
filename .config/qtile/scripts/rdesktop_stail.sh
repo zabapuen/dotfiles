@@ -4,9 +4,9 @@ rdesktop \
     -g 100% \
     -P \
     -r sound:local \
-    -d REDOCU \
-    -u alejandro.zabaleta \
-    -p P@ssw0rd2 \
+    -d WAZP1 \
+    -u stailpc \
+    -p W10Adm2015 \
     -z \
     -x b \
     -M \
