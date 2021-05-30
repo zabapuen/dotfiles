@@ -36,5 +36,8 @@
         "polimórficos",
         "rficos"
     ],
-    "window.zoomLevel": 1
+    "window.zoomLevel": 1,
+    "search.useRipgrep": false,
+    "search.followSymlinks": false,
+    "workbench.editor.showTabs": false
 }

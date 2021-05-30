@@ -307,16 +307,28 @@ layouts = [
 # #             ["#151515", "#151515"],  # color 8
 # #             ["#9400de", "#9400de"]]  # color 9
 
-# ##### Import Pywal Palette / Importar la paleta generada por pywal #####
-with open(home + '/.cache/wal/colors.json') as json_file:
-    data = json.load(json_file)
-    colorsarray = data['colors']
-    val_list = list(colorsarray.values())
-    def getList(val_list):
-        return [*val_list]
-
 def init_colors():
-    return [*val_list]
+    return [["#0d0d0d", "#2F343F"],  # color 0
+            ["#0d0d0d", "#2F343F"],  # color 1
+            ["#c0c5ce", "#c0c5ce"],  # color 2
+            ["#FFC620", "#FFD750"],  # color 3
+            ["#1BA6FA", "#1BA6FA"],  # color 4
+            ["#A0E521", "#B8E466"],  # color 5
+            ["#FF301B", "#FF4352"],  # color 6
+            ["#EBEBEB", "#FEFEF8"],  # color 7
+            ["#0a1124", "#0a1124"],  # color 8
+            ["#8763B8", "#A578EA"]]  # color 9
+
+# ##### Import Pywal Palette / Importar la paleta generada por pywal #####
+# # with open(home + '/.cache/wal/colors.json') as json_file:
+# #     data = json.load(json_file)
+# #     colorsarray = data['colors']
+# #     val_list = list(colorsarray.values())
+# #     def getList(val_list):
+# #         return [*val_list]
+
+# # def init_colors():
+# #     return [*val_list]
 
 colors = init_colors()
 
