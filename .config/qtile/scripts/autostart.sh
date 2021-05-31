@@ -31,6 +31,8 @@ run dunst &
 run picom &
 run cbatticon &
 paleofetch --recache &
+udisksctl mount -b /dev/sdb1 &
+#udisksctl mount -b /dev/sda2 &
 # picom -b --config ~/.config/picom/picom.conf &
 # ~/.conky/conky-startup.sh &
 #starting user applications at boot time

@@ -27,7 +27,7 @@ import qualified Data.Map as M
 import XMonad.Hooks.DynamicLog (dynamicLogWithPP, wrap, xmobarPP, xmobarColor, shorten, PP(..))
 import XMonad.Hooks.EwmhDesktops  -- for some fullscreen events, also for xcomposite in obs.
 import XMonad.Hooks.ManageDocks (avoidStruts, docksEventHook, manageDocks, ToggleStruts(..))
-import XMonad.Hooks.ManageHelpers (isFullscreen, doFullFloat)
+import XMonad.Hooks.ManageHelpers (isFullscreen, doFullFloat, doCenterFloat)
 import XMonad.Hooks.ServerMode
 import XMonad.Hooks.SetWMName
 import XMonad.Hooks.WorkspaceHistory
@@ -323,25 +323,25 @@ myManageHook = composeAll
      -- using 'doShift ( myWorkspaces !! 7)' sends program to workspace 8!
      -- I'm doing it this way because otherwise I would have to write out the full
      -- name of my workspaces and the names would be very long if using clickable workspaces.
-     [ className =? "confirm"         --> doFloat
-     , className =? "file_progress"   --> doFloat
-     , className =? "dialog"          --> doFloat
-     , className =? "download"        --> doFloat
-     , className =? "error"           --> doFloat
-     , className =? "Gimp"            --> doFloat
-     , className =? "notification"    --> doFloat
-     , className =? "CopyQ"           --> doFloat
-     , className =? "copyq"           --> doFloat
-     , className =? "pinentry-gtk-2"  --> doFloat
-     , className =? "splash"          --> doFloat
-     , className =? "Pamac-manager"   --> doFloat
-     , className =? "feh"             --> doFloat
-     , className =? "toolbar"         --> doFloat
-     , title =? "Oracle VM VirtualBox Manager"  --> doFloat
+     [ className =? "confirm"         --> doCenterFloat
+     , className =? "file_progress"   --> doCenterFloat
+     , className =? "dialog"          --> doCenterFloat
+     , className =? "download"        --> doCenterFloat
+     , className =? "error"           --> doCenterFloat
+     , className =? "Gimp"            --> doCenterFloat
+     , className =? "notification"    --> doCenterFloat
+     , className =? "CopyQ"           --> doCenterFloat
+     , className =? "copyq"           --> doCenterFloat
+     , className =? "pinentry-gtk-2"  --> doCenterFloat
+     , className =? "splash"          --> doCenterFloat
+     , className =? "Pamac-manager"   --> doCenterFloat
+     , className =? "feh"             --> doCenterFloat
+     , className =? "toolbar"         --> doCenterFloat
+     , title =? "Oracle VM VirtualBox Manager"  --> doCenterFloat
     --  , className =? "Alacritty"       --> doShift ( myWorkspaces !! 1 )
      , className =? "rdesktop"        --> doShift ( myWorkspaces !! 6 )
      , className =? "VirtualBox Manager" --> doShift  ( myWorkspaces !! 2 )
-     , (className =? "google-chrome-stable" <&&> resource =? "Dialog") --> doFloat  -- Float Firefox Dialog
+     , (className =? "google-chrome-stable" <&&> resource =? "Dialog") --> doCenterFloat  -- Float Firefox Dialog
      ] <+> namedScratchpadManageHook myScratchPads
 
 myKeys :: [(String, X ())]

@@ -39,5 +39,5 @@
     "window.zoomLevel": 1,
     "search.useRipgrep": false,
     "search.followSymlinks": false,
-    "workbench.editor.showTabs": false
+    "workbench.editor.scrollToSwitchTabs": true
 }

@@ -15,16 +15,16 @@ Config {
     allDesktops     = True,
     persistent      = True,
     commands        = [ 
-                        Run Date " %d %b %-I:%M  " "date" 600,
-                        Run Com "~/.xmonad/xmobar/trayer-padding-icon.sh" [] "trayerpad" 20,
+                        Run CoreTemp ["-t", "<fn=1>\xe20a </fn><core0>ºC"] 20,
                         Run Cpu ["-t", "<fn=0>\xf2db </fn><total>%","-H","50","--high","red"] 20,
                         Run Memory ["-t","Mem:<usedratio>%"] 20,
-                        Run CoreTemp ["-t", "<fn=1>\xe20a </fn><core0>ºC"] 20,
+                        Run DiskU [("/", "<fn=0>\xf0c7 </fn>hdd:<used>/<size>")] [] 60,
+                        Run Date " %d %b %-I:%M" "date" 600,
+                        Run Com "/bin/sh" [ "-c", "~/.xmonad/xmobar/trayer-padding-icon.sh" ] "trayerpad" 20,
                         -- Run Com "bash" ["-c", "checkupdates | wc -l"] "updates" 3000,
                         -- Run Com "brightness" [] "brightness" 10,
                         -- Run Com "battery" [] "battery" 600,
                         -- Run Com "volume" [] "volume" 10,
-                        Run DiskU [("/", "<fn=0>\xf0c7 </fn>hdd:<used>/<size>")] [] 60,
                         Run UnsafeStdinReader
     ],
     alignSep        = "}{",
@@ -40,6 +40,6 @@ Config {
                     -- \ %brightness%\
                     -- \ %battery%\
                     -- \ %volume% \
-                    \<action=`~/.config/qtile/scripts/calendar.sh`>%date%</action> \
+                    \<action=`~/.config/qtile/scripts/calendar.sh`>%date%</action>\
                     \%trayerpad%</fn>"
 }
