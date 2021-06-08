@@ -2,8 +2,8 @@
 
 Config { 
     font            = "xft:Fira Sans:weight=bold:pixelsize=20:antialias=true:hinting=true,
-                            Font Awesome 5 Brands:weight=regular:pixelsize=20:antialias=true:hinting=true,
-                            FontAwesome:weight=regular:pixelsize=20:antialias=true:hinting=true",
+                           Font Awesome 5 Brands:weight=regular:pixelsize=20:antialias=true:hinting=true,
+                           FontAwesome:weight=regular:pixelsize=20:antialias=true:hinting=true",
     additionalFonts = [ "xft:MesloLGSDZ Nerd Font:weight=regular:pixelsize=20:antialias=true:hinting=true",
                         "xft:FontAwesome:pixelsize=13"],
     bgColor         = "#0d0d0d",

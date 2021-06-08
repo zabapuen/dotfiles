@@ -115,7 +115,7 @@ myStartupHook = do
     -- spawnOnce "feh --randomize --bg-fill ~/wallpapers/*"  -- feh set random wallpaper
     -- spawnOnce "nitrogen --restore &"   -- if you prefer nitrogen to feh
     spawnOnce "~/.config/qtile/scripts/autostart.sh &"  -- autostart programs
-    spawnOnce "trayer --edge top --align right --widthtype request --padding 6 --SetDockType true --SetPartialStrut true --expand true --monitor 0 --transparent true --alpha 82 --tint 0x0D0D0D --height 30 &"
+    spawnOnce "trayer --edge top --align right --widthtype request --padding 6 --iconspacing 3 --SetDockType true --SetPartialStrut true --expand true --monitor 0 --transparent true --alpha 82 --tint 0x0D0D0D --height 30 &"
     setWMName "LG3D"
 
 myColorizer :: Window -> Bool -> X (String, String)
@@ -336,11 +336,12 @@ myManageHook = composeAll
      , className =? "splash"          --> doCenterFloat
      , className =? "Pamac-manager"   --> doCenterFloat
      , className =? "feh"             --> doCenterFloat
+     , className =? "Mailspring"      --> doCenterFloat
      , className =? "toolbar"         --> doCenterFloat
      , title =? "Oracle VM VirtualBox Manager"  --> doCenterFloat
     --  , className =? "Alacritty"       --> doShift ( myWorkspaces !! 1 )
      , className =? "rdesktop"        --> doShift ( myWorkspaces !! 6 )
-     , className =? "VirtualBox Manager" --> doShift  ( myWorkspaces !! 2 )
+     , className =? "Microsoft Teams - Preview" --> doShift  ( myWorkspaces !! 5 )
      , (className =? "google-chrome-stable" <&&> resource =? "Dialog") --> doCenterFloat  -- Float Firefox Dialog
      ] <+> namedScratchpadManageHook myScratchPads
 
@@ -357,9 +358,14 @@ myKeys =
     -- Run Prompt
     -- M-p was the default keybinding.  I've changed it to M-S-RET because I will use
     -- M-p as part of the keychord for the other dmenu script bindings.
-        , ("M-d", spawn "~/.config/qtile/scripts/dmenu.sh") -- Dmenu
-        , ("M-<Space>", spawn "nwggrid -p -o 0.4") -- Nwggrid
-        , ("M-<Esc>", spawn "xkill") -- Nwggrid
+        , ("M-d", spawn "~/.config/qtile/scripts/dmenu.sh") -- Dmenu ~/.config/qtile/scripts/xmenu.sh
+        -- , ("M-0", spawn "~/.config/qtile/scripts/xmenu.sh") -- Jgmenu 
+        , ("M-<Space>", spawn "nwggrid -p -o 0.4")          -- Nwggrid
+        , ("M-<Esc>", spawn "xkill")                        -- Xkill
+        , ("M", spawn "~/.config/qtile/scripts/dmenu.sh") -- Dmenu ~/.config/qtile/scripts/xmenu.sh
+        , ("M1-M", spawn "~/.config/qtile/scripts/dmenu.sh")
+
+        
 
     -- Useful programs to have a keybinding for launch
         , ("M-<Return>", spawn myTerminal)
@@ -457,10 +463,10 @@ myKeys =
         --, ("M-<F2>", spawn "feh --randomize --bg-fill ~/wallpapers/*")
 
     -- Controls for mocp music player (SUPER-u followed by a key)
-        -- , ("M-u p", spawn "mocp --play")
-        -- , ("M-u l", spawn "mocp --next")
-        -- , ("M-u h", spawn "mocp --previous")
-        -- , ("M-u <Space>", spawn "mocp --toggle-pause")
+        -- , ("M-u p", spawn "playerctl play")
+        -- , ("M-u l", spawn "playerctl next")
+        -- , ("M-u h", spawn "playerctl previous")
+        -- , ("M-u <Space>", spawn "playerctl toggle-pause")
 
     -- Emacs (CTRL-e followed by a key)
         -- , ("C-e e", spawn myEmacs)                 -- start emacs
@@ -480,9 +486,9 @@ myKeys =
         , ("C-e a", spawn (myEmacs ++ "--eval '(emms)' --eval '(emms-play-directory-tree \"~/Music/Non-Classical/70s-80s/\")'"))
 
     -- Multimedia Keys
-        , ("<XF86AudioPlay>", spawn (myTerminal ++ "mocp --play"))
-        , ("<XF86AudioPrev>", spawn (myTerminal ++ "mocp --previous"))
-        , ("<XF86AudioNext>", spawn (myTerminal ++ "mocp --next"))
+        , ("<XF86AudioPlay>", spawn (myTerminal ++ "playerctl play"))
+        , ("<XF86AudioPrev>", spawn (myTerminal ++ "playerctl previous"))
+        , ("<XF86AudioNext>", spawn (myTerminal ++ "playerctl next"))
         , ("<XF86AudioMute>",   spawn "amixer set Master toggle")
         -- , ("<XF86AudioLowerVolume>", spawn "amixer set Master 5%- unmute")
         -- , ("<XF86AudioRaiseVolume>", spawn "amixer set Master 5%+ unmute")
@@ -526,6 +532,7 @@ main = do
         , normalBorderColor  = myNormColor
         , focusedBorderColor = myFocusColor
         , focusFollowsMouse  = False
+        , clickJustFocuses   = False                    -- Previene el doble clic cuando usamos focusFollowsMouse  = False
         , logHook = dynamicLogWithPP $ namedScratchpadFilterOutWorkspacePP $ xmobarPP
               -- the following variables beginning with 'pp' are settings for xmobar.
               { ppOutput = hPutStrLn xmproc0                                        -- xmobar on monitor 1
