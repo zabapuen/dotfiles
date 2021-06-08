@@ -100,6 +100,20 @@ alias ohmyzsh="vi ~/.oh-my-zsh"
 alias vi=vim
 alias vagrant='TERM=xterm-256color vagrant'
 alias ssh='TERM=xterm-256color ssh'
+# ls
+alias l='ls -lh'
+alias ll='ls -lah'
+alias la='ls -A'
+alias lm='ls -m'
+alias lr='ls -R'
+alias lg='ls -l --group-directories-first'
+
+# git
+alias gcl='git clone --depth 1'
+alias gi='git init'
+alias ga='git add'
+alias gc='git commit -m'
+alias gp='git push origin master'
 #if [[ -n $SSH_CONNECTION ]]; then
 #  journalctl -xef
 #else
