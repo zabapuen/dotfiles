@@ -39,5 +39,6 @@
     "search.useRipgrep": false,
     "search.followSymlinks": false,
     "workbench.editor.scrollToSwitchTabs": true,
-    "window.zoomLevel": 1
+    "window.zoomLevel": 1,
+    "diffEditor.ignoreTrimWhitespace": false
 }

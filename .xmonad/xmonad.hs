@@ -164,7 +164,7 @@ myAppGrid = [ ("Audacity", "audacity")
 
 myScratchPads :: [NamedScratchpad]
 myScratchPads = [ NS "terminal" spawnTerm findTerm manageTerm
-                , NS "mocp" spawnMocp findMocp manageMocp
+                , NS "spoty" spawnSpoty findSpoty manageSpoty
                 , NS "calculator" spawnCalc findCalc manageCalc
                 ]
   where
@@ -176,9 +176,9 @@ myScratchPads = [ NS "terminal" spawnTerm findTerm manageTerm
                  w = 0.9
                  t = 0.95 -h
                  l = 0.95 -w
-    spawnMocp  = myTerminal ++ " -t mocp -e mocp"
-    findMocp   = title =? "mocp"
-    manageMocp = customFloating $ W.RationalRect l t w h
+    spawnSpoty  = myTerminal ++ "-t spoty -e ~/.local/bin/spoty"
+    findSpoty   = title =? "spoty"
+    manageSpoty = customFloating $ W.RationalRect l t w h
                where
                  h = 0.9
                  w = 0.9
@@ -337,6 +337,7 @@ myManageHook = composeAll
      , className =? "Pamac-manager"   --> doCenterFloat
      , className =? "feh"             --> doCenterFloat
      , className =? "Mailspring"      --> doCenterFloat
+     , className =? "sysmontask"      --> doCenterFloat
      , className =? "toolbar"         --> doCenterFloat
      , title =? "Oracle VM VirtualBox Manager"  --> doCenterFloat
     --  , className =? "Alacritty"       --> doShift ( myWorkspaces !! 1 )
@@ -365,8 +366,6 @@ myKeys =
         , ("M", spawn "~/.config/qtile/scripts/dmenu.sh") -- Dmenu ~/.config/qtile/scripts/xmenu.sh
         , ("M1-M", spawn "~/.config/qtile/scripts/dmenu.sh")
 
-        
-
     -- Useful programs to have a keybinding for launch
         , ("M-<Return>", spawn myTerminal)
         , ("M1-f", spawn myBrowser)
@@ -380,12 +379,8 @@ myKeys =
         , ("C-M1-o", spawn "~/.config/qtile/scripts/picom-toggle.sh")
 
     -- Workspaces
-        , ("M-.", nextScreen)  -- Switch focus to next monitor
-        , ("M-,", prevScreen)  -- Switch focus to prev monitor
         , ("M1-<Left>", prevWS)  -- Switch focus to prev monitor
         , ("M1-<Right>", nextWS)  -- Switch focus to prev monitor
-        , ("M-S-<Down>", windows W.swapDown)   -- Swap focused window with next window
-        , ("M-S-<Up>", windows W.swapUp)     -- Swap focused window with prev window
         , ("M-S-<KP_Add>", shiftTo Next nonNSP >> moveTo Next nonNSP)       -- Shifts focused window to next ws
         , ("M-S-<KP_Subtract>", shiftTo Prev nonNSP >> moveTo Prev nonNSP)  -- Shifts focused window to prev ws
 
@@ -401,12 +396,14 @@ myKeys =
         , ("M-S-i", incScreenSpacing 4)         -- Increase screen spacing
 
     -- Windows navigation
+        , ("M-S-<Down>", windows W.swapDown)   -- Swap focused window with next window
+        , ("M-S-<Up>", windows W.swapUp)     -- Swap focused window with prev window
+        , ("M-S-j", windows W.swapDown)   -- Swap focused window with next window
+        , ("M-S-k", windows W.swapUp)     -- Swap focused window with prev window
         , ("M-m", windows W.focusMaster)  -- Move focus to the master window
         , ("M-j", windows W.focusDown)    -- Move focus to the next window
         , ("M-k", windows W.focusUp)      -- Move focus to the prev window
         , ("M-S-m", windows W.swapMaster) -- Swap the focused window and the master window
-        -- , ("M-S-j", windows W.swapDown)   -- Swap focused window with next window
-        -- , ("M-S-k", windows W.swapUp)     -- Swap focused window with prev window
         , ("M-<Backspace>", promote)      -- Moves focused window to master, others maintain order
         , ("M-S-<Tab>", rotSlavesDown)    -- Rotate all windows except master and keep focus in place
         , ("M-C-<Tab>", rotAllDown)       -- Rotate all the windows in the current stack
@@ -415,7 +412,6 @@ myKeys =
         , ("M-<Tab>", sendMessage NextLayout)           -- Switch to next layout
         , ("M-C-M1-<Up>", sendMessage Arrange)
         , ("M-C-M1-<Down>", sendMessage DeArrange)
-        -- , ("M-S-<Space>", sendMessage ToggleStruts)     -- Toggles struts
         , ("M-S-<Space>", sinkAll)                       -- Push ALL floating windows to tile
         , ("M-S-n", sendMessage $ MT.Toggle NOBORDERS)  -- Toggles noborder
         , ("M-f", sendMessage (MT.Toggle NBFULL) >> sendMessage ToggleStruts) -- Toggles noborder/full
@@ -431,30 +427,30 @@ myKeys =
         , ("M-l", sendMessage Expand)                   -- Expand horiz window width
         , ("M-C-<Left>", sendMessage Shrink)                   -- Shrink horiz window width
         , ("M-C-<Right>", sendMessage Expand)                   -- Expand horiz window width
-        , ("M-M1-j", sendMessage MirrorShrink)          -- Shrink vert window width
-        , ("M-M1-k", sendMessage MirrorExpand)          -- Expand vert window width
+        , ("M-C-j", sendMessage MirrorShrink)          -- Shrink vert window width
+        , ("M-C-k", sendMessage MirrorExpand)          -- Expand vert window width
         , ("M-C-<Up>", sendMessage MirrorShrink)          -- Shrink vert window width
         , ("M-C-<Down>", sendMessage MirrorExpand)          -- Expand vert window width
 
     -- Sublayouts
     -- This is used to push windows to tabbed sublayouts, or pull them out of it.
-        , ("M-C-h", sendMessage $ pullGroup L)
-        , ("M-C-l", sendMessage $ pullGroup R)
-        , ("M-C-k", sendMessage $ pullGroup U)
-        , ("M-C-j", sendMessage $ pullGroup D)
-        , ("M-C-m", withFocused (sendMessage . MergeAll))
+        -- , ("M-C-h", sendMessage $ pullGroup L)
+        -- , ("M-C-l", sendMessage $ pullGroup R)
+        -- , ("M-C-k", sendMessage $ pullGroup U)
+        -- , ("M-C-j", sendMessage $ pullGroup D)
+        -- , ("M-C-m", withFocused (sendMessage . MergeAll))
         -- , ("M-C-u", withFocused (sendMessage . UnMerge))
-        , ("M-C-/", withFocused (sendMessage . UnMergeAll))
-        , ("M-C-.", onGroup W.focusUp')    -- Switch focus to next tab
-        , ("M-C-,", onGroup W.focusDown')  -- Switch focus to prev tab
+        -- , ("M-C-/", withFocused (sendMessage . UnMergeAll))
+        -- , ("M-C-.", onGroup W.focusUp')    -- Switch focus to next tab
+        -- , ("M-C-,", onGroup W.focusDown')  -- Switch focus to prev tab
 
     -- Scratchpads
     -- Toggle show/hide these programs.  They run on a hidden workspace.
     -- When you toggle them to show, it brings them to your current workspace.
     -- Toggle them to hide and it sends them back to hidden workspace (NSP).
-        -- , ("C-s t", namedScratchpadAction myScratchPads "terminal")
-        -- , ("C-s m", namedScratchpadAction myScratchPads "mocp")
-        -- , ("C-s c", namedScratchpadAction myScratchPads "calculator")
+        , ("C-m t", namedScratchpadAction myScratchPads "terminal")
+        , ("C-m s", namedScratchpadAction myScratchPads "spoty")
+        , ("C-m c", namedScratchpadAction myScratchPads "calculator")
 
     -- Set wallpaper with 'feh'. Type 'SUPER+F1' to launch sxiv in the wallpapers directory.
     -- Then in sxiv, type 'C-x w' to set the wallpaper that you choose.
@@ -486,9 +482,9 @@ myKeys =
         , ("C-e a", spawn (myEmacs ++ "--eval '(emms)' --eval '(emms-play-directory-tree \"~/Music/Non-Classical/70s-80s/\")'"))
 
     -- Multimedia Keys
-        , ("<XF86AudioPlay>", spawn (myTerminal ++ "playerctl play"))
-        , ("<XF86AudioPrev>", spawn (myTerminal ++ "playerctl previous"))
-        , ("<XF86AudioNext>", spawn (myTerminal ++ "playerctl next"))
+        , ("<XF86AudioPlay>", spawn "playerctl play")
+        , ("<XF86AudioPrev>", spawn "playerctl previous")
+        , ("<XF86AudioNext>", spawn "playerctl next")
         , ("<XF86AudioMute>",   spawn "amixer set Master toggle")
         -- , ("<XF86AudioLowerVolume>", spawn "amixer set Master 5%- unmute")
         -- , ("<XF86AudioRaiseVolume>", spawn "amixer set Master 5%+ unmute")

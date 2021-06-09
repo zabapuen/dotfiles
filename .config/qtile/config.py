@@ -44,6 +44,8 @@ keys = [
     Key([mod], "v", lazy.spawn('pavucontrol')),
     Key([mod], "d", lazy.spawn(
         home + '/.config/qtile/scripts/dmenu.sh')),
+    # Key([], "mod1", lazy.spawn("xbacklight -dec 5")),
+    # Key([], "Escape", lazy.spawn('rofi -show drun -show-icons')),
     Key([mod], "Escape", lazy.spawn('xkill')),
     Key([mod], "Return", lazy.spawn('alacritty')),
     Key([mod], "KP_Enter", lazy.spawn('alacritty')),
