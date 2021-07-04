@@ -8,12 +8,9 @@
     "git.confirmSync": false,
     "terminal.integrated.fontSize": 18,
     "docker.showStartPage": false,
-    "workbench.editorAssociations": [
-        {
-            "viewType": "jupyter.notebook.ipynb",
-            "filenamePattern": "*.ipynb"
-        }
-    ],
+    "workbench.editorAssociations": {
+        "*.ipynb": "jupyter.notebook.ipynb"
+    },
     "git.enableSmartCommit": true,
     "go.toolsManagement.autoUpdate": true,
     "workbench.iconTheme": "sweet-vscode-icons",
@@ -40,5 +37,6 @@
     "search.followSymlinks": false,
     "workbench.editor.scrollToSwitchTabs": true,
     "window.zoomLevel": 1,
-    "diffEditor.ignoreTrimWhitespace": false
+    "diffEditor.ignoreTrimWhitespace": false,
+    "rufo.exe": "/home/alejandro.garuda/.gem/ruby/3.0.0/bin/rufo"
 }

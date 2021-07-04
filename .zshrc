@@ -120,4 +120,6 @@ alias gp='git push origin master'
 #  export EDITOR='vim'
 #fi
 export PATH=$HOME/.local/bin:$PATH
-paleofetch | lolcat
+#paleofetch | lolcat
+echo ""
+pfetch

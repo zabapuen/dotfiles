@@ -27,7 +27,7 @@ import qualified Data.Map as M
 import XMonad.Hooks.DynamicLog (dynamicLogWithPP, wrap, xmobarPP, xmobarColor, shorten, PP(..))
 import XMonad.Hooks.EwmhDesktops  -- for some fullscreen events, also for xcomposite in obs.
 import XMonad.Hooks.ManageDocks (avoidStruts, docksEventHook, manageDocks, ToggleStruts(..))
-import XMonad.Hooks.ManageHelpers (isFullscreen, doFullFloat, doCenterFloat)
+import XMonad.Hooks.ManageHelpers (isFullscreen, doFullFloat, doCenterFloat, isDialog)
 import XMonad.Hooks.ServerMode
 import XMonad.Hooks.SetWMName
 import XMonad.Hooks.WorkspaceHistory
@@ -57,6 +57,9 @@ import XMonad.Layout.PerWorkspace
 import XMonad.Layout.WindowArranger (windowArrange, WindowArrangerMsg(..))
 import qualified XMonad.Layout.ToggleLayouts as T (toggleLayouts, ToggleLayout(Toggle))
 import qualified XMonad.Layout.MultiToggle as MT (Toggle(..))
+
+import XMonad.Operations
+import qualified XMonad.StackSet as W
 
    -- Utilities
 import XMonad.Util.Dmenu
@@ -115,7 +118,7 @@ myStartupHook = do
     -- spawnOnce "feh --randomize --bg-fill ~/wallpapers/*"  -- feh set random wallpaper
     -- spawnOnce "nitrogen --restore &"   -- if you prefer nitrogen to feh
     spawnOnce "~/.config/qtile/scripts/autostart.sh &"  -- autostart programs
-    spawnOnce "trayer --edge top --align right --widthtype request --padding 6 --iconspacing 3 --SetDockType true --SetPartialStrut true --expand true --monitor 0 --transparent true --alpha 82 --tint 0x0D0D0D --height 30 &"
+    spawnOnce "trayer --edge top --align right --distancefrom right --distance 180 --widthtype request --padding 3 --iconspacing 3 --SetDockType true --SetPartialStrut true --expand true --monitor 0 --transparent true --alpha 82 --tint 0x0D0D0D --height 30 &"
     setWMName "LG3D"
 
 myColorizer :: Window -> Bool -> X (String, String)
@@ -285,9 +288,9 @@ myTabTheme = def { fontName            = myFont
 --     , swn_color             = "#ffffff"
 --     }
 
--- The layout hook
+-- The layout hook  -- $ modWorkspaceSource "  \xf268  " ResizableTall 1 (3/100) (17/25) [] tall
 myLayoutHook = avoidStruts $ windowArrange $ T.toggleLayouts floats $ onWorkspace "  \xf3ca  " floats 
-               $ onWorkspace "  \xf395  " grid $ onWorkspace "  \xf26c  " monocle 
+               $ onWorkspace "  \xf395  " grid $ onWorkspace "  \xf26c  " monocle
                $ mkToggle (NBFULL ?? NOBORDERS ?? EOT) myDefaultLayout
              where
                myDefaultLayout =     noBorders tall
@@ -323,7 +326,8 @@ myManageHook = composeAll
      -- using 'doShift ( myWorkspaces !! 7)' sends program to workspace 8!
      -- I'm doing it this way because otherwise I would have to write out the full
      -- name of my workspaces and the names would be very long if using clickable workspaces.
-     [ className =? "confirm"         --> doCenterFloat
+     [ isDialog                       --> doCenterFloat
+     , className =? "confirm"         --> doCenterFloat
      , className =? "file_progress"   --> doCenterFloat
      , className =? "dialog"          --> doCenterFloat
      , className =? "download"        --> doCenterFloat
@@ -337,14 +341,22 @@ myManageHook = composeAll
      , className =? "Pamac-manager"   --> doCenterFloat
      , className =? "feh"             --> doCenterFloat
      , className =? "Mailspring"      --> doCenterFloat
-     , className =? "sysmontask"      --> doCenterFloat
+     , className =? "Sysmontask"      --> doCenterFloat
      , className =? "toolbar"         --> doCenterFloat
+     , className =? "Wine"            --> doCenterFloat
      , title =? "Oracle VM VirtualBox Manager"  --> doCenterFloat
-    --  , className =? "Alacritty"       --> doShift ( myWorkspaces !! 1 )
+     , className =? "UXXI"            --> doShift ( myWorkspaces !! 5 )
+     , className =? "DEV"             --> doShift ( myWorkspaces !! 1 )
      , className =? "rdesktop"        --> doShift ( myWorkspaces !! 6 )
      , className =? "Microsoft Teams - Preview" --> doShift  ( myWorkspaces !! 5 )
      , (className =? "google-chrome-stable" <&&> resource =? "Dialog") --> doCenterFloat  -- Float Firefox Dialog
      ] <+> namedScratchpadManageHook myScratchPads
+
+centerWindow :: Window -> X ()
+centerWindow win = do
+    (_, W.RationalRect x y w h) <- floatLocation win
+    windows $ W.float win (W.RationalRect ((1 - w) / 2) ((1 - h) / 2) w h)
+    return ()
 
 myKeys :: [(String, X ())]
 myKeys =
@@ -359,12 +371,15 @@ myKeys =
     -- Run Prompt
     -- M-p was the default keybinding.  I've changed it to M-S-RET because I will use
     -- M-p as part of the keychord for the other dmenu script bindings.
-        , ("M-d", spawn "~/.config/qtile/scripts/dmenu.sh") -- Dmenu ~/.config/qtile/scripts/xmenu.sh
+        , ("M-d", spawn "~/.config/qtile/scripts/dmenu.sh") -- Dmenu ~/.config/qtile/scripts/xmenu.sh rofi -show run
+        , ("M-S-d", spawn "rofi -show run") -- Dmenu ~/.config/qtile/scripts/xmenu.sh
         -- , ("M-0", spawn "~/.config/qtile/scripts/xmenu.sh") -- Jgmenu 
         , ("M-<Space>", spawn "nwggrid -p -o 0.4")          -- Nwggrid
         , ("M-<Esc>", spawn "xkill")                        -- Xkill
         , ("M", spawn "~/.config/qtile/scripts/dmenu.sh") -- Dmenu ~/.config/qtile/scripts/xmenu.sh
         , ("M1-M", spawn "~/.config/qtile/scripts/dmenu.sh")
+        , ("M-c", withFocused centerWindow)
+        
 
     -- Useful programs to have a keybinding for launch
         , ("M-<Return>", spawn myTerminal)
@@ -392,8 +407,8 @@ myKeys =
     -- Increase/decrease spacing (gaps)
         , ("M--", decWindowSpacing 4)           -- Decrease window spacing
         , ("M-+", incWindowSpacing 4)           -- Increase window spacing
-        , ("M-S-d", decScreenSpacing 4)         -- Decrease screen spacing
-        , ("M-S-i", incScreenSpacing 4)         -- Increase screen spacing
+        -- , ("M-S-d", decScreenSpacing 4)         -- Decrease screen spacing
+        -- , ("M-S-i", incScreenSpacing 4)         -- Increase screen spacing
 
     -- Windows navigation
         , ("M-S-<Down>", windows W.swapDown)   -- Swap focused window with next window
@@ -401,6 +416,8 @@ myKeys =
         , ("M-S-j", windows W.swapDown)   -- Swap focused window with next window
         , ("M-S-k", windows W.swapUp)     -- Swap focused window with prev window
         , ("M-m", windows W.focusMaster)  -- Move focus to the master window
+        , ("M-<Down>", windows W.focusDown)    -- Move focus to the next window
+        , ("M-<Up>", windows W.focusUp)      -- Move focus to the prev window
         , ("M-j", windows W.focusDown)    -- Move focus to the next window
         , ("M-k", windows W.focusUp)      -- Move focus to the prev window
         , ("M-S-m", windows W.swapMaster) -- Swap the focused window and the master window
@@ -482,7 +499,7 @@ myKeys =
         , ("C-e a", spawn (myEmacs ++ "--eval '(emms)' --eval '(emms-play-directory-tree \"~/Music/Non-Classical/70s-80s/\")'"))
 
     -- Multimedia Keys
-        , ("<XF86AudioPlay>", spawn "playerctl play")
+        , ("<XF86AudioPlay>", spawn "playerctl play-pause")
         , ("<XF86AudioPrev>", spawn "playerctl previous")
         , ("<XF86AudioNext>", spawn "playerctl next")
         , ("<XF86AudioMute>",   spawn "amixer set Master toggle")

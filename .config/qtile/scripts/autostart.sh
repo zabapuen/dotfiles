@@ -19,7 +19,7 @@ numlockx on &
 # run dex -ae qtile
 # run xscreensaver -no-splash &
 run volumeicon &
-run nm-applet &
+# run nm-applet &
 run pamac-tray &
 run copyq &
 run polychromatic-tray-applet &
@@ -31,6 +31,7 @@ run dunst &
 run picom &
 run cbatticon &
 paleofetch --recache &
+xset s off -dpms &
 udisksctl mount -b /dev/sdb1 &
 #udisksctl mount -b /dev/sda2 &
 # picom -b --config ~/.config/picom/picom.conf &
