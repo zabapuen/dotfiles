@@ -84,6 +84,10 @@ function copy
     end
 end
 
+## Import colorscheme from 'wal' asynchronously
+if type "wal" >> /dev/null 2>&1
+   cat ~/.cache/wal/sequences
+end
 
 ## Useful aliases
 # Replace ls with exa
@@ -107,7 +111,7 @@ alias wget='wget -c '
 alias rmpkg="sudo pacman -Rdd"
 alias psmem='ps auxf | sort -nr -k 4'
 alias psmem10='ps auxf | sort -nr -k 4 | head -10'
-alias upd='sudo reflector --latest 5 --age 2 --fastest 5 --protocol https --sort rate --save /etc/pacman.d/mirrorlist && cat /etc/pacman.d/mirrorlist && sudo pacman -Syu && fish_update_completions && sudo updatedb && sudo -H DIFFPROG=meld pacdiff'
+alias upd='sudo reflector --latest 5 --age 2 --fastest 5 --protocol https --sort rate --save /etc/pacman.d/mirrorlist && cat /etc/pacman.d/mirrorlist && sudo pacman -Syu && fish_update_completions && sudo updatedb'
 alias ..='cd ..'
 alias ...='cd ../..'
 alias ....='cd ../../..'
@@ -131,11 +135,9 @@ alias mirrora="sudo reflector --latest 50 --number 20 --sort age --save /etc/pac
 # Help people new to Arch
 alias apt='man pacman'
 alias apt-get='man pacman'
-alias pacdiff='sudo -H DIFFPROG=meld pacdiff'               # Compare .pacnew & .pacsave files 
 alias helpme='cht.sh --shell'
 alias please='sudo'
 alias tb='nc termbin.com 9999'
-alias paru="paru --bottomup"
 
 # Cleanup orphaned packages
 alias cleanup='sudo pacman -Rns (pacman -Qtdq)'
@@ -147,13 +149,7 @@ alias jctl="journalctl -p 3 -xb"
 alias rip="expac --timefmt='%Y-%m-%d %T' '%l\t%n %v' | sort | tail -200 | nl"
 
 
-## Import colorscheme from 'wal' asynchronously
-if type "wal" >> /dev/null 2>&1
-   cat ~/.cache/wal/sequences
-end
-
-
 ## Run paleofetch if session is interactive
 if status --is-interactive
-   paleofetch
+   neofetch
 end
