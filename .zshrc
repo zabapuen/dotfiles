@@ -100,6 +100,7 @@ alias ohmyzsh="vi ~/.oh-my-zsh"
 alias vi=vim
 alias vagrant='TERM=xterm-256color vagrant'
 alias ssh='TERM=xterm-256color ssh'
+alias mtga='legendary launch stargazer'
 # ls
 alias l='ls -lh'
 alias ll='ls -lah'

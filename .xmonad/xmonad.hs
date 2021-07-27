@@ -118,6 +118,7 @@ myStartupHook = do
     -- spawnOnce "feh --randomize --bg-fill ~/wallpapers/*"  -- feh set random wallpaper
     -- spawnOnce "nitrogen --restore &"   -- if you prefer nitrogen to feh
     spawnOnce "~/.config/qtile/scripts/autostart.sh &"  -- autostart programs
+    spawnOnce "xsetroot -cursor_name left_ptr &"  -- X mouse
     spawnOnce "trayer --edge top --align right --distancefrom right --distance 180 --widthtype request --padding 3 --iconspacing 3 --SetDockType true --SetPartialStrut true --expand true --monitor 0 --transparent true --alpha 82 --tint 0x0D0D0D --height 30 &"
     setWMName "LG3D"
 
@@ -366,6 +367,7 @@ myKeys =
         , ("M-S-q", io exitSuccess)              -- Quits xmonad
         , ("M-q", kill1)                         -- Kill the currently focused client
         -- , ("M-S-q", killAll)                     -- Kill all windows on current workspace
+        , ("M-S-l", spawn "dm-tool lock")                     -- Lock Session
 
 
     -- Run Prompt
@@ -374,7 +376,8 @@ myKeys =
         , ("M-d", spawn "~/.config/qtile/scripts/dmenu.sh") -- Dmenu ~/.config/qtile/scripts/xmenu.sh rofi -show run
         , ("M-S-d", spawn "rofi -show run") -- Dmenu ~/.config/qtile/scripts/xmenu.sh
         -- , ("M-0", spawn "~/.config/qtile/scripts/xmenu.sh") -- Jgmenu 
-        , ("M-<Space>", spawn "nwggrid -p -o 0.4")          -- Nwggrid
+        -- , ("M-<Space>", spawn "nwggrid -p -o 0.4")          -- Nwggrid
+        , ("M-<Space>", spawn "~/.config/eww/launch_eww")          -- eww
         , ("M-<Esc>", spawn "xkill")                        -- Xkill
         , ("M", spawn "~/.config/qtile/scripts/dmenu.sh") -- Dmenu ~/.config/qtile/scripts/xmenu.sh
         , ("M1-M", spawn "~/.config/qtile/scripts/dmenu.sh")

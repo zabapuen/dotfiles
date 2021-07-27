@@ -7,7 +7,7 @@ h = os.environ.get('HOME')
 w = "/.local/share/wallpapers"
 w2 = "/Imágenes/Walls/Anime"
 w3 = "/Imágenes/Walls/3440x1440/"
-e = h + w3
+e = h + w
 
 #Add your own wallpapers directory
 # e = "/home/alejandro/.local/share/wallpapers/favs"

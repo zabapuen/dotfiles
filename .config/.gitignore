@@ -22,6 +22,7 @@
 !dwmblocks
 !xmonad
 !xob
+!eww
 !dunst
 !picom
 !gtk-3.0
@@ -38,4 +39,5 @@
 !openrazer
 !autostart
 jgmenu/backup/
+!zathura
 qtile/__pycache__/

@@ -33,6 +33,7 @@ run cbatticon &
 paleofetch --recache &
 xset s off -dpms &
 udisksctl mount -b /dev/sdb1 &
+nvim --headless --listen localhost:6666 &
 #udisksctl mount -b /dev/sda2 &
 # picom -b --config ~/.config/picom/picom.conf &
 # ~/.conky/conky-startup.sh &
