@@ -38,5 +38,6 @@
     "workbench.editor.scrollToSwitchTabs": true,
     "window.zoomLevel": 1,
     "diffEditor.ignoreTrimWhitespace": false,
-    "rufo.exe": "/home/alejandro.garuda/.gem/ruby/3.0.0/bin/rufo"
+    "rufo.exe": "/home/alejandro.garuda/.gem/ruby/3.0.0/bin/rufo",
+    "vscode-neovim.neovimExecutablePaths.linux": "/usr/bin/nvim"
 }
