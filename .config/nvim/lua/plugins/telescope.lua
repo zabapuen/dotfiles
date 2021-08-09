@@ -67,6 +67,9 @@ telescope.setup(
     }
 )
 
+-- load the theme_switcher extension
+require("telescope").load_extension("themes")
+
 if
     not pcall(
         function()
@@ -75,9 +78,11 @@ if
         end
     )
  then
-    -- This should only trigger when in need of PackerSync, so better do it
-    print("After completion of PackerSync, restart neovim.")
+     -- This should only trigger when in need of PackerSync, so better do it
+    print("After completion of PackerCompile, restart neovim.")
     -- Trigger packer compile on PackerComplete, so it properly waits for PackerSync
-    vim.cmd 'autocmd User PackerComplete ++once lua require("packer").compile()'
-    require("packer").sync("telescope-fzf-native.nvim", "telescope-media-files.nvim")
+    vim.cmd 'autocmd User PackerComplete ++once lua print "Waiting for PackerCompile.." require("packer").compile()'
+    vim.cmd 'autocmd User PackerCompileDone ++once echo "Packer Compile done, restart neovim."'
+    require "pluginList"
+    require("packer").update("telescope-fzf-native.nvim", "telescope-media-files.nvim")
 end
