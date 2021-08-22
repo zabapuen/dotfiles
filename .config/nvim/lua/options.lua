@@ -1,13 +1,7 @@
 local opt = vim.opt
 local g = vim.g
 
--- Turn these off at startup, will be enabled later just before loading the theme
-vim.cmd([[
-    syntax off
-    filetype off
-    filetype plugin indent off
-]])
-
+opt.undofile = true
 opt.ruler = false
 opt.hidden = true
 opt.ignorecase = true
@@ -26,7 +20,7 @@ opt.clipboard = "unnamedplus"
 opt.shortmess:append("sI")
 
 -- disable tilde on end of buffer: https://github.com/  neovim/neovim/pull/8546#issuecomment-643643758
-vim.cmd("let &fcs='eob: '")
+opt.fillchars = {eob = " "}
 
 -- Numbers
 opt.number = true
@@ -71,9 +65,10 @@ for _, plugin in pairs(disabled_built_ins) do
     vim.g["loaded_" .. plugin] = 1
 end
 
-local M = {}
+-- Don't show status line on vim terminals
+vim.cmd [[ au TermOpen term://* setlocal nonumber laststatus=0 ]]
 
--- file extension specific tabbing
--- vim.cmd([[autocmd Filetype python setlocal expandtab tabstop=4 shiftwidth=4 softtabstop=4]])
-
-return M
+-- Open a file from its last left off position
+-- vim.cmd [[ au BufReadPost * if expand('%:p') !~# '\m/\.git/' && line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif ]]
+-- File extension specific tabbing
+-- vim.cmd [[ autocmd Filetype python setlocal expandtab tabstop=4 shiftwidth=4 softtabstop=4 ]]

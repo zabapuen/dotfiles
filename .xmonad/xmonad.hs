@@ -508,6 +508,8 @@ myKeys =
         -- , ("<XF86AudioLowerVolume>", spawn "amixer set Master 5%- unmute")
         -- , ("<XF86AudioRaiseVolume>", spawn "amixer set Master 5%+ unmute")
         , ("<XF86HomePage>", spawn "google-chrome-stable")
+        , ("<XF86MonBrightnessUp>", spawn "xbacklight -inc 5")
+        , ("<XF86MonBrightnessDown>", spawn "xbacklight -dec 5")
         , ("<XF86Search>", safeSpawn "google-chrome-stable" ["https://www.google.com/"])
         , ("<XF86Mail>", runOrRaise "thunderbird" (resource =? "thunderbird"))
         , ("<XF86Calculator>", runOrRaise "qalculate-gtk" (resource =? "qalculate-gtk"))
