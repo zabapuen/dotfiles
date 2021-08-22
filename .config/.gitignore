@@ -36,6 +36,9 @@
 !nwg-launchers
 !Code
 !jgmenu
+!bspwm
+!sxhkd
+!polybar
 !openrazer
 !autostart
 jgmenu/backup/
