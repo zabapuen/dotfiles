@@ -1,0 +1,6 @@
+[Desktop Entry]
+Type=Application
+Name=Inicio automático de LXRandR
+Comment=Iniciar xrandr con los ajustes realizados en LXRandR
+Exec=sh -c 'xrandr --output DP-2 --mode 3440x1440 --rate 100.00'
+OnlyShowIn=LXDE

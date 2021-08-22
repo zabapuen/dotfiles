@@ -113,9 +113,9 @@ myStartupHook = do
     -- spawnOnce "kak -d -s mysession &"  -- kakoune daemon for better performance
     -- spawnOnce "urxvtd -q -o -f &"      -- urxvt daemon for better performance
     -- spawnOnce "xargs xwallpaper --stretch < ~/.xwallpaper"  -- set last saved with xwallpaper
-    -- spawnOnce "/bin/ls ~/wallpapers | shuf -n 1 | xargs xwallpaper --stretch"  -- set random xwallpaper
+    -- spawnOnce "/bin/ls ~/.local/share/wallpapers | shuf -n 1 | xargs xwallpaper --stretch"  -- set random xwallpaper
     -- spawnOnce "~/.fehbg &"  -- set last saved feh wallpaper
-    -- spawnOnce "feh --randomize --bg-fill ~/wallpapers/*"  -- feh set random wallpaper
+    -- spawnOnce "feh --randomize --bg-fill ~/.local/share/wallpapers/*"  -- feh set random wallpaper
     -- spawnOnce "nitrogen --restore &"   -- if you prefer nitrogen to feh
     spawnOnce "~/.config/qtile/scripts/autostart.sh &"  -- autostart programs
     spawnOnce "xsetroot -cursor_name left_ptr &"  -- X mouse
@@ -374,9 +374,7 @@ myKeys =
     -- M-p was the default keybinding.  I've changed it to M-S-RET because I will use
     -- M-p as part of the keychord for the other dmenu script bindings.
         , ("M-d", spawn "~/.config/qtile/scripts/dmenu.sh") -- Dmenu ~/.config/qtile/scripts/xmenu.sh rofi -show run
-        , ("M-S-d", spawn "rofi -show run") -- Dmenu ~/.config/qtile/scripts/xmenu.sh
-        -- , ("M-0", spawn "~/.config/qtile/scripts/xmenu.sh") -- Jgmenu 
-        -- , ("M-<Space>", spawn "nwggrid -p -o 0.4")          -- Nwggrid
+        , ("M-S-d", spawn "~/.config/qtile/scripts/xmenu.sh") -- Dmenu ~/.config/qtile/scripts/xmenu.sh
         , ("M-<Space>", spawn "~/.config/eww/launch_eww")          -- eww
         , ("M-<Esc>", spawn "xkill")                        -- Xkill
         , ("M", spawn "~/.config/qtile/scripts/dmenu.sh") -- Dmenu ~/.config/qtile/scripts/xmenu.sh
@@ -399,8 +397,8 @@ myKeys =
     -- Workspaces
         , ("M1-<Left>", prevWS)  -- Switch focus to prev monitor
         , ("M1-<Right>", nextWS)  -- Switch focus to prev monitor
-        , ("M-S-<KP_Add>", shiftTo Next nonNSP >> moveTo Next nonNSP)       -- Shifts focused window to next ws
-        , ("M-S-<KP_Subtract>", shiftTo Prev nonNSP >> moveTo Prev nonNSP)  -- Shifts focused window to prev ws
+        , ("M-S-<Right>", shiftTo Next nonNSP >> moveTo Next nonNSP)       -- Shifts focused window to next ws
+        , ("M-S-<Left>", shiftTo Prev nonNSP >> moveTo Prev nonNSP)  -- Shifts focused window to prev ws
 
     -- Floating windows
         , ("M-S-f", sendMessage (T.Toggle "floats")) -- Toggles my 'floats' layout
@@ -471,12 +469,13 @@ myKeys =
         , ("C-m t", namedScratchpadAction myScratchPads "terminal")
         , ("C-m s", namedScratchpadAction myScratchPads "spoty")
         , ("C-m c", namedScratchpadAction myScratchPads "calculator")
+        , ("C-m a", namedScratchpadAction myScratchPads "copyq")
 
     -- Set wallpaper with 'feh'. Type 'SUPER+F1' to launch sxiv in the wallpapers directory.
     -- Then in sxiv, type 'C-x w' to set the wallpaper that you choose.
-        , ("M-<F1>", spawn "sxiv -r -q -t -o ~/wallpapers/*")
-        , ("M-<F2>", spawn "/bin/ls ~/wallpapers | shuf -n 1 | xargs xwallpaper --stretch")
-        --, ("M-<F2>", spawn "feh --randomize --bg-fill ~/wallpapers/*")
+        , ("M-<F1>", spawn "sxiv -r -q -t -o ~/.local/share/wallpapers/*")
+        , ("M-<F2>", spawn "/bin/ls -d ~/.local/share/wallpapers/* | shuf -n 1 | xargs xwallpaper --zoom")
+        --, ("M-<F2>", spawn "feh --randomize --bg-fill ~/.local/share/wallpapers/*")
 
     -- Controls for mocp music player (SUPER-u followed by a key)
         -- , ("M-u p", spawn "playerctl play")
@@ -513,8 +512,10 @@ myKeys =
         , ("<XF86Mail>", runOrRaise "thunderbird" (resource =? "thunderbird"))
         , ("<XF86Calculator>", runOrRaise "qalculate-gtk" (resource =? "qalculate-gtk"))
         , ("<XF86Eject>", spawn "toggleeject")
-        , ("<Print>", spawn "spectacle -c")
-        , ("M-C-<Print>", spawn "spectacle -c -r")
+        -- , ("<Print>", spawn "spectacle -c")
+        -- , ("M-C-<Print>", spawn "spectacle -c -r")
+        , ("<Print>", spawn "flameshot screen -c -p ~/Imágenes/Screenshots/")
+        , ("M-S-<Print>", spawn "flameshot gui")
         ]
     -- The following lines are needed for named scratchpads.
           where nonNSP          = WSIs (return (\ws -> W.tag ws /= "NSP"))
@@ -554,9 +555,9 @@ main = do
               { ppOutput = hPutStrLn xmproc0                                        -- xmobar on monitor 1
                             --   >> hPutStrLn xmproc1 x                             -- xmobar on monitor 2
                             --   >> hPutStrLn xmproc2 x                             -- xmobar on monitor 3
-              , ppCurrent = xmobarColor "#A0E521" "#2F343F" . wrap "" ""            -- Current workspace
-              , ppVisible = xmobarColor "#A0E521" "" . clickable                    -- Visible but not current workspace
-              , ppHidden = xmobarColor "#A0E521" "" . wrap "" "" . clickable        -- Hidden workspaces
+              , ppCurrent = xmobarColor "#A0E521" "#2F343F" . wrap "" ""            -- Current workspace (Purple #C50ED2)
+              , ppVisible = xmobarColor "#A0E521" "" . clickable                    -- Visible but not current workspace (Purple #C50ED2)
+              , ppHidden = xmobarColor "#A0E521" "" . wrap "" "" . clickable        -- Hidden workspaces (Purple #C50ED2)
               , ppHiddenNoWindows = xmobarColor "#EBEBEB" ""  . wrap "" "" . clickable     -- Hidden workspaces (no windows)
               , ppTitle = xmobarColor "#EBEBEB" "" . shorten 60                     -- Title of active window
               , ppSep =  "<fc=#c0c5ce> <fn=1>|</fn> </fc>"                          -- Separator character

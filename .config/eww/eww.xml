@@ -8,7 +8,7 @@
 
         <!-- Profile vars -->
         <var name="IMAGE">images/profile.jpg</var>
-        <var name="NAME">YOUR NAME</var>
+        <var name="NAME">Alejandro Zabaleta</var>
 		<script-var name="UNAME" interval="5m">whoami</script-var>
 
         <!-- System vars -->
@@ -254,19 +254,19 @@
 				</box>
 				<box orientation="h" space-evenly="false" vexpand="false" hexpand="false">
 					<button class="iconfolder1" onclick="~/.config/eww/scripts/open_folders --docs"></button>
-					<button class="label_folder1" onclick="~/.config/eww/scripts/open_folders --docs">Documents</button>
+					<button class="label_folder1" onclick="~/.config/eww/scripts/open_folders --docs">Documentos</button>
 				</box>
 				<box orientation="h" space-evenly="false" vexpand="false" hexpand="false">
 					<button class="iconfolder2" onclick="~/.config/eww/scripts/open_folders --dl"></button>
-					<button class="label_folder2" onclick="~/.config/eww/scripts/open_folders --dl">Downloads</button>
+					<button class="label_folder2" onclick="~/.config/eww/scripts/open_folders --dl">Descargas</button>
 				</box>
 				<box orientation="h" space-evenly="false" vexpand="false" hexpand="false">
 					<button class="iconfolder3" onclick="~/.config/eww/scripts/open_folders --music"></button>
-					<button class="label_folder3" onclick="~/.config/eww/scripts/open_folders --music">Music</button>
+					<button class="label_folder3" onclick="~/.config/eww/scripts/open_folders --music">Música</button>
 				</box>
 				<box orientation="h" space-evenly="false" vexpand="false" hexpand="false">
 					<button class="iconfolder4" onclick="~/.config/eww/scripts/open_folders --pics"></button>
-					<button class="label_folder4" onclick="~/.config/eww/scripts/open_folders --pics">Pictures</button>
+					<button class="label_folder4" onclick="~/.config/eww/scripts/open_folders --pics">Imágenes</button>
 				</box>
 				<box orientation="h" space-evenly="false" vexpand="false" hexpand="false">
 					<button class="iconfolder5" onclick="~/.config/eww/scripts/open_folders --cfg">ﮛ</button>

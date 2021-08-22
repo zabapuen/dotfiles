@@ -5,16 +5,16 @@ FILE="$HOME/.cache/eww_launch.xyz"
 EWW="$HOME/.bin/eww"
 
 if [[ "$1" == "--dl" ]]; then
-	${EWW} close-all && rm -rf "$FILE" && thunar ~/Downloads &
+	${EWW} close-all && rm -rf "$FILE" && thunar ~/Descargas &
 
 elif [[ "$1" == "--docs" ]]; then
-	${EWW} close-all && rm -rf "$FILE" && thunar ~/Documents &
+	${EWW} close-all && rm -rf "$FILE" && thunar ~/Documentos &
 
 elif [[ "$1" == "--music" ]]; then
-	${EWW} close-all && rm -rf "$FILE" && thunar ~/Music &
+	${EWW} close-all && rm -rf "$FILE" && thunar ~/Música &
 
 elif [[ "$1" == "--pics" ]]; then
-	${EWW} close-all && rm -rf "$FILE" && thunar ~/Pictures &
+	${EWW} close-all && rm -rf "$FILE" && thunar ~/Imágenes &
 
 elif [[ "$1" == "--cfg" ]]; then
 	${EWW} close-all && rm -rf "$FILE" && thunar ~/.config &
