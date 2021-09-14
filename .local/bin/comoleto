@@ -1,0 +1,15 @@
+#!/usr/bin/env sh
+export _BASE=/install-scripts
+# shellcheck disable=SC1091
+. ${_BASE}/script/set-env.sh
+echo ""
+echo "Actualizando mirrorlist..."
+echo ""
+sudo reflector --country Spain \
+        --country France \
+        --age 12 \
+        --protocol https \
+        --sort rate \
+        --save \
+        /etc/pacman.d/mirrorlist
+yay -Syyuu

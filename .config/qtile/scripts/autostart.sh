@@ -20,7 +20,7 @@ numlockx on &
 # run xscreensaver -no-splash &
 run volumeicon &
 # run nm-applet &
-run pamac-tray &
+# run pamac-tray &
 run copyq &
 run polychromatic-tray-applet &
 run blueman-applet &

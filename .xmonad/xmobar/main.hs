@@ -39,7 +39,7 @@ Config {
                     \%memory% \
                     \%disku% \
                     \</action>\
-                    \ %updates% \
+                    \<action=`alacritty -e ~/.local/bin/comoleto`> %updates% </action>\
                     -- \ %brightness%\
                     -- \ %battery%\
                     -- \ %volume% \
