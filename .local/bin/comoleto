@@ -13,3 +13,6 @@ sudo reflector --country Spain \
         --save \
         /etc/pacman.d/mirrorlist
 yay -Syyuu
+echo ""
+read -p "Press ENTER to continue"
+

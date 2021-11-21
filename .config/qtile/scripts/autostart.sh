@@ -14,7 +14,7 @@ function run {
 
 #starting utility applications at boot time
 run lxsession &
-/usr/lib/polkit-kde-authentication-agent-1 &
+##/usr/lib/polkit-kde-authentication-agent-1 &
 numlockx on &
 # run dex -ae qtile
 # run xscreensaver -no-splash &

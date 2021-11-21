@@ -3,7 +3,7 @@
     "editor.fontFamily": "'MesloLGSDZ Nerd Font', 'FontAwesome', 'Font Awesome 5 Free', 'Font Awesome 5 Brands', 'Droid Sans Mono', 'monospace', 'Droid Sans Fallback'",
     "editor.fontSize": 16,
     "python.showStartPage": false,
-    "terminal.integrated.fontFamily": "'MesloLGSDZ Nerd Font Mono'",
+    "terminal.integrated.fontFamily": "'MesloLGSDZ Nerd Font'",
     "terminal.external.linuxExec": "alacritty",
     "git.confirmSync": false,
     "terminal.integrated.fontSize": 18,
@@ -23,15 +23,17 @@
     "cSpell.language": "es,en",
     "cSpell.userWords": [
         "Infijas",
-        "Tuplas",
+        "kubectl",
         "mapean",
         "ndole",
         "operandos",
         "pas",
         "pasándole",
+        "podman",
         "polim",
         "polimórficos",
-        "rficos"
+        "rficos",
+        "Tuplas"
     ],
     "search.useRipgrep": false,
     "search.followSymlinks": false,
@@ -40,5 +42,6 @@
     "diffEditor.ignoreTrimWhitespace": false,
     "rufo.exe": "/home/alejandro.garuda/.gem/ruby/3.0.0/bin/rufo",
     "vscode-neovim.neovimExecutablePaths.linux": "/usr/bin/nvim",
-    "security.workspace.trust.untrustedFiles": "open"
+    "security.workspace.trust.untrustedFiles": "open",
+    "explorer.confirmDelete": false
 }

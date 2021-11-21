@@ -504,7 +504,8 @@ myKeys =
         , ("<XF86AudioPlay>", spawn "playerctl play-pause")
         , ("<XF86AudioPrev>", spawn "playerctl previous")
         , ("<XF86AudioNext>", spawn "playerctl next")
-        , ("<XF86AudioMute>",   spawn "amixer set Master toggle")
+        -- Los botones de volumen se gestionan desde volumeicon
+        -- , ("<XF86AudioMute>",   spawn "amixer set Master toggle")
         -- , ("<XF86AudioLowerVolume>", spawn "amixer set Master 5%- unmute")
         -- , ("<XF86AudioRaiseVolume>", spawn "amixer set Master 5%+ unmute")
         , ("<XF86HomePage>", spawn "google-chrome-stable")
@@ -554,10 +555,10 @@ main = do
         , clickJustFocuses   = False                    -- Previene el doble clic cuando usamos focusFollowsMouse  = False
         , logHook = dynamicLogWithPP $ namedScratchpadFilterOutWorkspacePP $ xmobarPP
               -- the following variables beginning with 'pp' are settings for xmobar.
-              { ppOutput = hPutStrLn xmproc0                                        -- xmobar on monitor 1
+              { ppOutput =  hPutStrLn xmproc0                                        -- xmobar on monitor 1
                             --   >> hPutStrLn xmproc1 x                             -- xmobar on monitor 2
                             --   >> hPutStrLn xmproc2 x                             -- xmobar on monitor 3
-              , ppCurrent = xmobarColor "#A0E521" "#2F343F" . wrap "" ""            -- Current workspace (Purple #C50ED2)
+              ,  ppCurrent = xmobarColor "#A0E521" "#2F343F" . wrap "" ""            -- Current workspace (Purple #C50ED2)
               , ppVisible = xmobarColor "#A0E521" "" . clickable                    -- Visible but not current workspace (Purple #C50ED2)
               , ppHidden = xmobarColor "#A0E521" "" . wrap "" "" . clickable        -- Hidden workspaces (Purple #C50ED2)
               , ppHiddenNoWindows = xmobarColor "#EBEBEB" ""  . wrap "" "" . clickable     -- Hidden workspaces (no windows)

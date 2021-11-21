@@ -102,6 +102,7 @@ alias vagrant='TERM=xterm-256color vagrant'
 alias ssh='TERM=xterm-256color ssh'
 alias mtga='legendary launch stargazer'
 # ls
+alias ls='lsd'
 alias l='lsd -lh'
 alias ll='lsd -lah'
 alias la='lsd -A'
@@ -115,11 +116,11 @@ alias gi='git init'
 alias ga='git add'
 alias gc='git commit -m'
 alias gp='git push origin master'
-#if [[ -n $SSH_CONNECTION ]]; then
-#  journalctl -xef
-#else
-#  export EDITOR='vim'
-#fi
+if [[ -n $SSH_CONNECTION ]]; then
+  export PS1='['`hostname`'] '$PS1
+else
+  export PS1=$PS1
+fi
 export PATH=$HOME/.local/bin:$PATH
 #paleofetch | lolcat
 echo ""
