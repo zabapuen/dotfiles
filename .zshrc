@@ -122,6 +122,7 @@ else
   export PS1=$PS1
 fi
 export PATH=$HOME/.local/bin:$PATH
+export PATH=$HOME/.cargo/bin:$PATH
 #paleofetch | lolcat
 echo ""
 pfetch
