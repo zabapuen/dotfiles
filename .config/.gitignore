@@ -45,3 +45,4 @@
 jgmenu/backup/
 !zathura
 qtile/__pycache__/
+!environment.d
