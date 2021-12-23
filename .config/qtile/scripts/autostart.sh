@@ -18,6 +18,7 @@ run lxsession &
 numlockx on &
 # run dex -ae qtile
 # run xscreensaver -no-splash &
+# run plank &
 run volumeicon &
 # run nm-applet &
 # run pamac-tray &
@@ -26,11 +27,9 @@ run polychromatic-tray-applet &
 run blueman-applet &
 run flameshot &
 run thunar --daemon &
-/var/lib/snapd/snap/bin/mailspring --background %U &
 run dunst &
 run picom &
 run cbatticon &
-paleofetch --recache &
 xset s off -dpms &
 udisksctl mount -b /dev/sdb1 &
 nvim --headless --listen localhost:6666 &

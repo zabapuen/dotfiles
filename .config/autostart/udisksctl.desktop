@@ -1,0 +1,22 @@
+[Desktop Entry]
+Comment[es_ES]=
+Comment=
+Exec=udisksctl mount -b /dev/sdb1 &
+GenericName[es_ES]=
+GenericName=
+Hidden=false
+Icon=disk-utility
+MimeType=
+Name[es_ES]=udisk
+Name=udisk
+NoDisplay=false
+Path=
+StartupNotify=true
+Terminal=false
+TerminalOptions=
+Type=Application
+X-DBUS-ServiceName=
+X-DBUS-StartupType=
+X-GNOME-Autostart-enabled=true
+X-KDE-SubstituteUID=false
+X-KDE-Username=
